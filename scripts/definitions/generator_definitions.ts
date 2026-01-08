@@ -1,0 +1,150 @@
+/**
+ * IdleOreGen - Block Definitions
+ *
+ * Definiciones World Dynamic Properties para bloques del juego.
+ * Responsabilidad: Almacenar, organizar y recuperar datos del catálogo de generadores.
+ */
+
+import { world } from "@minecraft/server";
+import { WORLD_KEYS } from "../storage/storage_keys.js";
+
+/**
+ * Guarda los tipos de generadores en World DP
+ */
+export function generateGeneratorDefinitions(): void {
+  world.setDynamicProperty(WORLD_KEYS.CATALOG.GENERATORS, JSON.stringify(GENERATORS));
+}
+
+// ============================================================================
+// GENERADORES
+// ============================================================================
+export type GeneratorKey = keyof typeof GENERATORS;
+export const GENERATORS: GeneratorTypesMap = {
+  oak_log: {
+    id: "idleoregen:oak_log_generator",
+    entityId: "idleoregen:oak_log_generator_entity",
+    name: "Oak Log Generator",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:oak_log",
+  },
+  cobblestone: {
+    id: "idleoregen:cobblestone_generator",
+    entityId: "idleoregen:cobblestone_generator_entity",
+    name: "Cobblestone Generator",
+    interval: 5,
+    cap: 512,
+    item: "minecraft:cobblestone",
+  },
+  coal: {
+    id: "idleoregen:coal_generator",
+    entityId: "idleoregen:coal_generator_entity",
+    name: "Coal Generator",
+    interval: 20,
+    cap: 512,
+    item: "minecraft:coal",
+  },
+  copper: {
+    id: "idleoregen:copper_generator",
+    entityId: "idleoregen:copper_generator_entity",
+    name: "Copper Generator",
+    interval: 30,
+    cap: 512,
+    item: "minecraft:raw_copper",
+  },
+  iron: {
+    id: "idleoregen:iron_generator",
+    entityId: "idleoregen:iron_generator_entity",
+    name: "Iron Generator",
+    interval: 30,
+    cap: 512,
+    item: "minecraft:raw_iron",
+  },
+  gold: {
+    id: "idleoregen:gold_generator",
+    entityId: "idleoregen:gold_generator_entity",
+    name: "Gold Generator",
+    interval: 35,
+    cap: 512,
+    item: "minecraft:gold_ingot",
+  },
+  diamond: {
+    id: "idleoregen:diamond_generator",
+    entityId: "idleoregen:diamond_generator_entity",
+    name: "Diamond Generator",
+    interval: 80,
+    cap: 256,
+    item: "minecraft:diamond",
+  },
+  emerald: {
+    id: "idleoregen:emerald_generator",
+    entityId: "idleoregen:emerald_generator_entity",
+    name: "Emerald Generator",
+    interval: 60,
+    cap: 512,
+    item: "emerald",
+  },
+  lapis: {
+    id: "idleoregen:lapis_generator",
+    entityId: "idleoregen:lapis_generator_entity",
+    name: "Lapis Lazuli Generator",
+    interval: 15,
+    cap: 1024,
+    item: "minecraft:lapis_lazuli",
+  },
+  redstone: {
+    id: "idleoregen:redstone_generator",
+    entityId: "idleoregen:redstone_generator_entity",
+    name: "Redstone Generator",
+    interval: 15,
+    cap: 1024,
+    item: "minecraft:redstone",
+  },
+  quartz: {
+    id: "idleoregen:quartz_generator",
+    entityId: "idleoregen:quartz_generator_entity",
+    name: "Quartz Generator",
+    interval: 30,
+    cap: 512,
+    item: "minecraft:quartz",
+  },
+  netherite: {
+    id: "idleoregen:netherite_generator",
+    entityId: "idleoregen:netherite_generator_entity",
+    name: "Netherite Generator",
+    interval: 100,
+    cap: 64,
+    item: "minecraft:netherite_ingot",
+  },
+} as const;
+
+// ============================================================================
+// HELPERS
+// ============================================================================
+
+/**
+ * Obtiene el tipo de generador desde un block ID
+ * @param blockId - El typeId del bloque (ej: "idleoregen:iron_generator")
+ * @returns La key del generador (ej: "iron") o null si no existe
+ */
+export function getGeneratorTypeFromBlockId(blockId: string): string | null {
+  const cleanId = blockId.split("[")[0]; // por si viene con states
+  for (const [key, def] of Object.entries(GENERATORS)) {
+    if (def.id === cleanId) return key;
+  }
+  return null;
+}
+
+// ============================================================================
+// GENERATOR DEFINITIONS
+// ============================================================================
+export interface GeneratorType {
+  id: string;
+  entityId?: string;
+  name: string;
+  interval: number; // Segundos entre producciones
+  cap: number;
+  item: string;
+}
+
+export type GeneratorTypesMap = Record<string, GeneratorType>;

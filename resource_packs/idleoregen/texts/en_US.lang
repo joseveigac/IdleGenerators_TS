@@ -1,0 +1,69 @@
+tile.idleoregen:empty_geometry.name=Empty Geometry 
+## Empty Geometry Model used for generators
+
+
+tile.idleoregen:oak_log_generator.name=Oak Log Generator 
+## Generator Block that produces Oak Logs
+entity.idleoregen:oak_log_generator_entity.name=Oak Log Generator Entity 
+## Entity for Oak Log Generator
+
+
+tile.idleoregen:cobblestone_generator.name=Cobblestone Generator 
+## Generator Block that produces Cobblestone
+entity.idleoregen:cobblestone_generator_entity.name=Cobblestone Generator Entity 
+## Entity for Cobblestone Generator
+
+
+tile.idleoregen:coal_generator.name=Coal Generator 
+## Generator Block that produces Coal
+entity.idleoregen:coal_generator_entity.name=Coal Generator Entity 
+## Entity for Coal Generator
+
+## xd
+tile.idleoregen:copper_generator.name=Copper Generator 
+## Generator Block that produces Copper
+entity.idleoregen:copper_generator_entity.name=Copper Generator Entity 
+## Entity for Copper Generator
+
+tile.idleoregen:iron_generator.name=Iron Generator 
+## Generator Block that produces Iron
+entity.idleoregen:iron_generator_entity.name=Iron Generator Entity 
+## Entity for Iron Generator
+tile.idleoregen:gold_generator.name=Gold Generator 
+## Generator Block that produces Gold
+entity.idleoregen:gold_generator_entity.name=Gold Generator Entity 
+## Entity for Gold Generator
+
+
+tile.idleoregen:diamond_generator.name=Diamond Generator 
+## Generator Block that produces Diamond
+entity.idleoregen:diamond_generator_entity.name=Diamond Generator Entity 
+## Entity for Diamond Generator
+
+
+tile.idleoregen:netherite_generator.name=Netherite Generator 
+## Generator Block that produces Netherite
+entity.idleoregen:netherite_generator_entity.name=Netherite Generator Entity 
+## Entity for Netherite Generator
+
+tile.idleoregen:emerald_generator.name=Emerald Generator 
+## Generator Block that produces Emerald
+entity.idleoregen:emerald_generator_entity.name=Emerald Generator Entity 
+## Entity for Emerald Generator
+
+
+
+tile.idleoregen:lapis_generator.name=Lapis Generator 
+## Generator Block that produces Lapis
+entity.idleoregen:lapis_generator_entity.name=Lapis Generator Entity 
+## Entity for Lapis Generator
+
+tile.idleoregen:quartz_generator.name=Quartz Generator 
+## Generator Block that produces Quartz
+entity.idleoregen:quartz_generator_entity.name=Quartz Generator Entity 
+## Entity for Quartz Generator
+
+tile.idleoregen:redstone_generator.name=Redstone Generator 
+## Generator Block that produces Redstone
+entity.idleoregen:redstone_generator_entity.name=Redstone Generator Entity 
+## Entity for Redstone Generator

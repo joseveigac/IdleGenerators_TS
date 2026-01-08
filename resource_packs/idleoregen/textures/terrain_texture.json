@@ -1,0 +1,47 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "empty_geometry": {
+      "textures": "textures/blocks/empty_geometry"
+    },
+    "oak_log_generator": {
+      "textures": "textures/blocks/oak_log_generator"
+    },
+    "iron_generator": {
+      "textures": "textures/blocks/iron_generator"
+    },
+    "cobblestone_generator": {
+      "textures": "textures/blocks/cobblestone_generator"
+    },
+    "copper_generator": {
+      "textures": "textures/blocks/copper_generator"
+    },
+    "gold_generator": {
+      "textures": "textures/blocks/gold_generator"
+    },
+    "diamond_generator": {
+      "textures": "textures/blocks/diamond_generator"
+    },
+    "emerald_generator": {
+      "textures": "textures/blocks/emerald_generator"
+    },
+    "netherite_generator": {
+      "textures": "textures/blocks/netherite_generator"
+    },
+    "lapis_generator": {
+      "textures": "textures/blocks/lapis_generator"
+    },
+    "redstone_generator": {
+      "textures": "textures/blocks/redstone_generator"
+    },
+    "coal_generator": {
+      "textures": "textures/blocks/coal_generator"
+    },
+    "quartz_generator": {
+      "textures": "textures/blocks/quartz_generator"
+    }
+  }
+}

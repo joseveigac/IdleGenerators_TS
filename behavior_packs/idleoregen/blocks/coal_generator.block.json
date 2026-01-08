@@ -1,0 +1,55 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:block": {
+    "description": {
+      "identifier": "idleoregen:coal_generator",
+      "menu_category": {
+        "category": "items"
+      },
+      "states": {
+        "sb:runtime": [0, 1]
+      }
+    },
+    "components": {
+      "minecraft:custom_components": ["idleoregen:generator"],
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:geometry": "geometry.generator",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "coal_generator",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:map_color": "#ffffff",
+      "minecraft:redstone_conductivity": {
+        "redstone_conductor": false
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('sb:runtime') == 0",
+        "components": {
+          "minecraft:geometry": "geometry.generator",
+          "minecraft:material_instances": {
+            "*": { "texture": "coal_generator", "render_method": "alpha_test" }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('sb:runtime') == 1",
+        "components": {
+          "minecraft:geometry": "geometry.empty_geometry",
+          "minecraft:material_instances": {
+            "*": { "texture": "empty_geometry", "render_method": "alpha_test" }
+          }
+        }
+      }
+    ]
+  }
+}
