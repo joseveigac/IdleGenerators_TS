@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "idleoregen:netherite_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GEG", "NBN", "GNG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "E": { "item": "minecraft:dragon_egg" },
+      "N": { "item": "minecraft:nether_star" },
+      "B": { "item": "minecraft:netherite_block" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:netherite_ingot"
+      }
+    ],
+    "result": {
+      "item": "idleoregen:netherite_generator",
+      "count": 1
+    }
+  }
+}

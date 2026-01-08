@@ -1,0 +1,24 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "idleoregen:diamond_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GOG", "OBO", "GOG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "O": { "item": "minecraft:crying_obsidian" },
+      "B": { "item": "minecraft:diamond_block" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:diamond"
+      }
+    ],
+    "result": {
+      "item": "idleoregen:diamond_generator",
+      "count": 1
+    }
+  }
+}

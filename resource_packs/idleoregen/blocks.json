@@ -1,0 +1,42 @@
+{
+  "format_version": "1.21.0",
+  "empty_geometry": {
+    "sound": "stone"
+  },
+  "oak_log_generator": {
+    "sound": "stone"
+  },
+  "iron_generator": {
+    "sound": "stone"
+  },
+  "cobblestone_generator": {
+    "sound": "stone"
+  },
+  "copper_generator": {
+    "sound": "stone"
+  },
+  "gold_generator": {
+    "sound": "stone"
+  },
+  "diamond_generator": {
+    "sound": "stone"
+  },
+  "emerald_generator": {
+    "sound": "stone"
+  },
+  "netherite_generator": {
+    "sound": "stone"
+  },
+  "lapis_generator": {
+    "sound": "stone"
+  },
+  "redstone_generator": {
+    "sound": "stone"
+  },
+  "coal_generator": {
+    "sound": "stone"
+  },
+  "quartz_generator": {
+    "sound": "stone"
+  }
+}
