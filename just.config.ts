@@ -18,6 +18,10 @@ import {
 import path from "path";
 setupEnvironment(path.resolve(__dirname, ".env"));
 const projectName = getOrThrowFromProcess("PROJECT_NAME");
+// Distributable filename: short download name + version, independent of the
+// author-prefixed PROJECT_NAME (ghozix_idlegen) used for pack folders/identifiers.
+const distName = "idlegen";
+const { version } = require(path.resolve(__dirname, "package.json"));
 const bundleTaskOptions: BundleTaskParameters = {
   entryPoint: path.join(__dirname, "./scripts/main.ts"),
   external: ["@minecraft/server", "@minecraft/server-ui"],
@@ -33,7 +37,7 @@ const copyTaskOptions: CopyTaskParameters = {
 };
 const mcaddonTaskOptions: ZipTaskParameters = {
   ...copyTaskOptions,
-  outputFile: `./dist/packages/${projectName}.mcaddon`,
+  outputFile: `./dist/packages/${distName}-${version}.mcaddon`,
 };
 task("lint", coreLint(["scripts/**/*.ts"], argv().fix));
 task("typescript", tscTask());
