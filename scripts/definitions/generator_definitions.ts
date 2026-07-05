@@ -27,6 +27,79 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 5,
     cap: 64,
     item: "minecraft:oak_log",
+    glyph: "\uE211",
+  },
+  spruce_log: {
+    id: "idleoregen:spruce_log_generator",
+    entityId: "idleoregen:spruce_log_generator_entity",
+    name: "Spruce Log Generator",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:spruce_log",
+    glyph: "\uE212",
+  },
+  birch_log: {
+    id: "idleoregen:birch_log_generator",
+    entityId: "idleoregen:birch_log_generator_entity",
+    name: "Birch Log Generator",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:birch_log",
+    glyph: "\uE213",
+  },
+  jungle_log: {
+    id: "idleoregen:jungle_log_generator",
+    entityId: "idleoregen:jungle_log_generator_entity",
+    name: "Jungle Log Generator",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:jungle_log",
+    glyph: "\uE214",
+  },
+  acacia_log: {
+    id: "idleoregen:acacia_log_generator",
+    entityId: "idleoregen:acacia_log_generator_entity",
+    name: "Acacia Log Generator",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:acacia_log",
+    glyph: "\uE215",
+  },
+  dark_oak_log: {
+    id: "idleoregen:dark_oak_log_generator",
+    entityId: "idleoregen:dark_oak_log_generator_entity",
+    name: "Dark Oak Log Generator",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:dark_oak_log",
+    glyph: "\uE216",
+  },
+  mangrove_log: {
+    id: "idleoregen:mangrove_log_generator",
+    entityId: "idleoregen:mangrove_log_generator_entity",
+    name: "Mangrove Log Generator",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:mangrove_log",
+    glyph: "\uE217",
+  },
+  cherry_log: {
+    id: "idleoregen:cherry_log_generator",
+    entityId: "idleoregen:cherry_log_generator_entity",
+    name: "Cherry Log Generator",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:cherry_log",
+    glyph: "\uE218",
+  },
+  pale_oak_log: {
+    id: "idleoregen:pale_oak_log_generator",
+    entityId: "idleoregen:pale_oak_log_generator_entity",
+    name: "Pale Oak Log Generator",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:pale_oak_log",
+    glyph: "\uE219",
   },
   cobblestone: {
     id: "idleoregen:cobblestone_generator",
@@ -35,6 +108,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 5,
     cap: 512,
     item: "minecraft:cobblestone",
+    glyph: "\uE200",
   },
   coal: {
     id: "idleoregen:coal_generator",
@@ -43,6 +117,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 20,
     cap: 512,
     item: "minecraft:coal",
+    glyph: "\uE201",
   },
   copper: {
     id: "idleoregen:copper_generator",
@@ -51,6 +126,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 30,
     cap: 512,
     item: "minecraft:raw_copper",
+    glyph: "\uE202",
   },
   iron: {
     id: "idleoregen:iron_generator",
@@ -59,6 +135,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 30,
     cap: 512,
     item: "minecraft:raw_iron",
+    glyph: "\uE203",
   },
   gold: {
     id: "idleoregen:gold_generator",
@@ -67,6 +144,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 35,
     cap: 512,
     item: "minecraft:gold_ingot",
+    glyph: "\uE204",
   },
   diamond: {
     id: "idleoregen:diamond_generator",
@@ -75,6 +153,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 80,
     cap: 256,
     item: "minecraft:diamond",
+    glyph: "\uE205",
   },
   emerald: {
     id: "idleoregen:emerald_generator",
@@ -83,6 +162,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 60,
     cap: 512,
     item: "emerald",
+    glyph: "\uE206",
   },
   lapis: {
     id: "idleoregen:lapis_generator",
@@ -91,6 +171,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 15,
     cap: 1024,
     item: "minecraft:lapis_lazuli",
+    glyph: "\uE207",
   },
   redstone: {
     id: "idleoregen:redstone_generator",
@@ -99,6 +180,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 15,
     cap: 1024,
     item: "minecraft:redstone",
+    glyph: "\uE208",
   },
   quartz: {
     id: "idleoregen:quartz_generator",
@@ -107,6 +189,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 30,
     cap: 512,
     item: "minecraft:quartz",
+    glyph: "\uE209",
   },
   netherite: {
     id: "idleoregen:netherite_generator",
@@ -115,6 +198,7 @@ export const GENERATORS: GeneratorTypesMap = {
     interval: 100,
     cap: 64,
     item: "minecraft:netherite_ingot",
+    glyph: "\uE210",
   },
 } as const;
 
@@ -145,6 +229,7 @@ export interface GeneratorType {
   interval: number; // Segundos entre producciones
   cap: number;
   item: string;
+  glyph: string; // Carácter del glyph_XX.png. Offsets HEX: 00…09,0A,0B
 }
 
 export type GeneratorTypesMap = Record<string, GeneratorType>;

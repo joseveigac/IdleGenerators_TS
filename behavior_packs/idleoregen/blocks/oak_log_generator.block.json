@@ -3,6 +3,9 @@
   "minecraft:block": {
     "description": {
       "identifier": "idleoregen:oak_log_generator",
+      "menu_category": {
+        "category": "items"
+      },
       "states": {
         "sb:runtime": [0, 1]
       }

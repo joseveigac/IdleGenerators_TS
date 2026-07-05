@@ -65,5 +65,47 @@ entity.idleoregen:quartz_generator_entity.name=Quartz Generator Entity
 
 tile.idleoregen:redstone_generator.name=Redstone Generator 
 ## Generator Block that produces Redstone
-entity.idleoregen:redstone_generator_entity.name=Redstone Generator Entity 
+entity.idleoregen:redstone_generator_entity.name=Redstone Generator Entity
 ## Entity for Redstone Generator
+
+
+## --- Wood Set (v1.1.0) ---
+tile.idleoregen:spruce_log_generator.name=Spruce Log Generator
+## Generator Block that produces Spruce Logs
+entity.idleoregen:spruce_log_generator_entity.name=Spruce Log Generator Entity
+## Entity for Spruce Log Generator
+
+tile.idleoregen:birch_log_generator.name=Birch Log Generator
+## Generator Block that produces Birch Logs
+entity.idleoregen:birch_log_generator_entity.name=Birch Log Generator Entity
+## Entity for Birch Log Generator
+
+tile.idleoregen:jungle_log_generator.name=Jungle Log Generator
+## Generator Block that produces Jungle Logs
+entity.idleoregen:jungle_log_generator_entity.name=Jungle Log Generator Entity
+## Entity for Jungle Log Generator
+
+tile.idleoregen:acacia_log_generator.name=Acacia Log Generator
+## Generator Block that produces Acacia Logs
+entity.idleoregen:acacia_log_generator_entity.name=Acacia Log Generator Entity
+## Entity for Acacia Log Generator
+
+tile.idleoregen:dark_oak_log_generator.name=Dark Oak Log Generator
+## Generator Block that produces Dark Oak Logs
+entity.idleoregen:dark_oak_log_generator_entity.name=Dark Oak Log Generator Entity
+## Entity for Dark Oak Log Generator
+
+tile.idleoregen:mangrove_log_generator.name=Mangrove Log Generator
+## Generator Block that produces Mangrove Logs
+entity.idleoregen:mangrove_log_generator_entity.name=Mangrove Log Generator Entity
+## Entity for Mangrove Log Generator
+
+tile.idleoregen:cherry_log_generator.name=Cherry Log Generator
+## Generator Block that produces Cherry Logs
+entity.idleoregen:cherry_log_generator_entity.name=Cherry Log Generator Entity
+## Entity for Cherry Log Generator
+
+tile.idleoregen:pale_oak_log_generator.name=Pale Oak Log Generator
+## Generator Block that produces Pale Oak Logs
+entity.idleoregen:pale_oak_log_generator_entity.name=Pale Oak Log Generator Entity
+## Entity for Pale Oak Log Generator

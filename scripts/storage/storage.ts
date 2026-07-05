@@ -3,6 +3,7 @@ import { log } from "../utils/logger";
 import { DB_VERSION, WORLD_KEYS } from "./storage_keys";
 
 import { generateGeneratorDefinitions, GeneratorType, GeneratorTypesMap } from "../definitions/generator_definitions";
+import { runPlacedMigrations } from "../instances/placed";
 
 // ============================================================================
 // INICIALIZACIÓN
@@ -23,6 +24,11 @@ export function initDatabase(): void {
       : `[IdleOreGen] Updating from ${currentVersion} to ${DB_VERSION}`
   );
 
+  // Migraciones de datos "placed" antes de sellar la versión (evita huérfanos).
+  if (currentVersion === undefined || (currentVersion as number) < DB_VERSION) {
+    runPlacedMigrations(currentVersion as number | undefined);
+  }
+
   world.setDynamicProperty(WORLD_KEYS.META.SCHEMA_VERSION, DB_VERSION);
   generateGeneratorDefinitions();
 
@@ -30,8 +36,17 @@ export function initDatabase(): void {
 }
 
 export function initDatabaseAutoUpdate(): void {
-  world.setDynamicProperty(WORLD_KEYS.META.SCHEMA_VERSION, DB_VERSION);
+  const stored = world.getDynamicProperty(WORLD_KEYS.META.SCHEMA_VERSION) as number | undefined;
+
+  // El catálogo se regenera siempre desde código.
   generateGeneratorDefinitions();
+
+  // Migraciones de datos "placed" (solo cuando sube la versión).
+  if (stored === undefined || stored < DB_VERSION) {
+    runPlacedMigrations(stored);
+    world.setDynamicProperty(WORLD_KEYS.META.SCHEMA_VERSION, DB_VERSION);
+    log(`[IdleOreGen] Storage migrado a versión ${DB_VERSION} (desde ${stored ?? "nuevo"}).`);
+  }
 
   log("[IdleOreGen] Storage Auto-Update ejecutado.");
   log("[IdleOreGen] Storage Definiciones iniciadas correctamente");
@@ -59,6 +74,10 @@ export function setWorldData(key: string, data: any): void {
   } catch (error) {
     console.error(`[IdleOre] Error saving ${key}:`, error);
   }
+}
+
+export function removeWorldData(key: string): void {
+  world.setDynamicProperty(key, undefined);
 }
 
 // ============================================================================
