@@ -24,6 +24,11 @@ export function initDatabase(): void {
       : `[IdleOreGen] Updating from ${currentVersion} to ${DB_VERSION}`
   );
 
+  // Migraciones de datos "placed" antes de sellar la versión (evita huérfanos).
+  if (currentVersion === undefined || (currentVersion as number) < DB_VERSION) {
+    runPlacedMigrations(currentVersion as number | undefined);
+  }
+
   world.setDynamicProperty(WORLD_KEYS.META.SCHEMA_VERSION, DB_VERSION);
   generateGeneratorDefinitions();
 
