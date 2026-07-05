@@ -1,0 +1,24 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:iron_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GPG", "PBP", "GPG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "P": { "item": "minecraft:iron_pickaxe" },
+      "B": { "item": "minecraft:iron_block" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:iron_ingot"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:iron_generator",
+      "count": 1
+    }
+  }
+}

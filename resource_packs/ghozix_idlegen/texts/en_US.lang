@@ -1,0 +1,111 @@
+tile.ghozix_idlegen:empty_geometry.name=Empty Geometry 
+## Empty Geometry Model used for generators
+
+
+tile.ghozix_idlegen:oak_log_generator.name=Oak Log Generator 
+## Generator Block that produces Oak Logs
+entity.ghozix_idlegen:oak_log_generator_entity.name=Oak Log Generator Entity 
+## Entity for Oak Log Generator
+
+
+tile.ghozix_idlegen:cobblestone_generator.name=Cobblestone Generator 
+## Generator Block that produces Cobblestone
+entity.ghozix_idlegen:cobblestone_generator_entity.name=Cobblestone Generator Entity 
+## Entity for Cobblestone Generator
+
+
+tile.ghozix_idlegen:coal_generator.name=Coal Generator 
+## Generator Block that produces Coal
+entity.ghozix_idlegen:coal_generator_entity.name=Coal Generator Entity 
+## Entity for Coal Generator
+
+## xd
+tile.ghozix_idlegen:copper_generator.name=Copper Generator 
+## Generator Block that produces Copper
+entity.ghozix_idlegen:copper_generator_entity.name=Copper Generator Entity 
+## Entity for Copper Generator
+
+tile.ghozix_idlegen:iron_generator.name=Iron Generator 
+## Generator Block that produces Iron
+entity.ghozix_idlegen:iron_generator_entity.name=Iron Generator Entity 
+## Entity for Iron Generator
+tile.ghozix_idlegen:gold_generator.name=Gold Generator 
+## Generator Block that produces Gold
+entity.ghozix_idlegen:gold_generator_entity.name=Gold Generator Entity 
+## Entity for Gold Generator
+
+
+tile.ghozix_idlegen:diamond_generator.name=Diamond Generator 
+## Generator Block that produces Diamond
+entity.ghozix_idlegen:diamond_generator_entity.name=Diamond Generator Entity 
+## Entity for Diamond Generator
+
+
+tile.ghozix_idlegen:netherite_generator.name=Netherite Generator 
+## Generator Block that produces Netherite
+entity.ghozix_idlegen:netherite_generator_entity.name=Netherite Generator Entity 
+## Entity for Netherite Generator
+
+tile.ghozix_idlegen:emerald_generator.name=Emerald Generator 
+## Generator Block that produces Emerald
+entity.ghozix_idlegen:emerald_generator_entity.name=Emerald Generator Entity 
+## Entity for Emerald Generator
+
+
+
+tile.ghozix_idlegen:lapis_generator.name=Lapis Generator 
+## Generator Block that produces Lapis
+entity.ghozix_idlegen:lapis_generator_entity.name=Lapis Generator Entity 
+## Entity for Lapis Generator
+
+tile.ghozix_idlegen:quartz_generator.name=Quartz Generator 
+## Generator Block that produces Quartz
+entity.ghozix_idlegen:quartz_generator_entity.name=Quartz Generator Entity 
+## Entity for Quartz Generator
+
+tile.ghozix_idlegen:redstone_generator.name=Redstone Generator 
+## Generator Block that produces Redstone
+entity.ghozix_idlegen:redstone_generator_entity.name=Redstone Generator Entity
+## Entity for Redstone Generator
+
+
+## --- Wood Set (v1.1.0) ---
+tile.ghozix_idlegen:spruce_log_generator.name=Spruce Log Generator
+## Generator Block that produces Spruce Logs
+entity.ghozix_idlegen:spruce_log_generator_entity.name=Spruce Log Generator Entity
+## Entity for Spruce Log Generator
+
+tile.ghozix_idlegen:birch_log_generator.name=Birch Log Generator
+## Generator Block that produces Birch Logs
+entity.ghozix_idlegen:birch_log_generator_entity.name=Birch Log Generator Entity
+## Entity for Birch Log Generator
+
+tile.ghozix_idlegen:jungle_log_generator.name=Jungle Log Generator
+## Generator Block that produces Jungle Logs
+entity.ghozix_idlegen:jungle_log_generator_entity.name=Jungle Log Generator Entity
+## Entity for Jungle Log Generator
+
+tile.ghozix_idlegen:acacia_log_generator.name=Acacia Log Generator
+## Generator Block that produces Acacia Logs
+entity.ghozix_idlegen:acacia_log_generator_entity.name=Acacia Log Generator Entity
+## Entity for Acacia Log Generator
+
+tile.ghozix_idlegen:dark_oak_log_generator.name=Dark Oak Log Generator
+## Generator Block that produces Dark Oak Logs
+entity.ghozix_idlegen:dark_oak_log_generator_entity.name=Dark Oak Log Generator Entity
+## Entity for Dark Oak Log Generator
+
+tile.ghozix_idlegen:mangrove_log_generator.name=Mangrove Log Generator
+## Generator Block that produces Mangrove Logs
+entity.ghozix_idlegen:mangrove_log_generator_entity.name=Mangrove Log Generator Entity
+## Entity for Mangrove Log Generator
+
+tile.ghozix_idlegen:cherry_log_generator.name=Cherry Log Generator
+## Generator Block that produces Cherry Logs
+entity.ghozix_idlegen:cherry_log_generator_entity.name=Cherry Log Generator Entity
+## Entity for Cherry Log Generator
+
+tile.ghozix_idlegen:pale_oak_log_generator.name=Pale Oak Log Generator
+## Generator Block that produces Pale Oak Logs
+entity.ghozix_idlegen:pale_oak_log_generator_entity.name=Pale Oak Log Generator Entity
+## Entity for Pale Oak Log Generator
