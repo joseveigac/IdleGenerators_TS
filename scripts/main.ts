@@ -8,6 +8,7 @@ import { registerComponents } from "./register_components";
 
 // import { CobblestoneGenerator } from "./generators/cobblestone_generator";
 // import { COMPONENT_IDS, PROPERTY_IDS } from "./config/components";
+import { GeneratorDisplay } from "./ui/generatorDisplay";
 
 /**
  * Entry Point del addon
@@ -28,6 +29,7 @@ world.afterEvents.worldLoad.subscribe(() => {
   // Inicializar DynamicProperties del addon
   // Storage.initDatabase();
   Storage.initDatabaseAutoUpdate();
+  GeneratorDisplay.initialize();
 });
 
 /**

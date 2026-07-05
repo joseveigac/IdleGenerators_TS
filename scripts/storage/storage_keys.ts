@@ -13,10 +13,10 @@ import { Vector3 } from "../types/common";
 // ============================================================================
 
 /** Versión del addon (semántico) */
-export const ADDON_VERSION = "1.0.0";
+export const ADDON_VERSION = "1.1.0";
 
 /** Versión del formato de DB - incrementa si cambias estructura de datos */
-export const DB_VERSION = 1;
+export const DB_VERSION = 2;
 
 /** Namespace corto para todas las claves de Dynamic Properties */
 export const DB_NAMESPACE = "sb";
@@ -66,12 +66,20 @@ export const WORLD_KEYS = Object.freeze({
   // --------------------------------------------------------------------------
   PLACED: {
     /**
-     * posKey -> PlacedInstance
-     *
-     * posKey format:
-     * "dimensionId:x,y,z"
+     * LEGACY single-blob map (posKey -> PlacedInstance). Kept only as the
+     * migration source for DB_VERSION 1 -> 2. No longer written after migration.
      */
     STATE: `${ns}:${px.WORLD}:${px.DATA}:placed_state`,
+
+    /**
+     * Bucket key prefix. Full key = `${BUCKET_PREFIX}:<dimensionId>:<bx>,<bz>`
+     * where bx = floor(x/512), bz = floor(z/512). Each bucket is a small
+     * posKey -> PlacedInstance map for one region.
+     */
+    BUCKET_PREFIX: `${ns}:${px.WORLD}:${px.DATA}:placed`,
+
+    /** Array<string> of non-empty bucket keys, for cheap world-wide iteration. */
+    BUCKETS_INDEX: `${ns}:${px.WORLD}:${px.INDEX}:placed_buckets`,
   },
 } as const);
 
