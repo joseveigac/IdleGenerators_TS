@@ -1,8 +1,8 @@
 {
-  "name": "IdleOreGen",
-  "version": "1.0.0",
-  "productName": "Minecraft TypeScript Starter Project",
-  "description": "IdleOreGen Adventure with customized progression!",
+  "name": "idle-generators",
+  "version": "1.1.0",
+  "productName": "Idle Generators",
+  "description": "Idle Generators — a Minecraft Bedrock addon that passively generates resources (ores, logs & more) on real-world time.",
   "private": true,
   "devDependencies": {
     "@minecraft/core-build-tasks": "^5.5.0",

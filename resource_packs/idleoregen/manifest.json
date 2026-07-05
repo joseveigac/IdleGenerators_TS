@@ -1,15 +1,15 @@
 {
   "format_version": 2,
   "header": {
-    "name": "IdleOreGen",
-    "description": "An idle ore generator addon for Minecraft Bedrock Edition servers.",
+    "name": "Idle Generators",
+    "description": "An idle generator addon for Minecraft Bedrock — passively generates resources on real-world time, even offline.",
     "uuid": "abad2758-5b6c-44cd-bfa5-4a39c7e60071",
     "version": [1, 1, 0],
     "min_engine_version": [1, 21, 130]
   },
   "modules": [
     {
-      "description": "IdleOreGen Resource Pack",
+      "description": "Idle Generators Resource Pack",
       "type": "resources",
       "uuid": "d034e8c0-69b2-45a0-96c3-3e989ff36a70",
       "version": [1, 1, 0]
