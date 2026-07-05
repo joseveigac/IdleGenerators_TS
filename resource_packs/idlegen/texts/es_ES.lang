@@ -1,0 +1,117 @@
+tile.idlegen:empty_geometry.name=Geometría Vacía
+## Modelo de geometría vacía usado para generadores
+
+###region GENERATORS ---------------------------------------------------------------------
+
+tile.idlegen:oak_log_generator.name=Generador de Troncos de Roble
+## Bloque generador que produce troncos de roble
+entity.idlegen:oak_log_generator_entity.name=Entidad Generador de Troncos de Roble
+## Entidad para el Generador de Troncos de Roble
+
+
+tile.idlegen:cobblestone_generator.name=Generador de Adoquín
+## Bloque generador que produce piedra
+entity.idlegen:cobblestone_generator_entity.name=Entidad Generador de Adoquín
+## Entidad para el Generador de Piedra
+
+
+tile.idlegen:coal_generator.name=Generador de Carbón
+## Bloque generador que produce carbón
+entity.idlegen:coal_generator_entity.name=Entidad Generador de Carbón
+## Entidad para el Generador de Carbón
+
+
+tile.idlegen:copper_generator.name=Generador de Cobre
+## Bloque generador que produce cobre
+entity.idlegen:copper_generator_entity.name=Entidad Generador de Cobre
+## Entidad para el Generador de Cobre
+
+
+tile.idlegen:iron_generator.name=Generador de Hierro
+## Bloque generador que produce hierro
+entity.idlegen:iron_generator_entity.name=Entidad Generador de Hierro
+## Entidad para el Generador de Hierro
+
+
+tile.idlegen:gold_generator.name=Generador de Oro
+## Bloque generador que produce oro
+entity.idlegen:gold_generator_entity.name=Entidad Generador de Oro
+## Entidad para el Generador de Oro
+
+
+tile.idlegen:diamond_generator.name=Generador de Diamantes
+## Bloque generador que produce diamantes
+entity.idlegen:diamond_generator_entity.name=Entidad Generador de Diamantes
+## Entidad para el Generador de Diamantes
+
+
+tile.idlegen:netherite_generator.name=Generador de Inframundita
+## Bloque generador que produce netherita
+entity.idlegen:netherite_generator_entity.name=Entidad Generador de Inframundita
+## Entidad para el Generador de Inframundita
+
+
+tile.idlegen:emerald_generator.name=Generador de Esmeraldas
+## Bloque generador que produce esmeraldas
+entity.idlegen:emerald_generator_entity.name=Entidad Generador de Esmeraldas
+## Entidad para el Generador de Esmeraldas
+
+
+tile.idlegen:lapis_generator.name=Generador de Lapislázuli
+## Bloque generador que produce lapislázuli
+entity.idlegen:lapis_generator_entity.name=Entidad Generador de Lapislázuli
+## Entidad para el Generador de Lapislázuli
+
+
+tile.idlegen:quartz_generator.name=Generador de Cuarzo
+## Bloque generador que produce cuarzo
+entity.idlegen:quartz_generator_entity.name=Entidad Generador de Cuarzo
+## Entidad para el Generador de Cuarzo
+
+tile.idlegen:redstone_generator.name=Generador de Redstone
+## Bloque generador que produce redstone
+entity.idlegen:redstone_generator_entity.name=Entidad Generador de Redstone
+## Entidad para el Generador de Redstone
+
+## --- Wood Set (v1.1.0) ---
+tile.idlegen:spruce_log_generator.name=Generador de Troncos de Pícea
+## Bloque generador que produce troncos de pícea
+entity.idlegen:spruce_log_generator_entity.name=Entidad Generador de Troncos de Pícea
+## Entidad para el Generador de Troncos de Pícea
+
+tile.idlegen:birch_log_generator.name=Generador de Troncos de Abedul
+## Bloque generador que produce troncos de abedul
+entity.idlegen:birch_log_generator_entity.name=Entidad Generador de Troncos de Abedul
+## Entidad para el Generador de Troncos de Abedul
+
+tile.idlegen:jungle_log_generator.name=Generador de Troncos de Jungla
+## Bloque generador que produce troncos de jungla
+entity.idlegen:jungle_log_generator_entity.name=Entidad Generador de Troncos de Jungla
+## Entidad para el Generador de Troncos de Jungla
+
+tile.idlegen:acacia_log_generator.name=Generador de Troncos de Acacia
+## Bloque generador que produce troncos de acacia
+entity.idlegen:acacia_log_generator_entity.name=Entidad Generador de Troncos de Acacia
+## Entidad para el Generador de Troncos de Acacia
+
+tile.idlegen:dark_oak_log_generator.name=Generador de Troncos de Roble Oscuro
+## Bloque generador que produce troncos de roble oscuro
+entity.idlegen:dark_oak_log_generator_entity.name=Entidad Generador de Troncos de Roble Oscuro
+## Entidad para el Generador de Troncos de Roble Oscuro
+
+tile.idlegen:mangrove_log_generator.name=Generador de Troncos de Mangle
+## Bloque generador que produce troncos de mangle
+entity.idlegen:mangrove_log_generator_entity.name=Entidad Generador de Troncos de Mangle
+## Entidad para el Generador de Troncos de Mangle
+
+tile.idlegen:cherry_log_generator.name=Generador de Troncos de Cerezo
+## Bloque generador que produce troncos de cerezo
+entity.idlegen:cherry_log_generator_entity.name=Entidad Generador de Troncos de Cerezo
+## Entidad para el Generador de Troncos de Cerezo
+
+tile.idlegen:pale_oak_log_generator.name=Generador de Troncos de Roble Pálido
+## Bloque generador que produce troncos de roble pálido
+entity.idlegen:pale_oak_log_generator_entity.name=Entidad Generador de Troncos de Roble Pálido
+## Entidad para el Generador de Troncos de Roble Pálido
+
+###endregion GENERATORS ---------------------------------------------------------------------

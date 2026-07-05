@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "idlegen:emerald_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GQG", "CBC", "GCG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "Q": { "item": "minecraft:bell" },
+      "C": { "item": "minecraft:bookshelf" },
+      "B": { "item": "minecraft:emerald_block" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:emerald"
+      }
+    ],
+    "result": {
+      "item": "idlegen:emerald_generator",
+      "count": 1
+    }
+  }
+}
