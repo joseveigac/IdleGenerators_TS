@@ -1,5 +1,5 @@
 /**
- * IdleOreGen - Common Types
+ * IdleGen - Common Types
  *
  * Tipos compartidos en todo el proyecto
  */

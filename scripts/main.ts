@@ -15,7 +15,7 @@ import { GeneratorDisplay } from "./ui/generatorDisplay";
  * Responsabilidad: SOLO registro de componentes
  */
 system.beforeEvents.startup.subscribe((startupEvent) => {
-  log("[IdleOreGen] Starting addon...");
+  log("[IdleGen] Starting addon...");
 
   // Register Custom Components (API correcta)
   registerComponents(startupEvent);
@@ -24,7 +24,7 @@ system.beforeEvents.startup.subscribe((startupEvent) => {
 // Ejecutado una vez al cargar el mundo
 // Versión de la "base de datos" del addon
 world.afterEvents.worldLoad.subscribe(() => {
-  log("[IdleOreGen] Loaded world. Version idleoregen:", ADDON_VERSION);
+  log("[IdleGen] Loaded world. Version idleoregen:", ADDON_VERSION);
 
   // Inicializar DynamicProperties del addon
   // Storage.initDatabase();

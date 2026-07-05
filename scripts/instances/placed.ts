@@ -141,5 +141,5 @@ function migratePlacedStateToBuckets(): void {
     count++;
   }
   removeWorldData(WORLD_KEYS.PLACED.STATE);
-  console.log(`[IdleOreGen] Migrated ${count} placed generators into region buckets.`);
+  console.log(`[IdleGen] Migrated ${count} placed generators into region buckets.`);
 }
