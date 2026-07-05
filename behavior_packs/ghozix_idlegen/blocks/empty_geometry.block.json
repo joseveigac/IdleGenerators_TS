@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:block": {
+    "description": {
+      "identifier": "ghozix_idlegen:empty_geometry"
+    },
+    "components": {
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:geometry": "geometry.empty_geometry",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "empty_geometry",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:map_color": "#ffffff",
+      "minecraft:redstone_conductivity": {
+        "redstone_conductor": false
+      }
+    }
+  }
+}
