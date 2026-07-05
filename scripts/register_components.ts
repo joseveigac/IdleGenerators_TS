@@ -13,12 +13,12 @@ export function registerComponents(ev: StartupEvent) {
  * Register Block Components
  */
 function registerBlockComponents(ev: StartupEvent) {
-  ev.blockComponentRegistry.registerCustomComponent("idleoregen:generator", new Generator());
+  ev.blockComponentRegistry.registerCustomComponent("idlegen:generator", new Generator());
 }
 /*
  * Register Item Components
  */
 function registerItemCustomComponents(_ev: StartupEvent) {
   // Bedrock API: si en tu versión existe itemComponentRegistry, irá aquí.
-  // ev.itemComponentRegistry.registerCustomComponent("idleoregen:my_item", new MyItemComponent());
+  // ev.itemComponentRegistry.registerCustomComponent("idlegen:my_item", new MyItemComponent());
 }

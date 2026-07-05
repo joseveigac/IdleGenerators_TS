@@ -5,14 +5,14 @@ export const LOG_CONFIG = {
 
 export function log(...args: any[]) {
   if (!LOG_CONFIG.DEBUG) return;
-  console.log("[IdleOre]", ...args);
+  console.log("[IdleGen]", ...args);
 }
 
 export function warn(...args: any[]) {
   if (!LOG_CONFIG.WARN) return;
-  console.warn("[IdleOre]", ...args);
+  console.warn("[IdleGen]", ...args);
 }
 
 export function error(...args: any[]) {
-  console.error("[IdleOre]", ...args);
+  console.error("[IdleGen]", ...args);
 }
