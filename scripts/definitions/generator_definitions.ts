@@ -1,5 +1,5 @@
 /**
- * IdleOreGen - Block Definitions
+ * IdleGen - Block Definitions
  *
  * Definiciones World Dynamic Properties para bloques del juego.
  * Responsabilidad: Almacenar, organizar y recuperar datos del catálogo de generadores.

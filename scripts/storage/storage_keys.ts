@@ -1,7 +1,7 @@
 import { Vector3 } from "../types/common";
 
 /**
- * IdleOreGen - LevelDB Configuration
+ * IdleGen - LevelDB Configuration
  *
  * Configuración centralizada para Dynamic Properties:
  * - Versiones y namespace

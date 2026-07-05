@@ -20,8 +20,8 @@ export function initDatabase(): void {
   const isFirstTime = currentVersion === undefined;
   log(
     isFirstTime
-      ? "[IdleOreGen] First initialization - setting up database..."
-      : `[IdleOreGen] Updating from ${currentVersion} to ${DB_VERSION}`
+      ? "[IdleGen] First initialization - setting up database..."
+      : `[IdleGen] Updating from ${currentVersion} to ${DB_VERSION}`
   );
 
   // Migraciones de datos "placed" antes de sellar la versión (evita huérfanos).
@@ -32,7 +32,7 @@ export function initDatabase(): void {
   world.setDynamicProperty(WORLD_KEYS.META.SCHEMA_VERSION, DB_VERSION);
   generateGeneratorDefinitions();
 
-  log("[IdleOreGen] Definitions loaded successfully");
+  log("[IdleGen] Definitions loaded successfully");
 }
 
 export function initDatabaseAutoUpdate(): void {
@@ -45,11 +45,11 @@ export function initDatabaseAutoUpdate(): void {
   if (stored === undefined || stored < DB_VERSION) {
     runPlacedMigrations(stored);
     world.setDynamicProperty(WORLD_KEYS.META.SCHEMA_VERSION, DB_VERSION);
-    log(`[IdleOreGen] Storage migrado a versión ${DB_VERSION} (desde ${stored ?? "nuevo"}).`);
+    log(`[IdleGen] Storage migrado a versión ${DB_VERSION} (desde ${stored ?? "nuevo"}).`);
   }
 
-  log("[IdleOreGen] Storage Auto-Update ejecutado.");
-  log("[IdleOreGen] Storage Definiciones iniciadas correctamente");
+  log("[IdleGen] Storage Auto-Update ejecutado.");
+  log("[IdleGen] Storage Definiciones iniciadas correctamente");
 }
 
 // ============================================================================
