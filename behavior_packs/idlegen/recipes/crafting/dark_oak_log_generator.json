@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "idleoregen:dark_oak_log_generator_recipe"
+      "identifier": "idlegen:dark_oak_log_generator_recipe"
     },
     "tags": ["crafting_table"],
     "pattern": ["GBG", "SLS", "GSG"],
@@ -18,7 +18,7 @@
       }
     ],
     "result": {
-      "item": "idleoregen:dark_oak_log_generator",
+      "item": "idlegen:dark_oak_log_generator",
       "count": 1
     }
   }

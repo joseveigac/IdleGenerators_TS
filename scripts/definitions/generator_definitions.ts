@@ -21,8 +21,8 @@ export function generateGeneratorDefinitions(): void {
 export type GeneratorKey = keyof typeof GENERATORS;
 export const GENERATORS: GeneratorTypesMap = {
   oak_log: {
-    id: "idleoregen:oak_log_generator",
-    entityId: "idleoregen:oak_log_generator_entity",
+    id: "idlegen:oak_log_generator",
+    entityId: "idlegen:oak_log_generator_entity",
     name: "Oak Log Generator",
     interval: 5,
     cap: 64,
@@ -30,8 +30,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE211",
   },
   spruce_log: {
-    id: "idleoregen:spruce_log_generator",
-    entityId: "idleoregen:spruce_log_generator_entity",
+    id: "idlegen:spruce_log_generator",
+    entityId: "idlegen:spruce_log_generator_entity",
     name: "Spruce Log Generator",
     interval: 5,
     cap: 64,
@@ -39,8 +39,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE212",
   },
   birch_log: {
-    id: "idleoregen:birch_log_generator",
-    entityId: "idleoregen:birch_log_generator_entity",
+    id: "idlegen:birch_log_generator",
+    entityId: "idlegen:birch_log_generator_entity",
     name: "Birch Log Generator",
     interval: 5,
     cap: 64,
@@ -48,8 +48,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE213",
   },
   jungle_log: {
-    id: "idleoregen:jungle_log_generator",
-    entityId: "idleoregen:jungle_log_generator_entity",
+    id: "idlegen:jungle_log_generator",
+    entityId: "idlegen:jungle_log_generator_entity",
     name: "Jungle Log Generator",
     interval: 5,
     cap: 64,
@@ -57,8 +57,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE214",
   },
   acacia_log: {
-    id: "idleoregen:acacia_log_generator",
-    entityId: "idleoregen:acacia_log_generator_entity",
+    id: "idlegen:acacia_log_generator",
+    entityId: "idlegen:acacia_log_generator_entity",
     name: "Acacia Log Generator",
     interval: 5,
     cap: 64,
@@ -66,8 +66,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE215",
   },
   dark_oak_log: {
-    id: "idleoregen:dark_oak_log_generator",
-    entityId: "idleoregen:dark_oak_log_generator_entity",
+    id: "idlegen:dark_oak_log_generator",
+    entityId: "idlegen:dark_oak_log_generator_entity",
     name: "Dark Oak Log Generator",
     interval: 5,
     cap: 64,
@@ -75,8 +75,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE216",
   },
   mangrove_log: {
-    id: "idleoregen:mangrove_log_generator",
-    entityId: "idleoregen:mangrove_log_generator_entity",
+    id: "idlegen:mangrove_log_generator",
+    entityId: "idlegen:mangrove_log_generator_entity",
     name: "Mangrove Log Generator",
     interval: 5,
     cap: 64,
@@ -84,8 +84,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE217",
   },
   cherry_log: {
-    id: "idleoregen:cherry_log_generator",
-    entityId: "idleoregen:cherry_log_generator_entity",
+    id: "idlegen:cherry_log_generator",
+    entityId: "idlegen:cherry_log_generator_entity",
     name: "Cherry Log Generator",
     interval: 5,
     cap: 64,
@@ -93,8 +93,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE218",
   },
   pale_oak_log: {
-    id: "idleoregen:pale_oak_log_generator",
-    entityId: "idleoregen:pale_oak_log_generator_entity",
+    id: "idlegen:pale_oak_log_generator",
+    entityId: "idlegen:pale_oak_log_generator_entity",
     name: "Pale Oak Log Generator",
     interval: 5,
     cap: 64,
@@ -102,8 +102,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE219",
   },
   cobblestone: {
-    id: "idleoregen:cobblestone_generator",
-    entityId: "idleoregen:cobblestone_generator_entity",
+    id: "idlegen:cobblestone_generator",
+    entityId: "idlegen:cobblestone_generator_entity",
     name: "Cobblestone Generator",
     interval: 5,
     cap: 512,
@@ -111,8 +111,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE200",
   },
   coal: {
-    id: "idleoregen:coal_generator",
-    entityId: "idleoregen:coal_generator_entity",
+    id: "idlegen:coal_generator",
+    entityId: "idlegen:coal_generator_entity",
     name: "Coal Generator",
     interval: 20,
     cap: 512,
@@ -120,8 +120,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE201",
   },
   copper: {
-    id: "idleoregen:copper_generator",
-    entityId: "idleoregen:copper_generator_entity",
+    id: "idlegen:copper_generator",
+    entityId: "idlegen:copper_generator_entity",
     name: "Copper Generator",
     interval: 30,
     cap: 512,
@@ -129,8 +129,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE202",
   },
   iron: {
-    id: "idleoregen:iron_generator",
-    entityId: "idleoregen:iron_generator_entity",
+    id: "idlegen:iron_generator",
+    entityId: "idlegen:iron_generator_entity",
     name: "Iron Generator",
     interval: 30,
     cap: 512,
@@ -138,8 +138,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE203",
   },
   gold: {
-    id: "idleoregen:gold_generator",
-    entityId: "idleoregen:gold_generator_entity",
+    id: "idlegen:gold_generator",
+    entityId: "idlegen:gold_generator_entity",
     name: "Gold Generator",
     interval: 35,
     cap: 512,
@@ -147,8 +147,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE204",
   },
   diamond: {
-    id: "idleoregen:diamond_generator",
-    entityId: "idleoregen:diamond_generator_entity",
+    id: "idlegen:diamond_generator",
+    entityId: "idlegen:diamond_generator_entity",
     name: "Diamond Generator",
     interval: 80,
     cap: 256,
@@ -156,8 +156,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE205",
   },
   emerald: {
-    id: "idleoregen:emerald_generator",
-    entityId: "idleoregen:emerald_generator_entity",
+    id: "idlegen:emerald_generator",
+    entityId: "idlegen:emerald_generator_entity",
     name: "Emerald Generator",
     interval: 60,
     cap: 512,
@@ -165,8 +165,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE206",
   },
   lapis: {
-    id: "idleoregen:lapis_generator",
-    entityId: "idleoregen:lapis_generator_entity",
+    id: "idlegen:lapis_generator",
+    entityId: "idlegen:lapis_generator_entity",
     name: "Lapis Lazuli Generator",
     interval: 15,
     cap: 1024,
@@ -174,8 +174,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE207",
   },
   redstone: {
-    id: "idleoregen:redstone_generator",
-    entityId: "idleoregen:redstone_generator_entity",
+    id: "idlegen:redstone_generator",
+    entityId: "idlegen:redstone_generator_entity",
     name: "Redstone Generator",
     interval: 15,
     cap: 1024,
@@ -183,8 +183,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE208",
   },
   quartz: {
-    id: "idleoregen:quartz_generator",
-    entityId: "idleoregen:quartz_generator_entity",
+    id: "idlegen:quartz_generator",
+    entityId: "idlegen:quartz_generator_entity",
     name: "Quartz Generator",
     interval: 30,
     cap: 512,
@@ -192,8 +192,8 @@ export const GENERATORS: GeneratorTypesMap = {
     glyph: "\uE209",
   },
   netherite: {
-    id: "idleoregen:netherite_generator",
-    entityId: "idleoregen:netherite_generator_entity",
+    id: "idlegen:netherite_generator",
+    entityId: "idlegen:netherite_generator_entity",
     name: "Netherite Generator",
     interval: 100,
     cap: 64,
@@ -208,7 +208,7 @@ export const GENERATORS: GeneratorTypesMap = {
 
 /**
  * Obtiene el tipo de generador desde un block ID
- * @param blockId - El typeId del bloque (ej: "idleoregen:iron_generator")
+ * @param blockId - El typeId del bloque (ej: "idlegen:iron_generator")
  * @returns La key del generador (ej: "iron") o null si no existe
  */
 export function getGeneratorTypeFromBlockId(blockId: string): string | null {

@@ -25,7 +25,7 @@ There is **no unit-test harness** — verification is in-game. Build/deploy, the
 
 ### Runtime data flow (the important part)
 
-Everything is a single custom **block component** `idleoregen:generator` ([scripts/components/generator.ts](scripts/components/generator.ts)), registered at startup in [scripts/register_components.ts](scripts/register_components.ts). One component class serves *all* generator types; the block's `typeId` is mapped back to a generator definition via `getGeneratorTypeFromBlockId`.
+Everything is a single custom **block component** `idlegen:generator` ([scripts/components/generator.ts](scripts/components/generator.ts)), registered at startup in [scripts/register_components.ts](scripts/register_components.ts). One component class serves *all* generator types; the block's `typeId` is mapped back to a generator definition via `getGeneratorTypeFromBlockId`.
 
 **Generation is lazy and timestamp-based — there is no per-tick production loop.** Each placed generator stores a `lastInteraction` timestamp (`Date.now()`, real-world ms). Produced amount is computed on demand as `floor((now - lastInteraction) / intervalMs)`, clamped to `cap`. This is what makes offline generation work: time simply elapses. `onPlayerInteract` withdraws (left-click = 1, sneak = up to 64), then advances `lastInteraction` by the number of *whole* cycles consumed (never by raw `now`, to avoid losing sub-cycle progress). Any code that changes withdrawal/production must preserve this whole-cycle accounting.
 

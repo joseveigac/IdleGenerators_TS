@@ -2,7 +2,7 @@
   "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
-      "identifier": "idleoregen:pale_oak_log_generator_entity",
+      "identifier": "idlegen:pale_oak_log_generator_entity",
 
       "materials": {
         "default": "entity_alphatest"

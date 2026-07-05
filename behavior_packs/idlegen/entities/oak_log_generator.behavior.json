@@ -2,7 +2,7 @@
   "format_version": "1.16.100",
   "minecraft:entity": {
     "description": {
-      "identifier": "idleoregen:oak_log_generator_entity",
+      "identifier": "idlegen:oak_log_generator_entity",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false

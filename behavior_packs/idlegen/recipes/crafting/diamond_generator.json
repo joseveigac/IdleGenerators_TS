@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "idleoregen:diamond_generator_recipe"
+      "identifier": "idlegen:diamond_generator_recipe"
     },
     "tags": ["crafting_table"],
     "pattern": ["GOG", "OBO", "GOG"],
@@ -17,7 +17,7 @@
       }
     ],
     "result": {
-      "item": "idleoregen:diamond_generator",
+      "item": "idlegen:diamond_generator",
       "count": 1
     }
   }

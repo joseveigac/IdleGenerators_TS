@@ -2,7 +2,7 @@
   "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
-      "identifier": "idleoregen:quartz_generator_entity",
+      "identifier": "idlegen:quartz_generator_entity",
 
       "materials": {
         "default": "entity_alphatest"

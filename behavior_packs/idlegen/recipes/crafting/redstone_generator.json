@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "idleoregen:redstone_generator_recipe"
+      "identifier": "idlegen:redstone_generator_recipe"
     },
     "tags": ["crafting_table"],
     "pattern": ["GQG", "CBC", "GQG"],
@@ -18,7 +18,7 @@
       }
     ],
     "result": {
-      "item": "idleoregen:redstone_generator",
+      "item": "idlegen:redstone_generator",
       "count": 1
     }
   }
