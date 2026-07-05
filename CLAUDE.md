@@ -16,7 +16,7 @@ Build tooling is `just-scripts` via `@minecraft/core-build-tasks`. **Requires a 
 - `npm run lint` — `coreLint` over `scripts/**/*.ts` (append `-- --fix` to autofix)
 - `npm run dev` — watch mode: rebuilds and deploys into the local Minecraft `development_*_packs` on every source/asset change
 - `npm run local-deploy` — one-shot build + deploy to the local com.mojang packs
-- `npm run mcaddon` — produce a distributable `dist/packages/idleoregen.mcaddon`
+- `npm run mcaddon` — produce a distributable `dist/packages/idlegen.mcaddon`
 - `npm run enablemcloopback` / `enablemcpreviewloopback` — one-time Windows loopback exemption so the client can talk to a local server
 
 There is **no unit-test harness** — verification is in-game. Build/deploy, then load a world with both packs and test manually.

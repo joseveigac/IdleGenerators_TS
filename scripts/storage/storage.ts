@@ -63,7 +63,7 @@ export function getWorldData<T = any>(key: string): T | null {
   try {
     return JSON.parse(value as string) as T;
   } catch (error) {
-    console.error(`[IdleOre] Error parsing ${key}:`, error);
+    console.error(`[IdleGen] Error parsing ${key}:`, error);
     return null;
   }
 }
@@ -72,7 +72,7 @@ export function setWorldData(key: string, data: any): void {
   try {
     world.setDynamicProperty(key, JSON.stringify(data));
   } catch (error) {
-    console.error(`[IdleOre] Error saving ${key}:`, error);
+    console.error(`[IdleGen] Error saving ${key}:`, error);
   }
 }
 
