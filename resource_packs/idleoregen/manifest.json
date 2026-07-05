@@ -4,7 +4,7 @@
     "name": "IdleOreGen",
     "description": "An idle ore generator addon for Minecraft Bedrock Edition servers.",
     "uuid": "abad2758-5b6c-44cd-bfa5-4a39c7e60071",
-    "version": [1, 0, 0],
+    "version": [1, 1, 0],
     "min_engine_version": [1, 21, 130]
   },
   "modules": [
@@ -12,13 +12,13 @@
       "description": "IdleOreGen Resource Pack",
       "type": "resources",
       "uuid": "d034e8c0-69b2-45a0-96c3-3e989ff36a70",
-      "version": [1, 0, 0]
+      "version": [1, 1, 0]
     }
   ],
   "dependencies": [
     {
       "uuid": "ed97778b-789f-405d-bb74-5c42e2e1398d",
-      "version": [1, 0, 0]
+      "version": [1, 1, 0]
     }
   ],
   "metadata": {
