@@ -1,5 +1,5 @@
 export const LOG_CONFIG = {
-  DEBUG: false, // 🔁 activar en desarrollo
+  DEBUG: true, // 🔁 activar en desarrollo
   WARN: true, // ⚠️ mantener en producción
 };
 
