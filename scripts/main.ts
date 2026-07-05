@@ -24,7 +24,7 @@ system.beforeEvents.startup.subscribe((startupEvent) => {
 // Ejecutado una vez al cargar el mundo
 // Versión de la "base de datos" del addon
 world.afterEvents.worldLoad.subscribe(() => {
-  log("[IdleGen] Loaded world. Version idlegen:", ADDON_VERSION);
+  log("[IdleGen] Loaded world. Version ghozix_idlegen:", ADDON_VERSION);
 
   // Inicializar DynamicProperties del addon
   // Storage.initDatabase();
@@ -36,7 +36,7 @@ world.afterEvents.worldLoad.subscribe(() => {
  * ScriptEvents
  */
 // system.afterEvents.scriptEventReceive.subscribe((event) => {
-//   if (event.id !== "idlegen:generator_trigger") return;
+//   if (event.id !== "ghozix_idlegen:generator_trigger") return;
 
 //   log("[GeneratorCore] Trigger recibido desde entidad:", event.sourceEntity?.typeId);
 // });
