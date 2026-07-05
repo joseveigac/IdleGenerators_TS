@@ -5,11 +5,12 @@
       "identifier": "idleoregen:netherite_generator_recipe"
     },
     "tags": ["crafting_table"],
-    "pattern": ["GEG", "NBN", "GNG"],
+    "pattern": ["GNG", "RBR", "GSG"],
     "key": {
       "G": { "item": "minecraft:glass" },
-      "E": { "item": "minecraft:dragon_egg" },
       "N": { "item": "minecraft:nether_star" },
+      "R": { "item": "minecraft:wither_rose" },
+      "S": { "item": "minecraft:netherite_upgrade_smithing_template" },
       "B": { "item": "minecraft:netherite_block" }
     },
     "unlock": [
