@@ -6,6 +6,30 @@
   "oak_log_generator": {
     "sound": "stone"
   },
+  "spruce_log_generator": {
+    "sound": "stone"
+  },
+  "birch_log_generator": {
+    "sound": "stone"
+  },
+  "jungle_log_generator": {
+    "sound": "stone"
+  },
+  "acacia_log_generator": {
+    "sound": "stone"
+  },
+  "dark_oak_log_generator": {
+    "sound": "stone"
+  },
+  "mangrove_log_generator": {
+    "sound": "stone"
+  },
+  "cherry_log_generator": {
+    "sound": "stone"
+  },
+  "pale_oak_log_generator": {
+    "sound": "stone"
+  },
   "iron_generator": {
     "sound": "stone"
   },

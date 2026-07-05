@@ -10,6 +10,30 @@
     "oak_log_generator": {
       "textures": "textures/blocks/oak_log_generator"
     },
+    "spruce_log_generator": {
+      "textures": "textures/blocks/spruce_log_generator"
+    },
+    "birch_log_generator": {
+      "textures": "textures/blocks/birch_log_generator"
+    },
+    "jungle_log_generator": {
+      "textures": "textures/blocks/jungle_log_generator"
+    },
+    "acacia_log_generator": {
+      "textures": "textures/blocks/acacia_log_generator"
+    },
+    "dark_oak_log_generator": {
+      "textures": "textures/blocks/dark_oak_log_generator"
+    },
+    "mangrove_log_generator": {
+      "textures": "textures/blocks/mangrove_log_generator"
+    },
+    "cherry_log_generator": {
+      "textures": "textures/blocks/cherry_log_generator"
+    },
+    "pale_oak_log_generator": {
+      "textures": "textures/blocks/pale_oak_log_generator"
+    },
     "iron_generator": {
       "textures": "textures/blocks/iron_generator"
     },
