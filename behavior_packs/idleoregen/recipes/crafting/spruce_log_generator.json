@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "idleoregen:spruce_log_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GBG", "SLS", "GSG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "B": { "item": "minecraft:bone_meal" },
+      "S": { "item": "minecraft:spruce_sapling" },
+      "L": { "item": "minecraft:spruce_log" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:spruce_log"
+      }
+    ],
+    "result": {
+      "item": "idleoregen:spruce_log_generator",
+      "count": 1
+    }
+  }
+}

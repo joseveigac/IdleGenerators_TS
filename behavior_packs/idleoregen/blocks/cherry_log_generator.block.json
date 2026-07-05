@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "idleoregen:oak_log_generator",
+      "identifier": "idleoregen:cherry_log_generator",
       "menu_category": {
         "category": "items"
       },
@@ -21,7 +21,7 @@
       "minecraft:geometry": "geometry.generator",
       "minecraft:material_instances": {
         "*": {
-          "texture": "oak_log_generator",
+          "texture": "cherry_log_generator",
           "render_method": "alpha_test"
         }
       },
@@ -37,7 +37,7 @@
         "components": {
           "minecraft:geometry": "geometry.generator",
           "minecraft:material_instances": {
-            "*": { "texture": "oak_log_generator", "render_method": "alpha_test" }
+            "*": { "texture": "cherry_log_generator", "render_method": "alpha_test" }
           }
         }
       },

@@ -73,4 +73,45 @@ tile.idleoregen:redstone_generator.name=Generador de Redstone
 entity.idleoregen:redstone_generator_entity.name=Entidad Generador de Redstone
 ## Entidad para el Generador de Redstone
 
+## --- Wood Set (v1.1.0) ---
+tile.idleoregen:spruce_log_generator.name=Generador de Troncos de Pícea
+## Bloque generador que produce troncos de pícea
+entity.idleoregen:spruce_log_generator_entity.name=Entidad Generador de Troncos de Pícea
+## Entidad para el Generador de Troncos de Pícea
+
+tile.idleoregen:birch_log_generator.name=Generador de Troncos de Abedul
+## Bloque generador que produce troncos de abedul
+entity.idleoregen:birch_log_generator_entity.name=Entidad Generador de Troncos de Abedul
+## Entidad para el Generador de Troncos de Abedul
+
+tile.idleoregen:jungle_log_generator.name=Generador de Troncos de Jungla
+## Bloque generador que produce troncos de jungla
+entity.idleoregen:jungle_log_generator_entity.name=Entidad Generador de Troncos de Jungla
+## Entidad para el Generador de Troncos de Jungla
+
+tile.idleoregen:acacia_log_generator.name=Generador de Troncos de Acacia
+## Bloque generador que produce troncos de acacia
+entity.idleoregen:acacia_log_generator_entity.name=Entidad Generador de Troncos de Acacia
+## Entidad para el Generador de Troncos de Acacia
+
+tile.idleoregen:dark_oak_log_generator.name=Generador de Troncos de Roble Oscuro
+## Bloque generador que produce troncos de roble oscuro
+entity.idleoregen:dark_oak_log_generator_entity.name=Entidad Generador de Troncos de Roble Oscuro
+## Entidad para el Generador de Troncos de Roble Oscuro
+
+tile.idleoregen:mangrove_log_generator.name=Generador de Troncos de Mangle
+## Bloque generador que produce troncos de mangle
+entity.idleoregen:mangrove_log_generator_entity.name=Entidad Generador de Troncos de Mangle
+## Entidad para el Generador de Troncos de Mangle
+
+tile.idleoregen:cherry_log_generator.name=Generador de Troncos de Cerezo
+## Bloque generador que produce troncos de cerezo
+entity.idleoregen:cherry_log_generator_entity.name=Entidad Generador de Troncos de Cerezo
+## Entidad para el Generador de Troncos de Cerezo
+
+tile.idleoregen:pale_oak_log_generator.name=Generador de Troncos de Roble Pálido
+## Bloque generador que produce troncos de roble pálido
+entity.idleoregen:pale_oak_log_generator_entity.name=Entidad Generador de Troncos de Roble Pálido
+## Entidad para el Generador de Troncos de Roble Pálido
+
 ###endregion GENERATORS ---------------------------------------------------------------------

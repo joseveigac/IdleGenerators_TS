@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "idleoregen:mangrove_log_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GBG", "SLS", "GSG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "B": { "item": "minecraft:bone_meal" },
+      "S": { "item": "minecraft:mangrove_propagule" },
+      "L": { "item": "minecraft:mangrove_log" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:mangrove_log"
+      }
+    ],
+    "result": {
+      "item": "idleoregen:mangrove_log_generator",
+      "count": 1
+    }
+  }
+}
