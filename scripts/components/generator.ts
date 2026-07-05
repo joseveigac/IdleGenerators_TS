@@ -137,12 +137,14 @@ export class Generator implements BlockCustomComponent {
     const intervalMs = def.interval * 1000;
     const cycles = Math.floor(elapsed / intervalMs);
 
-    if (cycles <= 0) {
+    // FIX: el importe retirable es el buffer acumulado + los ciclos nuevos (no solo los nuevos).
+    // Antes se hacía `if (cycles <= 0) return;`, que bloqueaba retirar el buffer ya acumulado.
+    const produced = Math.min(instance.data.storedAmount + cycles, def.cap);
+
+    if (produced <= 0) {
       // player.sendMessage("§eGenerator is empty");
       return;
     }
-
-    const produced = Math.min(instance.data.storedAmount + cycles, def.cap);
 
     // Determine withdrawal amount based on click type
     const withdrawAmount = player.isSneaking
