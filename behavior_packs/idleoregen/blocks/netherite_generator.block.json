@@ -17,7 +17,6 @@
       "minecraft:destructible_by_mining": {
         "seconds_to_destroy": 1
       },
-      "minecraft:loot": "loot_tables/blocks/netherite_generator.json",
       "minecraft:destructible_by_explosion": false,
       "minecraft:geometry": "geometry.generator",
       "minecraft:material_instances": {
