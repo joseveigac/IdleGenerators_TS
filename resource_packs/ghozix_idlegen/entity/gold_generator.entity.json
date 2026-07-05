@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "ghozix_idlegen:gold_generator_entity",
+
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/gold_generator_entity"
+      },
+      "geometry": {
+        "default": "geometry.generator_entity"
+      },
+
+      "animations": {
+        "rotate": "animation.generator_entity.rotate"
+      },
+      "scripts": {
+        "animate": ["rotate"]
+      },
+
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}
