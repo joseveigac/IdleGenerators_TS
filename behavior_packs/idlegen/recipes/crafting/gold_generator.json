@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "idleoregen:gold_generator_recipe"
+      "identifier": "idlegen:gold_generator_recipe"
     },
     "tags": ["crafting_table"],
     "pattern": ["GBG", "BCB", "GBG"],
@@ -17,7 +17,7 @@
       }
     ],
     "result": {
-      "item": "idleoregen:gold_generator",
+      "item": "idlegen:gold_generator",
       "count": 1
     }
   }

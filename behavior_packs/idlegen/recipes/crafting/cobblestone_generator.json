@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "idleoregen:cobblestone_generator_recipe"
+      "identifier": "idlegen:cobblestone_generator_recipe"
     },
     "tags": ["crafting_table"],
     "pattern": ["GPG", "LSW", "GPG"],
@@ -19,7 +19,7 @@
       }
     ],
     "result": {
-      "item": "idleoregen:cobblestone_generator",
+      "item": "idlegen:cobblestone_generator",
       "count": 1
     }
   }

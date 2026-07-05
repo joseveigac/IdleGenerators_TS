@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:block": {
     "description": {
-      "identifier": "idleoregen:empty_geometry"
+      "identifier": "idlegen:empty_geometry"
     },
     "components": {
       "minecraft:collision_box": true,

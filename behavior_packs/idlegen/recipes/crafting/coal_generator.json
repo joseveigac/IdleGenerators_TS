@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "idleoregen:coal_generator_recipe"
+      "identifier": "idlegen:coal_generator_recipe"
     },
     "tags": ["crafting_table"],
     "pattern": ["GFG", "FBF", "GFG"],
@@ -17,7 +17,7 @@
       }
     ],
     "result": {
-      "item": "idleoregen:coal_generator",
+      "item": "idlegen:coal_generator",
       "count": 1
     }
   }

@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "idleoregen:mangrove_log_generator_recipe"
+      "identifier": "idlegen:mangrove_log_generator_recipe"
     },
     "tags": ["crafting_table"],
     "pattern": ["GBG", "SLS", "GSG"],
@@ -18,7 +18,7 @@
       }
     ],
     "result": {
-      "item": "idleoregen:mangrove_log_generator",
+      "item": "idlegen:mangrove_log_generator",
       "count": 1
     }
   }

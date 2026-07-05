@@ -2,7 +2,7 @@
   "format_version": "1.21.50",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "idleoregen:netherite_generator_recipe"
+      "identifier": "idlegen:netherite_generator_recipe"
     },
     "tags": ["crafting_table"],
     "pattern": ["GNG", "RBR", "GSG"],
@@ -19,7 +19,7 @@
       }
     ],
     "result": {
-      "item": "idleoregen:netherite_generator",
+      "item": "idlegen:netherite_generator",
       "count": 1
     }
   }
