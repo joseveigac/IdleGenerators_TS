@@ -8,8 +8,10 @@
 #   - Required reviewers: joseveigac
 #   - Secret   CURSEFORGE_TOKEN       account-level authors token (same one as the Java repo)
 #   - Variable CURSEFORGE_PROJECT_ID  numeric id of the Bedrock CurseForge project
-#   - Variable CF_GAME_VERSION        exact game-version name on the Bedrock section
-#                                     (run once without it: the log prints the available list)
+#   - Variable CF_GAME_VERSION        MINIMUM supported game version (exact name on the
+#                                     Bedrock section, e.g. "1.21.130"); the file gets tagged
+#                                     with it and every newer version. Run once without it to
+#                                     print the available list.
 #
 # While the token or the project id are missing the job runs in DRY-RUN:
 # it builds and attaches the artifact but uploads nothing to CurseForge.
@@ -84,13 +86,15 @@ jobs:
           GAME_VERSIONS="[]"
           VERSIONS=$(curl -sf -H "X-Api-Token: $CF_TOKEN" "$API/game/versions")
           if [ -n "$CF_GAME_VERSION" ]; then
-            GV_ID=$(echo "$VERSIONS" | jq -r --arg n "$CF_GAME_VERSION" '[.[] | select(.name == $n)][0].id // empty')
-            if [ -z "$GV_ID" ]; then
+            MIN_ID=$(echo "$VERSIONS" | jq -r --arg n "$CF_GAME_VERSION" '[.[] | select(.name == $n)][0].id // empty')
+            if [ -z "$MIN_ID" ]; then
               echo "CF_GAME_VERSION '$CF_GAME_VERSION' not found on CurseForge. Available:"
               echo "$VERSIONS" | jq -r '.[] | "\(.id)\t\(.name)"'
               exit 1
             fi
-            GAME_VERSIONS="[$GV_ID]"
+            # min_engine semantics: tag the minimum and everything newer (ids ascend with release date)
+            GAME_VERSIONS=$(echo "$VERSIONS" | jq -c --argjson m "$MIN_ID" '[.[] | select(.id >= $m) | .id]')
+            echo "Tagging versions >= $CF_GAME_VERSION: $(echo "$VERSIONS" | jq -r --argjson m "$MIN_ID" '[.[] | select(.id >= $m) | .name] | join(", ")')"
           else
             echo "WARNING: CF_GAME_VERSION not set - uploading without a game version (fix it in the CF panel, or pin the variable). Available:"
             echo "$VERSIONS" | jq -r '.[] | "\(.id)\t\(.name)"'
