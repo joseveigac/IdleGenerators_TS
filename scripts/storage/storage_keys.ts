@@ -13,7 +13,7 @@ import { Vector3 } from "../types/common";
 // ============================================================================
 
 /** Versión del addon (semántico) */
-export const ADDON_VERSION = "1.1.0";
+export const ADDON_VERSION = "1.2.0";
 
 /** Versión del formato de DB - incrementa si cambias estructura de datos */
 export const DB_VERSION = 2;
