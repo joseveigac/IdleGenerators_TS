@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:deepslate_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "SBS", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:stone_pickaxe" },
+      "S": { "item": "minecraft:cobblestone" },
+      "B": { "item": "minecraft:deepslate" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:deepslate"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:deepslate_generator",
+      "count": 1
+    }
+  }
+}
