@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:dripstone_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "SBS", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:water_bucket" },
+      "S": { "item": "minecraft:cobblestone" },
+      "B": { "item": "minecraft:dripstone_block" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:dripstone_block"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:dripstone_generator",
+      "count": 1
+    }
+  }
+}

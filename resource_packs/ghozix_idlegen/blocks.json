@@ -62,5 +62,41 @@
   },
   "quartz_generator": {
     "sound": "stone"
+  },
+  "stone_generator": {
+    "sound": "stone"
+  },
+  "granite_generator": {
+    "sound": "stone"
+  },
+  "diorite_generator": {
+    "sound": "stone"
+  },
+  "andesite_generator": {
+    "sound": "stone"
+  },
+  "deepslate_generator": {
+    "sound": "stone"
+  },
+  "tuff_generator": {
+    "sound": "stone"
+  },
+  "calcite_generator": {
+    "sound": "stone"
+  },
+  "dripstone_generator": {
+    "sound": "stone"
+  },
+  "gravel_generator": {
+    "sound": "stone"
+  },
+  "sand_generator": {
+    "sound": "stone"
+  },
+  "red_sand_generator": {
+    "sound": "stone"
+  },
+  "clay_generator": {
+    "sound": "stone"
   }
 }
