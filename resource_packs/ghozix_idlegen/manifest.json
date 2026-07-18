@@ -21,6 +21,7 @@
       "version": [1, 2, 0]
     }
   ],
+  "capabilities": ["pbr"],
   "metadata": {
     "generated_with": {
       "mctoolsweb": ["0.15.2"],
