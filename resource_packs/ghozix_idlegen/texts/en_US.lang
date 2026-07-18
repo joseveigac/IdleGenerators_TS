@@ -109,3 +109,64 @@ tile.ghozix_idlegen:pale_oak_log_generator.name=Pale Oak Log Generator
 ## Generator Block that produces Pale Oak Logs
 entity.ghozix_idlegen:pale_oak_log_generator_entity.name=Pale Oak Log Generator Entity
 ## Entity for Pale Oak Log Generator
+
+## --- Stone & Construction (v1.2.0) ---
+tile.ghozix_idlegen:stone_generator.name=Stone Generator
+## Generator Block that produces Stone
+entity.ghozix_idlegen:stone_generator_entity.name=Stone Generator Entity
+## Entity for Stone Generator
+
+tile.ghozix_idlegen:granite_generator.name=Granite Generator
+## Generator Block that produces Granite
+entity.ghozix_idlegen:granite_generator_entity.name=Granite Generator Entity
+## Entity for Granite Generator
+
+tile.ghozix_idlegen:diorite_generator.name=Diorite Generator
+## Generator Block that produces Diorite
+entity.ghozix_idlegen:diorite_generator_entity.name=Diorite Generator Entity
+## Entity for Diorite Generator
+
+tile.ghozix_idlegen:andesite_generator.name=Andesite Generator
+## Generator Block that produces Andesite
+entity.ghozix_idlegen:andesite_generator_entity.name=Andesite Generator Entity
+## Entity for Andesite Generator
+
+tile.ghozix_idlegen:deepslate_generator.name=Deepslate Generator
+## Generator Block that produces Deepslate
+entity.ghozix_idlegen:deepslate_generator_entity.name=Deepslate Generator Entity
+## Entity for Deepslate Generator
+
+tile.ghozix_idlegen:tuff_generator.name=Tuff Generator
+## Generator Block that produces Tuff
+entity.ghozix_idlegen:tuff_generator_entity.name=Tuff Generator Entity
+## Entity for Tuff Generator
+
+tile.ghozix_idlegen:calcite_generator.name=Calcite Generator
+## Generator Block that produces Calcite
+entity.ghozix_idlegen:calcite_generator_entity.name=Calcite Generator Entity
+## Entity for Calcite Generator
+
+tile.ghozix_idlegen:dripstone_generator.name=Dripstone Generator
+## Generator Block that produces Pointed Dripstone
+entity.ghozix_idlegen:dripstone_generator_entity.name=Dripstone Generator Entity
+## Entity for Dripstone Generator
+
+tile.ghozix_idlegen:gravel_generator.name=Gravel Generator
+## Generator Block that produces Gravel
+entity.ghozix_idlegen:gravel_generator_entity.name=Gravel Generator Entity
+## Entity for Gravel Generator
+
+tile.ghozix_idlegen:sand_generator.name=Sand Generator
+## Generator Block that produces Sand
+entity.ghozix_idlegen:sand_generator_entity.name=Sand Generator Entity
+## Entity for Sand Generator
+
+tile.ghozix_idlegen:red_sand_generator.name=Red Sand Generator
+## Generator Block that produces Red Sand
+entity.ghozix_idlegen:red_sand_generator_entity.name=Red Sand Generator Entity
+## Entity for Red Sand Generator
+
+tile.ghozix_idlegen:clay_generator.name=Clay Generator
+## Generator Block that produces Clay Balls
+entity.ghozix_idlegen:clay_generator_entity.name=Clay Generator Entity
+## Entity for Clay Generator
