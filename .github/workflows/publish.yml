@@ -1,0 +1,120 @@
+# Release pipeline — mirrors the Java repo's publish.yml design:
+# a published GitHub Release (or manual dispatch by tag) triggers a job gated
+# by the `publish` environment (required reviewer). After the Approve it
+# builds the .mcaddon, attaches it to the release and uploads it to CurseForge
+# via the minecraft-bedrock Upload API.
+#
+# One-time setup (Settings -> Environments -> `publish`):
+#   - Required reviewers: joseveigac
+#   - Secret   CURSEFORGE_TOKEN       account-level authors token (same one as the Java repo)
+#   - Variable CURSEFORGE_PROJECT_ID  numeric id of the Bedrock CurseForge project
+#   - Variable CF_GAME_VERSION        exact game-version name on the Bedrock section
+#                                     (run once without it: the log prints the available list)
+#
+# While the token or the project id are missing the job runs in DRY-RUN:
+# it builds and attaches the artifact but uploads nothing to CurseForge.
+
+name: Publish to CurseForge
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to publish (e.g. v1.2.0)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency: publish
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: publish
+    env:
+      TAG: ${{ github.event_name == 'release' && github.event.release.tag_name || inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Build .mcaddon
+        run: |
+          echo "PROJECT_NAME=ghozix_idlegen" > .env
+          npm ci
+          npm run mcaddon
+          FILE=$(ls dist/packages/*.mcaddon)
+          echo "FILE=$FILE" >> "$GITHUB_ENV"
+          echo "Built $FILE"
+
+      - name: Attach artifact to the GitHub Release
+        run: |
+          if gh release view "$TAG" --json tagName >/dev/null 2>&1; then
+            gh release upload "$TAG" "$FILE" --clobber
+          else
+            echo "No GitHub release found for $TAG - skipping attach"
+          fi
+
+      - name: Upload to CurseForge
+        env:
+          CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          CF_PROJECT_ID: ${{ vars.CURSEFORGE_PROJECT_ID }}
+          CF_GAME_VERSION: ${{ vars.CF_GAME_VERSION }}
+        run: |
+          API="https://minecraft-bedrock.curseforge.com/api"
+
+          if [ -z "$CF_TOKEN" ] || [ -z "$CF_PROJECT_ID" ]; then
+            echo "DRY-RUN: CURSEFORGE_TOKEN and/or CURSEFORGE_PROJECT_ID not configured - nothing uploaded."
+            if [ -n "$CF_TOKEN" ]; then
+              echo "Available game versions on the Bedrock section:"
+              curl -sf -H "X-Api-Token: $CF_TOKEN" "$API/game/versions" | jq -r '.[] | "\(.id)\t\(.name)"'
+            fi
+            exit 0
+          fi
+
+          GAME_VERSIONS="[]"
+          VERSIONS=$(curl -sf -H "X-Api-Token: $CF_TOKEN" "$API/game/versions")
+          if [ -n "$CF_GAME_VERSION" ]; then
+            GV_ID=$(echo "$VERSIONS" | jq -r --arg n "$CF_GAME_VERSION" '[.[] | select(.name == $n)][0].id // empty')
+            if [ -z "$GV_ID" ]; then
+              echo "CF_GAME_VERSION '$CF_GAME_VERSION' not found on CurseForge. Available:"
+              echo "$VERSIONS" | jq -r '.[] | "\(.id)\t\(.name)"'
+              exit 1
+            fi
+            GAME_VERSIONS="[$GV_ID]"
+          else
+            echo "WARNING: CF_GAME_VERSION not set - uploading without a game version (fix it in the CF panel, or pin the variable). Available:"
+            echo "$VERSIONS" | jq -r '.[] | "\(.id)\t\(.name)"'
+          fi
+
+          CHANGELOG=$(gh release view "$TAG" --json body -q .body 2>/dev/null || true)
+          [ -n "$CHANGELOG" ] || CHANGELOG="See the GitHub release $TAG."
+
+          METADATA=$(jq -n \
+            --arg changelog "$CHANGELOG" \
+            --arg displayName "Idle Generators $TAG" \
+            --argjson gameVersions "$GAME_VERSIONS" \
+            '{changelog: $changelog, changelogType: "markdown", displayName: $displayName, releaseType: "release"}
+             + (if ($gameVersions | length) > 0 then {gameVersions: $gameVersions} else {} end)')
+
+          echo "Uploading $FILE to CurseForge project $CF_PROJECT_ID..."
+          HTTP=$(curl -sS -o response.json -w "%{http_code}" \
+            -H "X-Api-Token: $CF_TOKEN" \
+            -F "metadata=$METADATA" \
+            -F "file=@$FILE" \
+            "$API/projects/$CF_PROJECT_ID/upload-file")
+          cat response.json; echo
+          if [ "$HTTP" -lt 200 ] || [ "$HTTP" -ge 300 ]; then
+            echo "Upload failed with HTTP $HTTP"
+            exit 1
+          fi
+          echo "Upload OK (HTTP $HTTP)"
