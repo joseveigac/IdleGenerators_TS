@@ -4,7 +4,7 @@
     "name": "Idle Generators",
     "description": "An idle generator addon for Minecraft Bedrock — passively generates resources on real-world time, even offline.",
     "uuid": "ed97778b-789f-405d-bb74-5c42e2e1398d",
-    "version": [1, 1, 0],
+    "version": [1, 2, 0],
     "min_engine_version": [1, 21, 130]
   },
   "modules": [
@@ -13,7 +13,7 @@
       "language": "javascript",
       "type": "script",
       "uuid": "2c9cb3de-cbcd-4ef0-b29d-7e758a948bc8",
-      "version": [1, 1, 0],
+      "version": [1, 2, 0],
       "entry": "scripts/main.js"
     }
   ],
@@ -28,7 +28,7 @@
     },
     {
       "uuid": "abad2758-5b6c-44cd-bfa5-4a39c7e60071",
-      "version": [1, 1, 0]
+      "version": [1, 2, 0]
     }
   ],
   "metadata": {
