@@ -66,6 +66,42 @@
     },
     "quartz_generator": {
       "textures": "textures/blocks/quartz_generator"
+    },
+    "stone_generator": {
+      "textures": "textures/blocks/stone_generator"
+    },
+    "granite_generator": {
+      "textures": "textures/blocks/granite_generator"
+    },
+    "diorite_generator": {
+      "textures": "textures/blocks/diorite_generator"
+    },
+    "andesite_generator": {
+      "textures": "textures/blocks/andesite_generator"
+    },
+    "deepslate_generator": {
+      "textures": "textures/blocks/deepslate_generator"
+    },
+    "tuff_generator": {
+      "textures": "textures/blocks/tuff_generator"
+    },
+    "calcite_generator": {
+      "textures": "textures/blocks/calcite_generator"
+    },
+    "dripstone_generator": {
+      "textures": "textures/blocks/dripstone_generator"
+    },
+    "gravel_generator": {
+      "textures": "textures/blocks/gravel_generator"
+    },
+    "sand_generator": {
+      "textures": "textures/blocks/sand_generator"
+    },
+    "red_sand_generator": {
+      "textures": "textures/blocks/red_sand_generator"
+    },
+    "clay_generator": {
+      "textures": "textures/blocks/clay_generator"
     }
   }
 }

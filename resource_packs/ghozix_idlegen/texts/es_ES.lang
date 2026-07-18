@@ -114,4 +114,65 @@ tile.ghozix_idlegen:pale_oak_log_generator.name=Generador de Troncos de Roble P�
 entity.ghozix_idlegen:pale_oak_log_generator_entity.name=Entidad Generador de Troncos de Roble Pálido
 ## Entidad para el Generador de Troncos de Roble Pálido
 
+## --- Stone & Construction (v1.2.0) ---
+tile.ghozix_idlegen:stone_generator.name=Generador de Piedra
+## Bloque generador que produce piedra
+entity.ghozix_idlegen:stone_generator_entity.name=Entidad Generador de Piedra
+## Entidad para el Generador de Piedra
+
+tile.ghozix_idlegen:granite_generator.name=Generador de Granito
+## Bloque generador que produce granito
+entity.ghozix_idlegen:granite_generator_entity.name=Entidad Generador de Granito
+## Entidad para el Generador de Granito
+
+tile.ghozix_idlegen:diorite_generator.name=Generador de Diorita
+## Bloque generador que produce diorita
+entity.ghozix_idlegen:diorite_generator_entity.name=Entidad Generador de Diorita
+## Entidad para el Generador de Diorita
+
+tile.ghozix_idlegen:andesite_generator.name=Generador de Andesita
+## Bloque generador que produce andesita
+entity.ghozix_idlegen:andesite_generator_entity.name=Entidad Generador de Andesita
+## Entidad para el Generador de Andesita
+
+tile.ghozix_idlegen:deepslate_generator.name=Generador de Pizarra Abismal
+## Bloque generador que produce pizarra abismal
+entity.ghozix_idlegen:deepslate_generator_entity.name=Entidad Generador de Pizarra Abismal
+## Entidad para el Generador de Pizarra Abismal
+
+tile.ghozix_idlegen:tuff_generator.name=Generador de Toba Volcánica
+## Bloque generador que produce toba volcánica
+entity.ghozix_idlegen:tuff_generator_entity.name=Entidad Generador de Toba Volcánica
+## Entidad para el Generador de Toba Volcánica
+
+tile.ghozix_idlegen:calcite_generator.name=Generador de Calcita
+## Bloque generador que produce calcita
+entity.ghozix_idlegen:calcite_generator_entity.name=Entidad Generador de Calcita
+## Entidad para el Generador de Calcita
+
+tile.ghozix_idlegen:dripstone_generator.name=Generador de Espeleotema
+## Bloque generador que produce espeleotemas en punta
+entity.ghozix_idlegen:dripstone_generator_entity.name=Entidad Generador de Espeleotema
+## Entidad para el Generador de Espeleotema
+
+tile.ghozix_idlegen:gravel_generator.name=Generador de Grava
+## Bloque generador que produce grava
+entity.ghozix_idlegen:gravel_generator_entity.name=Entidad Generador de Grava
+## Entidad para el Generador de Grava
+
+tile.ghozix_idlegen:sand_generator.name=Generador de Arena
+## Bloque generador que produce arena
+entity.ghozix_idlegen:sand_generator_entity.name=Entidad Generador de Arena
+## Entidad para el Generador de Arena
+
+tile.ghozix_idlegen:red_sand_generator.name=Generador de Arena Roja
+## Bloque generador que produce arena roja
+entity.ghozix_idlegen:red_sand_generator_entity.name=Entidad Generador de Arena Roja
+## Entidad para el Generador de Arena Roja
+
+tile.ghozix_idlegen:clay_generator.name=Generador de Arcilla
+## Bloque generador que produce bolas de arcilla
+entity.ghozix_idlegen:clay_generator_entity.name=Entidad Generador de Arcilla
+## Entidad para el Generador de Arcilla
+
 ###endregion GENERATORS ---------------------------------------------------------------------
