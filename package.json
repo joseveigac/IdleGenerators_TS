@@ -1,6 +1,6 @@
 {
   "name": "ghozix_idlegen",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "productName": "Idle Generators",
   "description": "Idle Generators — a Minecraft Bedrock addon that passively generates resources (ores, logs & more) on real-world time.",
   "private": true,
