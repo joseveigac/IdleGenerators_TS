@@ -113,7 +113,7 @@ jobs:
           echo "Uploading $FILE to CurseForge project $CF_PROJECT_ID..."
           HTTP=$(curl -sS -o response.json -w "%{http_code}" \
             -H "X-Api-Token: $CF_TOKEN" \
-            -F "metadata=$METADATA" \
+            --form-string "metadata=$METADATA" \
             -F "file=@$FILE" \
             "$API/projects/$CF_PROJECT_ID/upload-file")
           cat response.json; echo
