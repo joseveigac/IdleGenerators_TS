@@ -4,8 +4,10 @@ import {
   BlockComponentPlayerInteractEvent,
   BlockComponentPlayerBreakEvent,
   BlockCustomComponent,
+  Dimension,
   ItemStack,
   Block,
+  Vector3,
 } from "@minecraft/server";
 
 import { log } from "../utils/logger";
@@ -14,6 +16,8 @@ import { posToKey, WORLD_KEYS } from "../storage/storage_keys";
 import { getWorldData } from "../storage/storage";
 
 import { getPlacedAtPos, upsertPlaced, removePlacedAtPos, createPlaced } from "../instances/placed";
+import { settle } from "../instances/production";
+import { isEnabled } from "../config/toggles";
 
 import type { PlacedInstance } from "../types/common";
 import { getGeneratorTypeFromBlockId, GeneratorTypesMap } from "../definitions/generator_definitions";
@@ -96,7 +100,7 @@ export class Generator implements BlockCustomComponent {
     }
 
     const tag = `io:gen:${posKey}`;
-    removeExistingVisuals(block, tag);
+    removeVisualEntity(block.dimension, block.location, posKey);
 
     const ent = block.dimension.spawnEntity(def.entityId, {
       x: block.location.x + 0.5,
@@ -132,55 +136,24 @@ export class Generator implements BlockCustomComponent {
     const def = defs[instance.data.type];
     if (!def) return;
 
-    const now = Date.now();
-    const elapsed = now - instance.data.lastInteraction;
-    const intervalMs = def.interval * 1000;
-    const cycles = Math.floor(elapsed / intervalMs);
+    // Un generador desactivado no produce, pero su buffer se sigue pudiendo retirar.
+    const enabled = isEnabled(instance.data.type, def.category);
+    const available = settle(instance.data, def, Date.now(), enabled);
+    if (available <= 0) return;
 
-    // FIX: el importe retirable es el buffer acumulado + los ciclos nuevos (no solo los nuevos).
-    // Antes se hacía `if (cycles <= 0) return;`, que bloqueaba retirar el buffer ya acumulado.
-    const produced = Math.min(instance.data.storedAmount + cycles, def.cap);
-
-    if (produced <= 0) {
-      // player.sendMessage("§eGenerator is empty");
-      return;
-    }
-
-    // Determine withdrawal amount based on click type
-    const withdrawAmount = player.isSneaking
-      ? Math.min(produced, 64) // Shift-click: 1 stack (max 64)
-      : Math.min(produced, 1); // Left-click: 1 item
+    // Click normal: 1 item. Agachado: hasta un stack.
+    const requested = player.isSneaking ? Math.min(available, 64) : 1;
 
     const inv = player.getComponent("minecraft:inventory");
     if (!inv?.container) return;
 
-    const stack = new ItemStack(def.item, withdrawAmount);
-    const remainder = inv.container.addItem(stack);
-    const collected = withdrawAmount - (remainder?.amount ?? 0);
+    const remainder = inv.container.addItem(new ItemStack(def.item, requested));
+    const collected = requested - (remainder?.amount ?? 0);
 
-    instance.data.storedAmount = produced - collected;
-    instance.data.lastInteraction += cycles * intervalMs;
-
+    instance.data.storedAmount = available - collected;
     upsertPlaced(instance);
 
-    if (collected > 0) {
-      //player.sendMessage(`§a+${collected} ${def.name}`);
-    }
-    if (remainder && remainder.amount > 0) {
-      //player.sendMessage(`§7(${remainder.amount} couldn't fit)`);
-    }
-
-    // Calcular tiempo transcurrido en formato legible
-    const elapsedSeconds = (elapsed / 1000).toFixed(1);
-    const nextItemIn = ((intervalMs - (elapsed % intervalMs)) / 1000).toFixed(1);
-
-    log(
-      `[Generator] ` +
-        `Collected: ${collected}/${withdrawAmount} | ` +
-        `Buffer: ${instance.data.storedAmount} | ` +
-        `Elapsed: ${elapsedSeconds}s | ` +
-        `Next in: ${nextItemIn}s`
-    );
+    log(`[Generator] Collected: ${collected}/${requested} | Buffer: ${instance.data.storedAmount}`);
   }
 
   onPlayerBreak(event: BlockComponentPlayerBreakEvent) {
@@ -188,20 +161,8 @@ export class Generator implements BlockCustomComponent {
     if (!block) return;
 
     const posKey = `${block.dimension.id}:${posToKey(block.location.x, block.location.y, block.location.z)}`;
-    const tag = `io:gen:${posKey}`;
 
-    const ents = block.dimension.getEntities({
-      location: { x: block.location.x + 0.5, y: block.location.y, z: block.location.z + 0.5 },
-      maxDistance: 0.9,
-    });
-
-    for (const e of ents) {
-      if (e.hasTag(tag)) {
-        e.remove();
-        break;
-      }
-    }
-
+    removeVisualEntity(block.dimension, block.location, posKey);
     removePlacedAtPos(posKey);
     log(`[Generator] Removed instance at ${posKey}`);
   }
@@ -221,13 +182,19 @@ function trySetRuntimeInvisible(block: Block) {
   }
 }
 
-function removeExistingVisuals(block: Block, tag: string) {
-  const ents = block.dimension.getEntities({
-    location: { x: block.location.x + 0.5, y: block.location.y, z: block.location.z + 0.5 },
-    maxDistance: 1.2,
-  });
+/**
+ * Elimina la entidad visual asociada a una posición, si sigue ahí.
+ * La usan la colocación, la rotura y la limpieza de huérfanos del volcado.
+ */
+export function removeVisualEntity(dimension: Dimension, location: Vector3, posKey: string) {
+  const tag = `io:gen:${posKey}`;
+  const center = {
+    x: Math.floor(location.x) + 0.5,
+    y: Math.floor(location.y),
+    z: Math.floor(location.z) + 0.5,
+  };
 
-  for (const e of ents) {
+  for (const e of dimension.getEntities({ location: center, maxDistance: 1.2 })) {
     if (e.hasTag(tag)) e.remove();
   }
 }

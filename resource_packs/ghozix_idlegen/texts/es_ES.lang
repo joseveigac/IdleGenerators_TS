@@ -176,3 +176,18 @@ entity.ghozix_idlegen:clay_generator_entity.name=Entidad Generador de Arcilla
 ## Entidad para el Generador de Arcilla
 
 ###endregion GENERATORS ---------------------------------------------------------------------
+
+###region UI ------------------------------------------------------------------------
+idlegen.config.title=Idle Generators - Ajustes
+idlegen.config.category.ores=Minerales
+idlegen.config.category.woods=Maderas
+idlegen.config.category.stones=Piedras
+idlegen.config.enable_category=Activar esta categoria
+idlegen.config.state.default=Segun la categoria
+idlegen.config.state.on=Siempre activo
+idlegen.config.state.off=Siempre apagado
+idlegen.config.save=Guardar
+idlegen.config.saved=Ajustes de Idle Generators actualizados.
+idlegen.config.no_permission=Solo los operadores del mundo pueden cambiar los ajustes de Idle Generators.
+idlegen.hud.off=APAGADO
+###endregion UI ------------------------------------------------------------------------

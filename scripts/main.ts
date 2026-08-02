@@ -9,6 +9,7 @@ import { registerComponents } from "./register_components";
 // import { CobblestoneGenerator } from "./generators/cobblestone_generator";
 // import { COMPONENT_IDS, PROPERTY_IDS } from "./config/components";
 import { GeneratorDisplay } from "./ui/generatorDisplay";
+import { GeneratorFlush } from "./systems/generatorFlush";
 
 /**
  * Entry Point del addon
@@ -30,6 +31,7 @@ world.afterEvents.worldLoad.subscribe(() => {
   // Storage.initDatabase();
   Storage.initDatabaseAutoUpdate();
   GeneratorDisplay.initialize();
+  GeneratorFlush.initialize();
 });
 
 /**

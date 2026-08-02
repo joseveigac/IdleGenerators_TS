@@ -10,7 +10,7 @@ const BUCKET_SIZE = 512;
 
 // posKey = "<dimensionId>:x,y,z"  — dimensionId itself contains a colon
 // (e.g. "minecraft:overworld:10,64,-5"), so split on the LAST colon.
-function parsePosKey(posKey: string): { dim: string; x: number; y: number; z: number } | null {
+export function parsePosKey(posKey: string): { dim: string; x: number; y: number; z: number } | null {
   const lastColon = posKey.lastIndexOf(":");
   if (lastColon < 0) return null;
   const dim = posKey.slice(0, lastColon);
@@ -92,6 +92,33 @@ export function removePlacedAtPos(posKey: string): void {
   if (!bucket[posKey]) return;
   delete bucket[posKey];
   saveBucket(bucketKey, bucket);
+}
+
+/**
+ * Recorre todas las instancias cargando cada bucket UNA vez y guardándolo UNA vez.
+ * `fn` devuelve true si modificó la instancia. Devuelve cuántas cambiaron.
+ *
+ * ⚠️ No borres instancias desde `fn` (rompería la iteración): acumula los posKey
+ * y llama a `removePlacedAtPos` después.
+ */
+export function updateAllPlaced(fn: (instance: PlacedInstance) => boolean): number {
+  let changed = 0;
+
+  for (const bucketKey of loadIndex()) {
+    const bucket = loadBucket(bucketKey);
+    let dirty = false;
+
+    for (const posKey of Object.keys(bucket)) {
+      if (fn(bucket[posKey])) {
+        dirty = true;
+        changed++;
+      }
+    }
+
+    if (dirty) saveBucket(bucketKey, bucket);
+  }
+
+  return changed;
 }
 
 /** Iterate every placed instance across all buckets (offline report / admin). */

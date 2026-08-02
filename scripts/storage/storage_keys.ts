@@ -61,6 +61,18 @@ export const WORLD_KEYS = Object.freeze({
      */
     GENERATORS: `${ns}:${px.WORLD}:${px.CATALOG}:generators`,
   },
+
+  // --------------------------------------------------------------------------
+  // WORLD CONFIG (ajustes del operador, editables en juego)
+  // --------------------------------------------------------------------------
+  CONFIG: {
+    /**
+     * Interruptores de activación: por categoría + override tri-estado por
+     * generador, más el sello `frozenSince` de cada tipo desactivado.
+     * Ver [config/toggles.ts]. Ausente = todo activado.
+     */
+    TOGGLES: `${ns}:${px.WORLD}:${px.DATA}:toggles`,
+  },
   // --------------------------------------------------------------------------
   // PLACED SYSTEM (SOURCE OF TRUTH)
   // --------------------------------------------------------------------------
