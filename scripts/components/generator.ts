@@ -137,7 +137,7 @@ export class Generator implements BlockCustomComponent {
     if (!def) return;
 
     // Un generador desactivado no produce, pero su buffer se sigue pudiendo retirar.
-    const enabled = isEnabled(instance.data.type, def.category);
+    const enabled = isEnabled(instance.data.type);
     const available = settle(instance.data, def, Date.now(), enabled);
     if (available <= 0) return;
 

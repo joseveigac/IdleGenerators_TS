@@ -363,8 +363,16 @@ export function getGeneratorTypeFromBlockId(blockId: string): string | null {
 // ============================================================================
 // GENERATOR DEFINITIONS
 // ============================================================================
-/** Grupo al que pertenece un generador, usado por los interruptores de configuración. */
+/** Pack al que pertenece un generador. Solo agrupa: cada generador se activa por separado. */
 export type GeneratorCategory = "ores" | "woods" | "stones";
+
+/** Orden de los packs en la configuración. */
+export const GENERATOR_SETS: GeneratorCategory[] = ["ores", "woods", "stones"];
+
+/** Claves de los generadores de un pack, en el orden del catálogo. */
+export function generatorKeysOf(set: GeneratorCategory): string[] {
+  return Object.keys(GENERATORS).filter((key) => GENERATORS[key].category === set);
+}
 
 export interface GeneratorType {
   id: string;

@@ -26,8 +26,8 @@ import { log } from "../utils/logger";
 import type { GeneratorData } from "../components/generator";
 import type { PlacedInstance } from "../types/common";
 
-/** Una pasada cada 5 s: suficiente para que el flujo parezca continuo. */
-const FLUSH_INTERVAL_TICKS = 100;
+/** Una pasada por segundo: el buffer se vacía casi a la vez que se produce. */
+const FLUSH_INTERVAL_TICKS = 20;
 
 /** Techo de items movidos por generador y pasada (acota el trabajo por tick). */
 const MAX_ITEMS_PER_PASS = 256;
@@ -102,7 +102,7 @@ export class GeneratorFlush {
     if (!container) return false;
 
     // Un generador desactivado no produce, pero su buffer se sigue vaciando.
-    const available = settle(data, def, now, isEnabled(data.type, def.category));
+    const available = settle(data, def, now, isEnabled(data.type));
     if (available <= 0) return false;
 
     const moved = push(container, def, available);

@@ -173,13 +173,10 @@ entity.ghozix_idlegen:clay_generator_entity.name=Clay Generator Entity
 
 ###region UI ------------------------------------------------------------------------
 idlegen.config.title=Idle Generators - Settings
-idlegen.config.category.ores=Ores
-idlegen.config.category.woods=Woods
-idlegen.config.category.stones=Stones
-idlegen.config.enable_category=Enable this category
-idlegen.config.state.default=Category default
-idlegen.config.state.on=Always on
-idlegen.config.state.off=Always off
+idlegen.config.pick_set=Choose a generator pack:
+idlegen.config.set.ores=Ores
+idlegen.config.set.woods=Woods
+idlegen.config.set.stones=Stones
 idlegen.config.save=Save
 idlegen.config.saved=Idle Generators settings updated.
 idlegen.config.no_permission=Only world operators can change Idle Generators settings.

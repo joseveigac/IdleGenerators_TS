@@ -1,52 +1,55 @@
 /**
  * IdleGen - Config Form
  *
- * Un único formulario con todos los interruptores, generado recorriendo el
- * catálogo: cabecera por categoría, un toggle para la categoría y un desplegable
- * tri-estado por generador. Un solo Submit = una sola escritura de config = un
- * solo barrido de congelado.
+ * Índice con un botón por pack de generadores; cada página es un formulario con
+ * un interruptor por generador y un solo Guardar. Al guardar se vuelve al índice.
  *
- * Al generarse desde `GENERATORS`, un generador nuevo aparece aquí sin tocar
- * este fichero. Los nombres reutilizan las claves `tile.*.name` que ya existen.
+ * Las páginas se generan recorriendo el catálogo, así que un generador nuevo
+ * aparece aquí sin tocar este fichero, y los nombres reutilizan las claves
+ * `tile.*.name` que ya existen.
+ *
+ * ⚠️ La respuesta de un ModalForm es POSICIONAL y los elementos no interactivos
+ * (header/divider/label) pueden ocupar hueco con `undefined`. Por eso la página
+ * solo lleva interruptores y la lectura filtra por booleanos: el emparejamiento
+ * con los generadores no puede descuadrarse.
  */
 
-import { Player } from "@minecraft/server";
-import { ModalFormData } from "@minecraft/server-ui";
+import { Player, system } from "@minecraft/server";
+import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 
-import { GENERATORS, GeneratorCategory } from "../definitions/generator_definitions";
-import { applyToggles, CATEGORIES, getToggles, ToggleState } from "../config/toggles";
+import { GENERATORS, GENERATOR_SETS, GeneratorCategory, generatorKeysOf } from "../definitions/generator_definitions";
+import { applyToggles, getToggles, isEnabled } from "../config/toggles";
 
-/** Orden de los desplegables; el índice es el valor devuelto por el formulario. */
-const STATES: ToggleState[] = ["default", "on", "off"];
-
-const STATE_LABELS = STATES.map((state) => ({ translate: `idlegen.config.state.${state}` }));
-
-/** Descripción del control i-ésimo, para leer la respuesta sin llevar índices a mano. */
-type Row = { kind: "category"; category: GeneratorCategory } | { kind: "generator"; key: string };
-
+/** Índice: elegir pack. */
 export function openConfigForm(player: Player): void {
+  const form = new ActionFormData()
+    .title({ translate: "idlegen.config.title" })
+    .body({ translate: "idlegen.config.pick_set" });
+
+  for (const set of GENERATOR_SETS) {
+    form.button({ translate: `idlegen.config.set.${set}` });
+  }
+
+  form
+    .show(player)
+    .then((response) => {
+      if (response.canceled || response.selection === undefined) return;
+
+      const set = GENERATOR_SETS[response.selection];
+      if (set) openSetPage(player, set);
+    })
+    .catch((error: unknown) => console.error("[IdleGen] config index error:", String(error)));
+}
+
+/** Página de un pack: un interruptor por generador. */
+function openSetPage(player: Player, set: GeneratorCategory): void {
   const cfg = getToggles();
-  const form = new ModalFormData().title({ translate: "idlegen.config.title" });
-  const rows: Row[] = [];
+  const keys = generatorKeysOf(set);
 
-  for (const category of CATEGORIES) {
-    form.header({ translate: `idlegen.config.category.${category}` });
-    form.toggle(
-      { translate: "idlegen.config.enable_category" },
-      {
-        defaultValue: cfg.categories[category] ?? true,
-      }
-    );
-    rows.push({ kind: "category", category });
+  const form = new ModalFormData().title({ translate: `idlegen.config.set.${set}` });
 
-    for (const [key, def] of Object.entries(GENERATORS)) {
-      if (def.category !== category) continue;
-
-      form.dropdown({ translate: `tile.${def.id}.name` }, STATE_LABELS, {
-        defaultValueIndex: Math.max(0, STATES.indexOf(cfg.generators[key] ?? "default")),
-      });
-      rows.push({ kind: "generator", key });
-    }
+  for (const key of keys) {
+    form.toggle({ translate: `tile.${GENERATORS[key].id}.name` }, { defaultValue: isEnabled(key, cfg) });
   }
 
   form.submitButton({ translate: "idlegen.config.save" });
@@ -54,26 +57,21 @@ export function openConfigForm(player: Player): void {
   form
     .show(player)
     .then((response) => {
-      if (response.canceled || !response.formValues) return;
+      if (response.canceled || !response.formValues) return; // Esc = salir sin guardar
 
-      const categories: Partial<Record<GeneratorCategory, boolean>> = {};
-      const generators: Record<string, ToggleState> = {};
+      const answers = response.formValues.filter((value) => typeof value === "boolean") as boolean[];
+      if (answers.length !== keys.length) {
+        console.error(`[IdleGen] config page mismatch: ${answers.length} values for ${keys.length} generators`);
+        return;
+      }
 
-      rows.forEach((row, index) => {
-        const value = response.formValues?.[index];
+      const states: Record<string, boolean> = {};
+      keys.forEach((key, index) => (states[key] = answers[index]));
 
-        if (row.kind === "category") {
-          categories[row.category] = value !== false;
-          return;
-        }
-
-        // Solo se guardan los overrides reales; "default" hereda la categoría.
-        const state = STATES[typeof value === "number" ? value : 0] ?? "default";
-        if (state !== "default") generators[row.key] = state;
-      });
-
-      applyToggles({ categories, generators });
+      applyToggles(states);
       player.sendMessage({ translate: "idlegen.config.saved" });
+
+      system.run(() => openConfigForm(player));
     })
-    .catch((error: unknown) => console.error("[IdleGen] config form error:", String(error)));
+    .catch((error: unknown) => console.error("[IdleGen] config page error:", String(error)));
 }

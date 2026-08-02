@@ -1,9 +1,9 @@
 /**
  * IdleGen - Toggles
  *
- * Interruptores de activación de generadores: uno por categoría más un override
- * tri-estado por generador (el individual siempre gana). Estado mundial, editable
- * en juego, aplicado en vivo.
+ * Activación por generador: cada uno se enciende o se apaga por separado. Estado
+ * mundial, editable en juego, aplicado en vivo. Por defecto todos activados, así
+ * que solo se guardan los apagados.
  *
  * SEMÁNTICA DE "DESACTIVADO" (garantía anti-exploit, portada de Java):
  *  - El bloque sigue en el mundo; no se borra ni se pierde nada.
@@ -19,7 +19,7 @@
 
 import { getWorldData, setWorldData } from "../storage/storage";
 import { WORLD_KEYS } from "../storage/storage_keys";
-import { GENERATORS, GeneratorCategory } from "../definitions/generator_definitions";
+import { GENERATORS } from "../definitions/generator_definitions";
 import { updateAllPlaced } from "../instances/placed";
 import { settle } from "../instances/production";
 import { log } from "../utils/logger";
@@ -27,19 +27,14 @@ import { log } from "../utils/logger";
 import type { GeneratorData } from "../components/generator";
 import type { PlacedInstance } from "../types/common";
 
-/** Orden de presentación en la UI. */
-export const CATEGORIES: GeneratorCategory[] = ["ores", "woods", "stones"];
-
-/** Override por generador. `default` = hereda el estado de su categoría. */
-export type ToggleState = "default" | "on" | "off";
+/** Sube esto si cambia la forma de ToggleConfig: lo anterior se descarta. */
+const CONFIG_VERSION = 2;
 
 export interface ToggleConfig {
   v: number;
-  /** Categoría -> activada. Ausente = activada. */
-  categories: Partial<Record<GeneratorCategory, boolean>>;
-  /** Generador -> override. Solo se guardan los que no son "default". */
-  generators: Record<string, ToggleState>;
-  /** Generador -> instante (ms) en que quedó desactivado. */
+  /** Claves de los generadores apagados. Ausente de la lista = encendido. */
+  off: string[];
+  /** Generador -> instante (ms) en que quedó apagado. */
   frozenSince: Record<string, number>;
 }
 
@@ -48,12 +43,12 @@ let cache: ToggleConfig | null = null;
 function load(): ToggleConfig {
   const stored = getWorldData<Partial<ToggleConfig>>(WORLD_KEYS.CONFIG.TOGGLES);
 
-  return {
-    v: 1,
-    categories: stored?.categories ?? {},
-    generators: stored?.generators ?? {},
-    frozenSince: stored?.frozenSince ?? {},
-  };
+  // Primera vez, o config de un formato anterior: se empieza limpio.
+  if (!stored || stored.v !== CONFIG_VERSION || !Array.isArray(stored.off)) {
+    return { v: CONFIG_VERSION, off: [], frozenSince: {} };
+  }
+
+  return { v: CONFIG_VERSION, off: stored.off, frozenSince: stored.frozenSince ?? {} };
 }
 
 /** Config actual (cacheada en memoria; solo este módulo la escribe). */
@@ -62,61 +57,51 @@ export function getToggles(): ToggleConfig {
   return cache;
 }
 
-/** El override individual manda sobre su categoría; por defecto todo activado. */
-export function isEnabled(key: string, category: GeneratorCategory, cfg: ToggleConfig = getToggles()): boolean {
-  const override = cfg.generators[key];
-  if (override === "on") return true;
-  if (override === "off") return false;
-
-  return cfg.categories[category] ?? true;
+export function isEnabled(key: string, cfg: ToggleConfig = getToggles()): boolean {
+  return !cfg.off.includes(key);
 }
 
 /**
- * Aplica un conjunto completo de interruptores (un submit del formulario),
- * congelando o descongelando lo que haya cambiado de estado.
+ * Aplica los interruptores de una página del formulario. Los generadores que no
+ * aparezcan en `states` conservan su estado.
  */
-export function applyToggles(next: {
-  categories: Partial<Record<GeneratorCategory, boolean>>;
-  generators: Record<string, ToggleState>;
-}): void {
+export function applyToggles(states: Record<string, boolean>): void {
   const current = getToggles();
+  const off = new Set(current.off);
+
+  for (const [key, enabled] of Object.entries(states)) {
+    if (!(key in GENERATORS)) continue;
+    if (enabled) off.delete(key);
+    else off.add(key);
+  }
+
   const updated: ToggleConfig = {
-    v: 1,
-    categories: { ...next.categories },
-    generators: { ...next.generators },
+    v: CONFIG_VERSION,
+    off: [...off],
     frozenSince: { ...current.frozenSince },
   };
 
-  freezeThaw(updated, enabledSet(current), enabledSet(updated), Date.now());
+  freezeThaw(updated, current, Date.now());
 
   cache = updated;
   setWorldData(WORLD_KEYS.CONFIG.TOGGLES, updated);
 }
 
-/** Conjunto de generadores efectivamente activados con esa config. */
-function enabledSet(cfg: ToggleConfig): Set<string> {
-  const out = new Set<string>();
-
-  for (const [key, def] of Object.entries(GENERATORS)) {
-    if (isEnabled(key, def.category, cfg)) out.add(key);
-  }
-
-  return out;
-}
-
-/** Barrido único sobre las instancias afectadas por el cambio de estado. */
-function freezeThaw(cfg: ToggleConfig, before: Set<string>, after: Set<string>, now: number): void {
+/** Barrido único sobre las instancias cuyo tipo ha cambiado de estado. */
+function freezeThaw(next: ToggleConfig, previous: ToggleConfig, now: number): void {
   const toFreeze = new Set<string>();
   const toThaw = new Set<string>();
 
   for (const key of Object.keys(GENERATORS)) {
-    if (before.has(key) && !after.has(key)) toFreeze.add(key);
-    else if (!before.has(key) && after.has(key)) toThaw.add(key);
+    const was = isEnabled(key, previous);
+    const is = isEnabled(key, next);
+    if (was && !is) toFreeze.add(key);
+    else if (!was && is) toThaw.add(key);
   }
 
   if (toFreeze.size === 0 && toThaw.size === 0) return;
 
-  const frozenSince = cfg.frozenSince;
+  const frozenSince = next.frozenSince;
 
   const touched = updateAllPlaced((instance) => {
     if (instance.type !== "generator") return false;
@@ -143,8 +128,8 @@ function freezeThaw(cfg: ToggleConfig, before: Set<string>, after: Set<string>, 
     return false;
   });
 
-  for (const key of toFreeze) cfg.frozenSince[key] = now;
-  for (const key of toThaw) delete cfg.frozenSince[key];
+  for (const key of toFreeze) next.frozenSince[key] = now;
+  for (const key of toThaw) delete next.frozenSince[key];
 
-  log(`[IdleGen] Toggles: ${toFreeze.size} congelados, ${toThaw.size} reactivados, ${touched} instancias ajustadas.`);
+  log(`[IdleGen] Toggles: ${toFreeze.size} apagados, ${toThaw.size} encendidos, ${touched} instancias ajustadas.`);
 }

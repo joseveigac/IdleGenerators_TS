@@ -34,7 +34,7 @@ export class GeneratorDisplay {
         const gen = getWorldData<GeneratorTypesMap>(WORLD_KEYS.CATALOG.GENERATORS)?.[genType];
         if (!gen) continue;
 
-        const enabled = isEnabled(genType, gen.category);
+        const enabled = isEnabled(genType);
         const { amount, progress } = peek(instance.data, gen, Date.now(), enabled);
 
         const status: RawMessage[] = enabled
