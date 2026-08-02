@@ -34,7 +34,7 @@ function registerItemCustomComponents(_ev: StartupEvent) {
 function registerCommands(ev: StartupEvent) {
   ev.customCommandRegistry.registerCommand(
     {
-      name: "idleoregen:config",
+      name: "idlegen:config",
       description: "Open the Idle Generators settings menu",
       permissionLevel: CommandPermissionLevel.Any,
       cheatsRequired: false,
