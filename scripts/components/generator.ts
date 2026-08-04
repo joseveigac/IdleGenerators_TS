@@ -4,23 +4,21 @@ import {
   BlockComponentPlayerInteractEvent,
   BlockComponentPlayerBreakEvent,
   BlockCustomComponent,
-  Dimension,
   ItemStack,
   Block,
-  Vector3,
 } from "@minecraft/server";
 
 import { log } from "../utils/logger";
 
-import { posToKey, WORLD_KEYS } from "../storage/storage_keys";
-import { getWorldData } from "../storage/storage";
+import { posToKey } from "../storage/storage_keys";
 
 import { getPlacedAtPos, upsertPlaced, removePlacedAtPos, createPlaced } from "../instances/placed";
 import { settle } from "../instances/production";
+import { removeVisualEntity, visualTag } from "../instances/visual_entity";
 import { isEnabled } from "../config/toggles";
 
 import type { PlacedInstance } from "../types/common";
-import { getGeneratorTypeFromBlockId, GeneratorTypesMap } from "../definitions/generator_definitions";
+import { GENERATORS, getGeneratorTypeFromBlockId } from "../definitions/generator_definitions";
 
 // ---- Generator runtime data ----
 export interface GeneratorData {
@@ -82,8 +80,7 @@ export class Generator implements BlockCustomComponent {
     const generatorType = getGeneratorTypeFromBlockId(block.typeId);
     if (!generatorType) return;
 
-    const defs = getWorldData<GeneratorTypesMap>(WORLD_KEYS.CATALOG.GENERATORS);
-    const def = defs?.[generatorType];
+    const def = GENERATORS[generatorType];
     if (!def) return;
 
     const posKey = `${block.dimension.id}:${posToKey(block.location.x, block.location.y, block.location.z)}`;
@@ -99,7 +96,7 @@ export class Generator implements BlockCustomComponent {
       return;
     }
 
-    const tag = `io:gen:${posKey}`;
+    const tag = visualTag(posKey);
     removeVisualEntity(block.dimension, block.location, posKey);
 
     const ent = block.dimension.spawnEntity(def.entityId, {
@@ -130,10 +127,7 @@ export class Generator implements BlockCustomComponent {
       return;
     }
 
-    const defs = getWorldData<GeneratorTypesMap>(WORLD_KEYS.CATALOG.GENERATORS);
-    if (!defs) return;
-
-    const def = defs[instance.data.type];
+    const def = GENERATORS[instance.data.type];
     if (!def) return;
 
     // Un generador desactivado no produce, pero su buffer se sigue pudiendo retirar.
@@ -179,23 +173,6 @@ function trySetRuntimeInvisible(block: Block) {
     return true;
   } catch {
     return false;
-  }
-}
-
-/**
- * Elimina la entidad visual asociada a una posición, si sigue ahí.
- * La usan la colocación, la rotura y la limpieza de huérfanos del volcado.
- */
-export function removeVisualEntity(dimension: Dimension, location: Vector3, posKey: string) {
-  const tag = `io:gen:${posKey}`;
-  const center = {
-    x: Math.floor(location.x) + 0.5,
-    y: Math.floor(location.y),
-    z: Math.floor(location.z) + 0.5,
-  };
-
-  for (const e of dimension.getEntities({ location: center, maxDistance: 1.2 })) {
-    if (e.hasTag(tag)) e.remove();
   }
 }
 

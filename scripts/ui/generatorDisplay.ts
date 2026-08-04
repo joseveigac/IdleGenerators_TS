@@ -1,13 +1,11 @@
 // BP/scripts/systems/generatorDisplay.ts
 import { world, system, RawMessage } from "@minecraft/server";
-import { getGeneratorTypeFromBlockId, GeneratorTypesMap } from "../definitions/generator_definitions";
+import { GENERATORS, getGeneratorTypeFromBlockId } from "../definitions/generator_definitions";
 import { getPlacedAtPos, makePosKeyFromBlock } from "../instances/placed";
 import { peek } from "../instances/production";
 import { isEnabled } from "../config/toggles";
 import { GeneratorData } from "../components/generator";
 import { PlacedInstance } from "../types/common";
-import { getWorldData } from "../storage/storage";
-import { WORLD_KEYS } from "../storage/storage_keys";
 
 export class GeneratorDisplay {
   static initialize(): void {
@@ -31,7 +29,7 @@ export class GeneratorDisplay {
           continue;
         }
 
-        const gen = getWorldData<GeneratorTypesMap>(WORLD_KEYS.CATALOG.GENERATORS)?.[genType];
+        const gen = GENERATORS[genType];
         if (!gen) continue;
 
         const enabled = isEnabled(genType);

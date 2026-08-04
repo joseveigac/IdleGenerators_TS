@@ -18,7 +18,7 @@ import { Player, system } from "@minecraft/server";
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 
 import { GENERATORS, GENERATOR_SETS, GeneratorCategory, generatorKeysOf } from "../definitions/generator_definitions";
-import { applyToggles, getToggles, isEnabled } from "../config/toggles";
+import { applyToggles, isEnabled } from "../config/toggles";
 
 /** Índice: elegir pack. */
 export function openConfigForm(player: Player): void {
@@ -43,13 +43,12 @@ export function openConfigForm(player: Player): void {
 
 /** Página de un pack: un interruptor por generador. */
 function openSetPage(player: Player, set: GeneratorCategory): void {
-  const cfg = getToggles();
   const keys = generatorKeysOf(set);
 
   const form = new ModalFormData().title({ translate: `idlegen.config.set.${set}` });
 
   for (const key of keys) {
-    form.toggle({ translate: `tile.${GENERATORS[key].id}.name` }, { defaultValue: isEnabled(key, cfg) });
+    form.toggle({ translate: `tile.${GENERATORS[key].id}.name` }, { defaultValue: isEnabled(key) });
   }
 
   form.submitButton({ translate: "idlegen.config.save" });

@@ -374,6 +374,16 @@ export function generatorKeysOf(set: GeneratorCategory): string[] {
   return Object.keys(GENERATORS).filter((key) => GENERATORS[key].category === set);
 }
 
+/** Estado encendido/apagado por pack. */
+export type SetStates = Record<GeneratorCategory, boolean>;
+
+/** Todos los packs encendidos: el estado por defecto del addon. */
+export function allSetsOn(): SetStates {
+  const states = {} as SetStates;
+  for (const set of GENERATOR_SETS) states[set] = true;
+  return states;
+}
+
 export interface GeneratorType {
   id: string;
   entityId?: string;

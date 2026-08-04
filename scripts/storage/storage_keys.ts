@@ -13,7 +13,7 @@ import { Vector3 } from "../types/common";
 // ============================================================================
 
 /** Versión del addon (semántico) */
-export const ADDON_VERSION = "1.2.0";
+export const ADDON_VERSION = "1.3.0";
 
 /** Versión del formato de DB - incrementa si cambias estructura de datos */
 export const DB_VERSION = 2;
@@ -67,9 +67,9 @@ export const WORLD_KEYS = Object.freeze({
   // --------------------------------------------------------------------------
   CONFIG: {
     /**
-     * Interruptores de activación: por categoría + override tri-estado por
-     * generador, más el sello `frozenSince` de cada tipo desactivado.
-     * Ver [config/toggles.ts]. Ausente = todo activado.
+     * Interruptores de activación: lista `off[]` de generadores apagados
+     * (ausente = encendido), qué claves apagó el pack en `packOff[]`, y el
+     * sello `frozenSince` de cada tipo desactivado. Ver [config/toggles.ts].
      */
     TOGGLES: `${ns}:${px.WORLD}:${px.DATA}:toggles`,
   },

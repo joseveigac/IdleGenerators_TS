@@ -10,6 +10,8 @@ import { registerComponents } from "./register_components";
 // import { COMPONENT_IDS, PROPERTY_IDS } from "./config/components";
 import { GeneratorDisplay } from "./ui/generatorDisplay";
 import { GeneratorFlush } from "./systems/generatorFlush";
+import { readPackSettings } from "./config/pack_settings";
+import { syncPackSettings } from "./config/toggles";
 
 /**
  * Entry Point del addon
@@ -30,6 +32,11 @@ world.afterEvents.worldLoad.subscribe(() => {
   // Inicializar DynamicProperties del addon
   // Storage.initDatabase();
   Storage.initDatabaseAutoUpdate();
+
+  // Los ajustes del pack se recogen aquí, y solo aquí. Va después de migrar la
+  // BD porque el barrido toca instancias.
+  syncPackSettings(readPackSettings());
+
   GeneratorDisplay.initialize();
   GeneratorFlush.initialize();
 });

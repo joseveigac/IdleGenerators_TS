@@ -14,13 +14,11 @@
 
 import { Block, Container, ItemStack, system, world } from "@minecraft/server";
 
-import { getWorldData } from "../storage/storage";
-import { WORLD_KEYS } from "../storage/storage_keys";
-import { GeneratorTypesMap, GeneratorType } from "../definitions/generator_definitions";
+import { GENERATORS, GeneratorType } from "../definitions/generator_definitions";
 import { parsePosKey, removePlacedAtPos, updateAllPlaced } from "../instances/placed";
 import { settle } from "../instances/production";
+import { removeVisualEntity } from "../instances/visual_entity";
 import { isEnabled } from "../config/toggles";
-import { removeVisualEntity } from "../components/generator";
 import { log } from "../utils/logger";
 
 import type { GeneratorData } from "../components/generator";
@@ -40,7 +38,7 @@ const SINK_IDS = new Set<string>([
   "minecraft:chest",
   "minecraft:trapped_chest",
   "minecraft:barrel",
-  "minecraft:hopper",
+  HOPPER_ID,
   "minecraft:dropper",
   "minecraft:dispenser",
 ]);
@@ -51,9 +49,6 @@ export class GeneratorFlush {
   }
 
   private static pass(): void {
-    const defs = getWorldData<GeneratorTypesMap>(WORLD_KEYS.CATALOG.GENERATORS);
-    if (!defs) return;
-
     const now = Date.now();
     const orphans: string[] = [];
 
@@ -61,7 +56,7 @@ export class GeneratorFlush {
       if (instance.type !== "generator") return false;
 
       try {
-        return GeneratorFlush.flushInstance(instance as PlacedInstance<GeneratorData>, defs, now, orphans);
+        return GeneratorFlush.flushInstance(instance as PlacedInstance<GeneratorData>, now, orphans);
       } catch {
         return false; // chunk descargado, bloque inválido… se reintenta en la siguiente pasada
       }
@@ -74,14 +69,9 @@ export class GeneratorFlush {
   }
 
   /** Devuelve true si la instancia debe persistirse (se movieron items). */
-  private static flushInstance(
-    instance: PlacedInstance<GeneratorData>,
-    defs: GeneratorTypesMap,
-    now: number,
-    orphans: string[]
-  ): boolean {
+  private static flushInstance(instance: PlacedInstance<GeneratorData>, now: number, orphans: string[]): boolean {
     const data = instance.data;
-    const def = defs[data.type];
+    const def = GENERATORS[data.type];
     if (!def) return false;
 
     const pos = parsePosKey(instance.posKey);
@@ -125,9 +115,21 @@ function sinkBelow(block: Block): Container | undefined {
   return below.getComponent("minecraft:inventory")?.container;
 }
 
+/** `maxAmount` por item: constante en runtime, se consulta una vez y se cachea. */
+const MAX_STACK = new Map<string, number>();
+
+function maxStackOf(item: string): number {
+  let max = MAX_STACK.get(item);
+  if (max === undefined) {
+    max = new ItemStack(item, 1).maxAmount;
+    MAX_STACK.set(item, max);
+  }
+  return max;
+}
+
 /** Empuja hasta `MAX_ITEMS_PER_PASS`; lo que no cabe se queda en el buffer. */
 function push(container: Container, def: GeneratorType, available: number): number {
-  const maxStack = new ItemStack(def.item, 1).maxAmount;
+  const maxStack = maxStackOf(def.item);
   const budget = Math.min(available, MAX_ITEMS_PER_PASS);
   let moved = 0;
 

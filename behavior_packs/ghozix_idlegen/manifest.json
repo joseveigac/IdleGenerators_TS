@@ -1,38 +1,69 @@
 {
-  "format_version": 2,
+  "format_version": 3,
   "header": {
     "name": "Idle Generators",
     "description": "An idle generator addon for Minecraft Bedrock — passively generates resources on real-world time, even offline.",
     "uuid": "ed97778b-789f-405d-bb74-5c42e2e1398d",
-    "version": [1, 2, 1],
-    "min_engine_version": [1, 21, 130]
+    "version": "1.3.0",
+    "min_engine_version": "1.26.30"
   },
   "modules": [
+    {
+      "description": "Behavior",
+      "type": "data",
+      "uuid": "5b445716-4551-42c1-8147-00333b87f233",
+      "version": "1.3.0"
+    },
     {
       "description": "Script resources",
       "language": "javascript",
       "type": "script",
       "uuid": "2c9cb3de-cbcd-4ef0-b29d-7e758a948bc8",
-      "version": [1, 2, 1],
+      "version": "1.3.0",
       "entry": "scripts/main.js"
+    }
+  ],
+  "settings": [
+    {
+      "type": "label",
+      "text": "idlegen.packsettings.intro"
+    },
+    {
+      "type": "toggle",
+      "name": "ghozix_idlegen:ores",
+      "text": "idlegen.packsettings.ores",
+      "default": true
+    },
+    {
+      "type": "toggle",
+      "name": "ghozix_idlegen:woods",
+      "text": "idlegen.packsettings.woods",
+      "default": true
+    },
+    {
+      "type": "toggle",
+      "name": "ghozix_idlegen:stones",
+      "text": "idlegen.packsettings.stones",
+      "default": true
     }
   ],
   "dependencies": [
     {
       "module_name": "@minecraft/server",
-      "version": [2, 4, 0]
+      "version": "2.8.0"
     },
     {
       "module_name": "@minecraft/server-ui",
-      "version": [2, 0, 0]
+      "version": "2.0.0"
     },
     {
       "uuid": "abad2758-5b6c-44cd-bfa5-4a39c7e60071",
-      "version": [1, 2, 1]
+      "version": "1.3.0"
     }
   ],
   "metadata": {
     "product_type": "addon",
+    "authors": ["Ghozix"],
     "generated_with": {
       "mctoolsweb": ["0.15.2"],
       "blockbench_block_wizard": ["1.5.2"],

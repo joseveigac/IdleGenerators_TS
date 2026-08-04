@@ -13,7 +13,7 @@
 import type { GeneratorData } from "../components/generator";
 import type { GeneratorType } from "../definitions/generator_definitions";
 
-export interface ProductionSnapshot {
+interface ProductionSnapshot {
   /** Items retirables ahora mismo (buffer + ciclos pendientes, limitado por `cap`). */
   amount: number;
   /** Progreso hacia el siguiente item, 0-100. Siempre 0 si está desactivado. */

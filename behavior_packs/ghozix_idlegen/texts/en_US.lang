@@ -1,0 +1,7 @@
+###region Pack settings ------------------------------------------------------------------
+## Shown on the pack's Settings screen, reachable from the world's Behavior Packs list.
+idlegen.packsettings.intro=Turn whole generator packs on or off. Changes apply once you reload the world. To pick generator by generator, use /idlegen:config in game.
+idlegen.packsettings.ores=Ores
+idlegen.packsettings.woods=Woods
+idlegen.packsettings.stones=Stones
+###endregion Pack settings ---------------------------------------------------------------
