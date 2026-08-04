@@ -4,4 +4,5 @@ idlegen.packsettings.intro=Enciende o apaga packs enteros de generadores. Los ca
 idlegen.packsettings.ores=Minerales
 idlegen.packsettings.woods=Maderas
 idlegen.packsettings.stones=Piedras
+idlegen.packsettings.colors=Colores
 ###endregion Pack settings ---------------------------------------------------------------

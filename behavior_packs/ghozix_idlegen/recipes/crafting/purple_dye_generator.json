@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:purple_dye_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:amethyst_shard" },
+      "B": { "item": "minecraft:bone_meal" },
+      "D": { "item": "minecraft:purple_dye" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:purple_dye"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:purple_dye_generator",
+      "count": 1
+    }
+  }
+}

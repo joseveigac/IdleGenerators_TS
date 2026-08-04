@@ -4,4 +4,5 @@ idlegen.packsettings.intro=Turn whole generator packs on or off. Changes apply o
 idlegen.packsettings.ores=Ores
 idlegen.packsettings.woods=Woods
 idlegen.packsettings.stones=Stones
+idlegen.packsettings.colors=Colors
 ###endregion Pack settings ---------------------------------------------------------------

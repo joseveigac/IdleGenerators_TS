@@ -45,6 +45,12 @@
       "name": "ghozix_idlegen:stones",
       "text": "idlegen.packsettings.stones",
       "default": true
+    },
+    {
+      "type": "toggle",
+      "name": "ghozix_idlegen:colors",
+      "text": "idlegen.packsettings.colors",
+      "default": true
     }
   ],
   "dependencies": [

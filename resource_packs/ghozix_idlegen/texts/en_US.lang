@@ -171,12 +171,94 @@ tile.ghozix_idlegen:clay_generator.name=Clay Generator
 entity.ghozix_idlegen:clay_generator_entity.name=Clay Generator Entity
 ## Entity for Clay Generator
 
+## --- Colors (v1.3.0) ---
+tile.ghozix_idlegen:white_dye_generator.name=White Dye Generator
+## Generator Block that produces White Dye
+entity.ghozix_idlegen:white_dye_generator_entity.name=White Dye Generator Entity
+## Entity for White Dye Generator
+
+tile.ghozix_idlegen:light_gray_dye_generator.name=Light Gray Dye Generator
+## Generator Block that produces Light Gray Dye
+entity.ghozix_idlegen:light_gray_dye_generator_entity.name=Light Gray Dye Generator Entity
+## Entity for Light Gray Dye Generator
+
+tile.ghozix_idlegen:gray_dye_generator.name=Gray Dye Generator
+## Generator Block that produces Gray Dye
+entity.ghozix_idlegen:gray_dye_generator_entity.name=Gray Dye Generator Entity
+## Entity for Gray Dye Generator
+
+tile.ghozix_idlegen:black_dye_generator.name=Black Dye Generator
+## Generator Block that produces Black Dye
+entity.ghozix_idlegen:black_dye_generator_entity.name=Black Dye Generator Entity
+## Entity for Black Dye Generator
+
+tile.ghozix_idlegen:brown_dye_generator.name=Brown Dye Generator
+## Generator Block that produces Brown Dye
+entity.ghozix_idlegen:brown_dye_generator_entity.name=Brown Dye Generator Entity
+## Entity for Brown Dye Generator
+
+tile.ghozix_idlegen:red_dye_generator.name=Red Dye Generator
+## Generator Block that produces Red Dye
+entity.ghozix_idlegen:red_dye_generator_entity.name=Red Dye Generator Entity
+## Entity for Red Dye Generator
+
+tile.ghozix_idlegen:orange_dye_generator.name=Orange Dye Generator
+## Generator Block that produces Orange Dye
+entity.ghozix_idlegen:orange_dye_generator_entity.name=Orange Dye Generator Entity
+## Entity for Orange Dye Generator
+
+tile.ghozix_idlegen:yellow_dye_generator.name=Yellow Dye Generator
+## Generator Block that produces Yellow Dye
+entity.ghozix_idlegen:yellow_dye_generator_entity.name=Yellow Dye Generator Entity
+## Entity for Yellow Dye Generator
+
+tile.ghozix_idlegen:lime_dye_generator.name=Lime Dye Generator
+## Generator Block that produces Lime Dye
+entity.ghozix_idlegen:lime_dye_generator_entity.name=Lime Dye Generator Entity
+## Entity for Lime Dye Generator
+
+tile.ghozix_idlegen:green_dye_generator.name=Green Dye Generator
+## Generator Block that produces Green Dye
+entity.ghozix_idlegen:green_dye_generator_entity.name=Green Dye Generator Entity
+## Entity for Green Dye Generator
+
+tile.ghozix_idlegen:cyan_dye_generator.name=Cyan Dye Generator
+## Generator Block that produces Cyan Dye
+entity.ghozix_idlegen:cyan_dye_generator_entity.name=Cyan Dye Generator Entity
+## Entity for Cyan Dye Generator
+
+tile.ghozix_idlegen:light_blue_dye_generator.name=Light Blue Dye Generator
+## Generator Block that produces Light Blue Dye
+entity.ghozix_idlegen:light_blue_dye_generator_entity.name=Light Blue Dye Generator Entity
+## Entity for Light Blue Dye Generator
+
+tile.ghozix_idlegen:blue_dye_generator.name=Blue Dye Generator
+## Generator Block that produces Blue Dye
+entity.ghozix_idlegen:blue_dye_generator_entity.name=Blue Dye Generator Entity
+## Entity for Blue Dye Generator
+
+tile.ghozix_idlegen:purple_dye_generator.name=Purple Dye Generator
+## Generator Block that produces Purple Dye
+entity.ghozix_idlegen:purple_dye_generator_entity.name=Purple Dye Generator Entity
+## Entity for Purple Dye Generator
+
+tile.ghozix_idlegen:magenta_dye_generator.name=Magenta Dye Generator
+## Generator Block that produces Magenta Dye
+entity.ghozix_idlegen:magenta_dye_generator_entity.name=Magenta Dye Generator Entity
+## Entity for Magenta Dye Generator
+
+tile.ghozix_idlegen:pink_dye_generator.name=Pink Dye Generator
+## Generator Block that produces Pink Dye
+entity.ghozix_idlegen:pink_dye_generator_entity.name=Pink Dye Generator Entity
+## Entity for Pink Dye Generator
+
 ###region UI ------------------------------------------------------------------------
 idlegen.config.title=§lIdle Generators§r — Settings
 idlegen.config.pick_set=Choose a generator pack:
 idlegen.config.set.ores=Ores
 idlegen.config.set.woods=Woods
 idlegen.config.set.stones=Stones
+idlegen.config.set.colors=Colors
 idlegen.config.hint=A generator that is off stops producing and accumulating, but keeps what it already produced.
 idlegen.config.bulk=Quick action
 idlegen.config.bulk.keep=Use the switches below

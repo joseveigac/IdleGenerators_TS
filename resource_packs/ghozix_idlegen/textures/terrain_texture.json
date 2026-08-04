@@ -102,6 +102,54 @@
     },
     "clay_generator": {
       "textures": "textures/blocks/clay_generator"
+    },
+    "white_dye_generator": {
+      "textures": "textures/blocks/white_dye_generator"
+    },
+    "light_gray_dye_generator": {
+      "textures": "textures/blocks/light_gray_dye_generator"
+    },
+    "gray_dye_generator": {
+      "textures": "textures/blocks/gray_dye_generator"
+    },
+    "black_dye_generator": {
+      "textures": "textures/blocks/black_dye_generator"
+    },
+    "brown_dye_generator": {
+      "textures": "textures/blocks/brown_dye_generator"
+    },
+    "red_dye_generator": {
+      "textures": "textures/blocks/red_dye_generator"
+    },
+    "orange_dye_generator": {
+      "textures": "textures/blocks/orange_dye_generator"
+    },
+    "yellow_dye_generator": {
+      "textures": "textures/blocks/yellow_dye_generator"
+    },
+    "lime_dye_generator": {
+      "textures": "textures/blocks/lime_dye_generator"
+    },
+    "green_dye_generator": {
+      "textures": "textures/blocks/green_dye_generator"
+    },
+    "cyan_dye_generator": {
+      "textures": "textures/blocks/cyan_dye_generator"
+    },
+    "light_blue_dye_generator": {
+      "textures": "textures/blocks/light_blue_dye_generator"
+    },
+    "blue_dye_generator": {
+      "textures": "textures/blocks/blue_dye_generator"
+    },
+    "purple_dye_generator": {
+      "textures": "textures/blocks/purple_dye_generator"
+    },
+    "magenta_dye_generator": {
+      "textures": "textures/blocks/magenta_dye_generator"
+    },
+    "pink_dye_generator": {
+      "textures": "textures/blocks/pink_dye_generator"
     }
   }
 }
