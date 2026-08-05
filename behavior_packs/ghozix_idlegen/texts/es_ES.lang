@@ -1,0 +1,8 @@
+###region Pack settings ------------------------------------------------------------------
+## Se ve en la pantalla de Ajustes del pack, desde la lista de Paquetes de comportamiento.
+idlegen.packsettings.intro=Enciende o apaga packs enteros de generadores. Los cambios se aplican al recargar el mundo. Para elegir generador a generador, usa /idlegen:config dentro del juego.
+idlegen.packsettings.ores=Minerales
+idlegen.packsettings.woods=Maderas
+idlegen.packsettings.stones=Piedras
+idlegen.packsettings.colors=Colores
+###endregion Pack settings ---------------------------------------------------------------

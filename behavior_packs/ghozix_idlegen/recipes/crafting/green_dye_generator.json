@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:green_dye_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:cactus" },
+      "B": { "item": "minecraft:bone_meal" },
+      "D": { "item": "minecraft:green_dye" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:green_dye"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:green_dye_generator",
+      "count": 1
+    }
+  }
+}

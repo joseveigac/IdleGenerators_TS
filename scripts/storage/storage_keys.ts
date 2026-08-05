@@ -13,7 +13,7 @@ import { Vector3 } from "../types/common";
 // ============================================================================
 
 /** Versión del addon (semántico) */
-export const ADDON_VERSION = "1.2.0";
+export const ADDON_VERSION = "1.3.0";
 
 /** Versión del formato de DB - incrementa si cambias estructura de datos */
 export const DB_VERSION = 2;
@@ -60,6 +60,18 @@ export const WORLD_KEYS = Object.freeze({
      * }
      */
     GENERATORS: `${ns}:${px.WORLD}:${px.CATALOG}:generators`,
+  },
+
+  // --------------------------------------------------------------------------
+  // WORLD CONFIG (ajustes del operador, editables en juego)
+  // --------------------------------------------------------------------------
+  CONFIG: {
+    /**
+     * Interruptores de activación: lista `off[]` de generadores apagados
+     * (ausente = encendido), qué claves apagó el pack en `packOff[]`, y el
+     * sello `frozenSince` de cada tipo desactivado. Ver [config/toggles.ts].
+     */
+    TOGGLES: `${ns}:${px.WORLD}:${px.DATA}:toggles`,
   },
   // --------------------------------------------------------------------------
   // PLACED SYSTEM (SOURCE OF TRUTH)

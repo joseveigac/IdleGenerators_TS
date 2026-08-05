@@ -98,5 +98,53 @@
   },
   "clay_generator": {
     "sound": "stone"
+  },
+  "white_dye_generator": {
+    "sound": "stone"
+  },
+  "light_gray_dye_generator": {
+    "sound": "stone"
+  },
+  "gray_dye_generator": {
+    "sound": "stone"
+  },
+  "black_dye_generator": {
+    "sound": "stone"
+  },
+  "brown_dye_generator": {
+    "sound": "stone"
+  },
+  "red_dye_generator": {
+    "sound": "stone"
+  },
+  "orange_dye_generator": {
+    "sound": "stone"
+  },
+  "yellow_dye_generator": {
+    "sound": "stone"
+  },
+  "lime_dye_generator": {
+    "sound": "stone"
+  },
+  "green_dye_generator": {
+    "sound": "stone"
+  },
+  "cyan_dye_generator": {
+    "sound": "stone"
+  },
+  "light_blue_dye_generator": {
+    "sound": "stone"
+  },
+  "blue_dye_generator": {
+    "sound": "stone"
+  },
+  "purple_dye_generator": {
+    "sound": "stone"
+  },
+  "magenta_dye_generator": {
+    "sound": "stone"
+  },
+  "pink_dye_generator": {
+    "sound": "stone"
   }
 }

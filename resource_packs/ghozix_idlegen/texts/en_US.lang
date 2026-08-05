@@ -1,69 +1,69 @@
-tile.ghozix_idlegen:empty_geometry.name=Empty Geometry 
+tile.ghozix_idlegen:empty_geometry.name=Empty Geometry
 ## Empty Geometry Model used for generators
 
 
-tile.ghozix_idlegen:oak_log_generator.name=Oak Log Generator 
+tile.ghozix_idlegen:oak_log_generator.name=Oak Log Generator
 ## Generator Block that produces Oak Logs
-entity.ghozix_idlegen:oak_log_generator_entity.name=Oak Log Generator Entity 
+entity.ghozix_idlegen:oak_log_generator_entity.name=Oak Log Generator Entity
 ## Entity for Oak Log Generator
 
 
-tile.ghozix_idlegen:cobblestone_generator.name=Cobblestone Generator 
+tile.ghozix_idlegen:cobblestone_generator.name=Cobblestone Generator
 ## Generator Block that produces Cobblestone
-entity.ghozix_idlegen:cobblestone_generator_entity.name=Cobblestone Generator Entity 
+entity.ghozix_idlegen:cobblestone_generator_entity.name=Cobblestone Generator Entity
 ## Entity for Cobblestone Generator
 
 
-tile.ghozix_idlegen:coal_generator.name=Coal Generator 
+tile.ghozix_idlegen:coal_generator.name=Coal Generator
 ## Generator Block that produces Coal
-entity.ghozix_idlegen:coal_generator_entity.name=Coal Generator Entity 
+entity.ghozix_idlegen:coal_generator_entity.name=Coal Generator Entity
 ## Entity for Coal Generator
 
 ## xd
-tile.ghozix_idlegen:copper_generator.name=Copper Generator 
+tile.ghozix_idlegen:copper_generator.name=Copper Generator
 ## Generator Block that produces Copper
-entity.ghozix_idlegen:copper_generator_entity.name=Copper Generator Entity 
+entity.ghozix_idlegen:copper_generator_entity.name=Copper Generator Entity
 ## Entity for Copper Generator
 
-tile.ghozix_idlegen:iron_generator.name=Iron Generator 
+tile.ghozix_idlegen:iron_generator.name=Iron Generator
 ## Generator Block that produces Iron
-entity.ghozix_idlegen:iron_generator_entity.name=Iron Generator Entity 
+entity.ghozix_idlegen:iron_generator_entity.name=Iron Generator Entity
 ## Entity for Iron Generator
-tile.ghozix_idlegen:gold_generator.name=Gold Generator 
+tile.ghozix_idlegen:gold_generator.name=Gold Generator
 ## Generator Block that produces Gold
-entity.ghozix_idlegen:gold_generator_entity.name=Gold Generator Entity 
+entity.ghozix_idlegen:gold_generator_entity.name=Gold Generator Entity
 ## Entity for Gold Generator
 
 
-tile.ghozix_idlegen:diamond_generator.name=Diamond Generator 
+tile.ghozix_idlegen:diamond_generator.name=Diamond Generator
 ## Generator Block that produces Diamond
-entity.ghozix_idlegen:diamond_generator_entity.name=Diamond Generator Entity 
+entity.ghozix_idlegen:diamond_generator_entity.name=Diamond Generator Entity
 ## Entity for Diamond Generator
 
 
-tile.ghozix_idlegen:netherite_generator.name=Netherite Generator 
+tile.ghozix_idlegen:netherite_generator.name=Netherite Generator
 ## Generator Block that produces Netherite
-entity.ghozix_idlegen:netherite_generator_entity.name=Netherite Generator Entity 
+entity.ghozix_idlegen:netherite_generator_entity.name=Netherite Generator Entity
 ## Entity for Netherite Generator
 
-tile.ghozix_idlegen:emerald_generator.name=Emerald Generator 
+tile.ghozix_idlegen:emerald_generator.name=Emerald Generator
 ## Generator Block that produces Emerald
-entity.ghozix_idlegen:emerald_generator_entity.name=Emerald Generator Entity 
+entity.ghozix_idlegen:emerald_generator_entity.name=Emerald Generator Entity
 ## Entity for Emerald Generator
 
 
 
-tile.ghozix_idlegen:lapis_generator.name=Lapis Generator 
+tile.ghozix_idlegen:lapis_generator.name=Lapis Generator
 ## Generator Block that produces Lapis
-entity.ghozix_idlegen:lapis_generator_entity.name=Lapis Generator Entity 
+entity.ghozix_idlegen:lapis_generator_entity.name=Lapis Generator Entity
 ## Entity for Lapis Generator
 
-tile.ghozix_idlegen:quartz_generator.name=Quartz Generator 
+tile.ghozix_idlegen:quartz_generator.name=Quartz Generator
 ## Generator Block that produces Quartz
-entity.ghozix_idlegen:quartz_generator_entity.name=Quartz Generator Entity 
+entity.ghozix_idlegen:quartz_generator_entity.name=Quartz Generator Entity
 ## Entity for Quartz Generator
 
-tile.ghozix_idlegen:redstone_generator.name=Redstone Generator 
+tile.ghozix_idlegen:redstone_generator.name=Redstone Generator
 ## Generator Block that produces Redstone
 entity.ghozix_idlegen:redstone_generator_entity.name=Redstone Generator Entity
 ## Entity for Redstone Generator
@@ -170,3 +170,104 @@ tile.ghozix_idlegen:clay_generator.name=Clay Generator
 ## Generator Block that produces Clay Balls
 entity.ghozix_idlegen:clay_generator_entity.name=Clay Generator Entity
 ## Entity for Clay Generator
+
+## --- Colors (v1.3.0) ---
+tile.ghozix_idlegen:white_dye_generator.name=White Dye Generator
+## Generator Block that produces White Dye
+entity.ghozix_idlegen:white_dye_generator_entity.name=White Dye Generator Entity
+## Entity for White Dye Generator
+
+tile.ghozix_idlegen:light_gray_dye_generator.name=Light Gray Dye Generator
+## Generator Block that produces Light Gray Dye
+entity.ghozix_idlegen:light_gray_dye_generator_entity.name=Light Gray Dye Generator Entity
+## Entity for Light Gray Dye Generator
+
+tile.ghozix_idlegen:gray_dye_generator.name=Gray Dye Generator
+## Generator Block that produces Gray Dye
+entity.ghozix_idlegen:gray_dye_generator_entity.name=Gray Dye Generator Entity
+## Entity for Gray Dye Generator
+
+tile.ghozix_idlegen:black_dye_generator.name=Black Dye Generator
+## Generator Block that produces Black Dye
+entity.ghozix_idlegen:black_dye_generator_entity.name=Black Dye Generator Entity
+## Entity for Black Dye Generator
+
+tile.ghozix_idlegen:brown_dye_generator.name=Brown Dye Generator
+## Generator Block that produces Brown Dye
+entity.ghozix_idlegen:brown_dye_generator_entity.name=Brown Dye Generator Entity
+## Entity for Brown Dye Generator
+
+tile.ghozix_idlegen:red_dye_generator.name=Red Dye Generator
+## Generator Block that produces Red Dye
+entity.ghozix_idlegen:red_dye_generator_entity.name=Red Dye Generator Entity
+## Entity for Red Dye Generator
+
+tile.ghozix_idlegen:orange_dye_generator.name=Orange Dye Generator
+## Generator Block that produces Orange Dye
+entity.ghozix_idlegen:orange_dye_generator_entity.name=Orange Dye Generator Entity
+## Entity for Orange Dye Generator
+
+tile.ghozix_idlegen:yellow_dye_generator.name=Yellow Dye Generator
+## Generator Block that produces Yellow Dye
+entity.ghozix_idlegen:yellow_dye_generator_entity.name=Yellow Dye Generator Entity
+## Entity for Yellow Dye Generator
+
+tile.ghozix_idlegen:lime_dye_generator.name=Lime Dye Generator
+## Generator Block that produces Lime Dye
+entity.ghozix_idlegen:lime_dye_generator_entity.name=Lime Dye Generator Entity
+## Entity for Lime Dye Generator
+
+tile.ghozix_idlegen:green_dye_generator.name=Green Dye Generator
+## Generator Block that produces Green Dye
+entity.ghozix_idlegen:green_dye_generator_entity.name=Green Dye Generator Entity
+## Entity for Green Dye Generator
+
+tile.ghozix_idlegen:cyan_dye_generator.name=Cyan Dye Generator
+## Generator Block that produces Cyan Dye
+entity.ghozix_idlegen:cyan_dye_generator_entity.name=Cyan Dye Generator Entity
+## Entity for Cyan Dye Generator
+
+tile.ghozix_idlegen:light_blue_dye_generator.name=Light Blue Dye Generator
+## Generator Block that produces Light Blue Dye
+entity.ghozix_idlegen:light_blue_dye_generator_entity.name=Light Blue Dye Generator Entity
+## Entity for Light Blue Dye Generator
+
+tile.ghozix_idlegen:blue_dye_generator.name=Blue Dye Generator
+## Generator Block that produces Blue Dye
+entity.ghozix_idlegen:blue_dye_generator_entity.name=Blue Dye Generator Entity
+## Entity for Blue Dye Generator
+
+tile.ghozix_idlegen:purple_dye_generator.name=Purple Dye Generator
+## Generator Block that produces Purple Dye
+entity.ghozix_idlegen:purple_dye_generator_entity.name=Purple Dye Generator Entity
+## Entity for Purple Dye Generator
+
+tile.ghozix_idlegen:magenta_dye_generator.name=Magenta Dye Generator
+## Generator Block that produces Magenta Dye
+entity.ghozix_idlegen:magenta_dye_generator_entity.name=Magenta Dye Generator Entity
+## Entity for Magenta Dye Generator
+
+tile.ghozix_idlegen:pink_dye_generator.name=Pink Dye Generator
+## Generator Block that produces Pink Dye
+entity.ghozix_idlegen:pink_dye_generator_entity.name=Pink Dye Generator Entity
+## Entity for Pink Dye Generator
+
+###region UI ------------------------------------------------------------------------
+idlegen.config.title=§lIdle Generators§r — Settings
+idlegen.config.pick_set=Choose a generator pack:
+idlegen.config.set.ores=Ores
+idlegen.config.set.woods=Woods
+idlegen.config.set.stones=Stones
+idlegen.config.set.colors=Colors
+idlegen.config.hint=A generator that is off stops producing and accumulating, but keeps what it already produced.
+idlegen.config.bulk=Quick action
+idlegen.config.bulk.keep=Use the switches below
+idlegen.config.bulk.all_on=Turn the whole pack ON
+idlegen.config.bulk.all_off=Turn the whole pack OFF
+idlegen.config.active=Active: %s of %s
+idlegen.config.tooltip=Produces 1 every %s seconds · Stores up to %s
+idlegen.config.save=Save
+idlegen.config.saved=Idle Generators settings updated.
+idlegen.config.no_permission=Only world operators can change Idle Generators settings.
+idlegen.hud.off=OFF
+###endregion UI ------------------------------------------------------------------------

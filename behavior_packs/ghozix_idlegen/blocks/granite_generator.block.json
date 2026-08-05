@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.50",
+  "format_version": "1.21.60",
   "minecraft:block": {
     "description": {
       "identifier": "ghozix_idlegen:granite_generator",
@@ -23,6 +23,12 @@
         "*": {
           "texture": "granite_generator",
           "render_method": "alpha_test"
+        }
+      },
+      "minecraft:item_visual": {
+        "geometry": { "identifier": "geometry.generator_item" },
+        "material_instances": {
+          "*": { "texture": "granite_generator", "render_method": "alpha_test" }
         }
       },
       "minecraft:light_dampening": 0,

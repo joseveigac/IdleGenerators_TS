@@ -1,11 +1,11 @@
 // BP/scripts/systems/generatorDisplay.ts
-import { world, system } from "@minecraft/server";
-import { getGeneratorTypeFromBlockId, GeneratorTypesMap } from "../definitions/generator_definitions";
+import { world, system, RawMessage } from "@minecraft/server";
+import { GENERATORS, getGeneratorTypeFromBlockId } from "../definitions/generator_definitions";
 import { getPlacedAtPos, makePosKeyFromBlock } from "../instances/placed";
+import { peek } from "../instances/production";
+import { isEnabled } from "../config/toggles";
 import { GeneratorData } from "../components/generator";
 import { PlacedInstance } from "../types/common";
-import { getWorldData } from "../storage/storage";
-import { WORLD_KEYS } from "../storage/storage_keys";
 
 export class GeneratorDisplay {
   static initialize(): void {
@@ -29,17 +29,25 @@ export class GeneratorDisplay {
           continue;
         }
 
-        const gen = getWorldData<GeneratorTypesMap>(WORLD_KEYS.CATALOG.GENERATORS)?.[genType];
+        const gen = GENERATORS[genType];
         if (!gen) continue;
 
-        const elapsed = Date.now() - instance.data.lastInteraction;
-        const intervalMs = gen.interval * 1000;
-        const amount = Math.min(instance.data.storedAmount + Math.floor(elapsed / intervalMs), gen.cap);
-        const progress = Math.floor(((elapsed % intervalMs) / intervalMs) * 100);
+        const enabled = isEnabled(genType);
+        const { amount, progress } = peek(instance.data, gen, Date.now(), enabled);
 
-        player.onScreenDisplay.setActionBar(
-          `${gen.glyph} §e${gen.name} §7| §f${amount}§7/§f${gen.cap} §7| §a${progress}%`
-        );
+        const status: RawMessage[] = enabled
+          ? [{ text: `§a${progress}%` }]
+          : [{ text: "§c" }, { translate: "idlegen.hud.off" }];
+
+        // rawtext para que el nombre salga en el idioma del jugador (claves tile.*.name).
+        player.onScreenDisplay.setActionBar({
+          rawtext: [
+            { text: `${gen.glyph} §e` },
+            { translate: `tile.${gen.id}.name` },
+            { text: ` §7| §f${amount}§7/§f${gen.cap} §7| ` },
+            ...status,
+          ],
+        });
       }
     }, 5); // 5 ticks = 0.25s (más responsive)
   }

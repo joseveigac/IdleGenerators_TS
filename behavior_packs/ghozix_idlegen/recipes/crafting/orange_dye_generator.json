@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:orange_dye_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:orange_tulip" },
+      "B": { "item": "minecraft:bone_meal" },
+      "D": { "item": "minecraft:orange_dye" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:orange_dye"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:orange_dye_generator",
+      "count": 1
+    }
+  }
+}
