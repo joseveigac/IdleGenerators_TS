@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:spore_blossom_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:moss_block" },
+      "B": { "item": "minecraft:vine" },
+      "D": { "item": "minecraft:spore_blossom" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:spore_blossom"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:spore_blossom_generator",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:big_dripleaf_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:small_dripleaf_block" },
+      "B": { "item": "minecraft:vine" },
+      "D": { "item": "minecraft:big_dripleaf" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:big_dripleaf"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:big_dripleaf_generator",
+      "count": 1
+    }
+  }
+}

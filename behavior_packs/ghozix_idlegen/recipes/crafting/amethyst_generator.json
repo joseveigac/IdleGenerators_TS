@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:amethyst_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:calcite" },
+      "B": { "item": "minecraft:vine" },
+      "D": { "item": "minecraft:amethyst_shard" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:amethyst_shard"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:amethyst_generator",
+      "count": 1
+    }
+  }
+}

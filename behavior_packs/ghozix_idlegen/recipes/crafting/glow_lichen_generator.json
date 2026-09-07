@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:glow_lichen_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:vine" },
+      "B": { "item": "minecraft:vine" },
+      "D": { "item": "minecraft:glow_lichen" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:glow_lichen"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:glow_lichen_generator",
+      "count": 1
+    }
+  }
+}

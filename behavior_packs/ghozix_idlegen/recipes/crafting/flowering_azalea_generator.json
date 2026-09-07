@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:flowering_azalea_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:azalea" },
+      "B": { "item": "minecraft:vine" },
+      "D": { "item": "minecraft:flowering_azalea" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:flowering_azalea"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:flowering_azalea_generator",
+      "count": 1
+    }
+  }
+}

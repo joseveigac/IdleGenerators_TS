@@ -252,6 +252,47 @@ tile.ghozix_idlegen:pink_dye_generator.name=Pink Dye Generator
 entity.ghozix_idlegen:pink_dye_generator_entity.name=Pink Dye Generator Entity
 ## Entity for Pink Dye Generator
 
+## --- Nature (v1.4.0) ---
+tile.ghozix_idlegen:amethyst_generator.name=Amethyst Generator
+## Generator Block that produces Amethyst Shards
+entity.ghozix_idlegen:amethyst_generator_entity.name=Amethyst Generator Entity
+## Entity for Amethyst Generator
+
+tile.ghozix_idlegen:honeycomb_generator.name=Honeycomb Generator
+## Generator Block that produces Honeycomb
+entity.ghozix_idlegen:honeycomb_generator_entity.name=Honeycomb Generator Entity
+## Entity for Honeycomb Generator
+
+tile.ghozix_idlegen:glow_lichen_generator.name=Glow Lichen Generator
+## Generator Block that produces Glow Lichen
+entity.ghozix_idlegen:glow_lichen_generator_entity.name=Glow Lichen Generator Entity
+## Entity for Glow Lichen Generator
+
+tile.ghozix_idlegen:moss_generator.name=Moss Generator
+## Generator Block that produces Moss Blocks
+entity.ghozix_idlegen:moss_generator_entity.name=Moss Generator Entity
+## Entity for Moss Generator
+
+tile.ghozix_idlegen:spore_blossom_generator.name=Spore Blossom Generator
+## Generator Block that produces Spore Blossoms
+entity.ghozix_idlegen:spore_blossom_generator_entity.name=Spore Blossom Generator Entity
+## Entity for Spore Blossom Generator
+
+tile.ghozix_idlegen:big_dripleaf_generator.name=Big Dripleaf Generator
+## Generator Block that produces Big Dripleaves
+entity.ghozix_idlegen:big_dripleaf_generator_entity.name=Big Dripleaf Generator Entity
+## Entity for Big Dripleaf Generator
+
+tile.ghozix_idlegen:flowering_azalea_generator.name=Flowering Azalea Generator
+## Generator Block that produces Flowering Azaleas
+entity.ghozix_idlegen:flowering_azalea_generator_entity.name=Flowering Azalea Generator Entity
+## Entity for Flowering Azalea Generator
+
+tile.ghozix_idlegen:resin_generator.name=Resin Generator
+## Generator Block that produces Resin Clumps
+entity.ghozix_idlegen:resin_generator_entity.name=Resin Generator Entity
+## Entity for Resin Generator
+
 ###region UI ------------------------------------------------------------------------
 idlegen.config.title=§lIdle Generators§r — Settings
 idlegen.config.pick_set=Choose a generator pack:
@@ -259,6 +300,7 @@ idlegen.config.set.ores=Ores
 idlegen.config.set.woods=Woods
 idlegen.config.set.stones=Stones
 idlegen.config.set.colors=Colors
+idlegen.config.set.nature=Nature
 idlegen.config.hint=A generator that is off stops producing and accumulating, but keeps what it already produced.
 idlegen.config.bulk=Quick action
 idlegen.config.bulk.keep=Use the switches below
