@@ -150,6 +150,30 @@
     },
     "pink_dye_generator": {
       "textures": "textures/blocks/pink_dye_generator"
+    },
+    "amethyst_generator": {
+      "textures": "textures/blocks/amethyst_generator"
+    },
+    "honeycomb_generator": {
+      "textures": "textures/blocks/honeycomb_generator"
+    },
+    "glow_lichen_generator": {
+      "textures": "textures/blocks/glow_lichen_generator"
+    },
+    "moss_generator": {
+      "textures": "textures/blocks/moss_generator"
+    },
+    "spore_blossom_generator": {
+      "textures": "textures/blocks/spore_blossom_generator"
+    },
+    "big_dripleaf_generator": {
+      "textures": "textures/blocks/big_dripleaf_generator"
+    },
+    "flowering_azalea_generator": {
+      "textures": "textures/blocks/flowering_azalea_generator"
+    },
+    "resin_generator": {
+      "textures": "textures/blocks/resin_generator"
     }
   }
 }

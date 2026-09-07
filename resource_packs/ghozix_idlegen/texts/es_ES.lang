@@ -258,6 +258,47 @@ entity.ghozix_idlegen:pink_dye_generator_entity.name=Entidad Generador de Tinte 
 
 ###endregion GENERATORS ---------------------------------------------------------------------
 
+## --- Nature (v1.4.0) ---
+tile.ghozix_idlegen:amethyst_generator.name=Generador de Amatista
+## Bloque generador que produce fragmentos de amatista
+entity.ghozix_idlegen:amethyst_generator_entity.name=Entidad Generador de Amatista
+## Entidad para el Generador de Amatista
+
+tile.ghozix_idlegen:honeycomb_generator.name=Generador de Panales
+## Bloque generador que produce panales
+entity.ghozix_idlegen:honeycomb_generator_entity.name=Entidad Generador de Panales
+## Entidad para el Generador de Panales
+
+tile.ghozix_idlegen:glow_lichen_generator.name=Generador de Liquen Resplandeciente
+## Bloque generador que produce liquen resplandeciente
+entity.ghozix_idlegen:glow_lichen_generator_entity.name=Entidad Generador de Liquen Resplandeciente
+## Entidad para el Generador de Liquen Resplandeciente
+
+tile.ghozix_idlegen:moss_generator.name=Generador de Musgo
+## Bloque generador que produce bloques de musgo
+entity.ghozix_idlegen:moss_generator_entity.name=Entidad Generador de Musgo
+## Entidad para el Generador de Musgo
+
+tile.ghozix_idlegen:spore_blossom_generator.name=Generador de Flores de Espora
+## Bloque generador que produce flores de espora
+entity.ghozix_idlegen:spore_blossom_generator_entity.name=Entidad Generador de Flores de Espora
+## Entidad para el Generador de Flores de Espora
+
+tile.ghozix_idlegen:big_dripleaf_generator.name=Generador de Goteojas Grandes
+## Bloque generador que produce goteojas grandes
+entity.ghozix_idlegen:big_dripleaf_generator_entity.name=Entidad Generador de Goteojas Grandes
+## Entidad para el Generador de Goteojas Grandes
+
+tile.ghozix_idlegen:flowering_azalea_generator.name=Generador de Azaleas Florecidas
+## Bloque generador que produce azaleas florecidas
+entity.ghozix_idlegen:flowering_azalea_generator_entity.name=Entidad Generador de Azaleas Florecidas
+## Entidad para el Generador de Azaleas Florecidas
+
+tile.ghozix_idlegen:resin_generator.name=Generador de Resina
+## Bloque generador que produce terrones de resina
+entity.ghozix_idlegen:resin_generator_entity.name=Entidad Generador de Resina
+## Entidad para el Generador de Resina
+
 ###region UI ------------------------------------------------------------------------
 idlegen.config.title=§lIdle Generators§r — Ajustes
 idlegen.config.pick_set=Elige un pack de generadores:
@@ -265,6 +306,7 @@ idlegen.config.set.ores=Minerales
 idlegen.config.set.woods=Maderas
 idlegen.config.set.stones=Piedras
 idlegen.config.set.colors=Colores
+idlegen.config.set.nature=Naturaleza
 idlegen.config.hint=Un generador apagado no produce ni acumula, pero conserva lo ya producido.
 idlegen.config.bulk=Acción rápida
 idlegen.config.bulk.keep=Usar los interruptores de abajo

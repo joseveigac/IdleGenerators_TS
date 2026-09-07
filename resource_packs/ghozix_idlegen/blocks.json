@@ -146,5 +146,29 @@
   },
   "pink_dye_generator": {
     "sound": "stone"
+  },
+  "amethyst_generator": {
+    "sound": "stone"
+  },
+  "honeycomb_generator": {
+    "sound": "stone"
+  },
+  "glow_lichen_generator": {
+    "sound": "stone"
+  },
+  "moss_generator": {
+    "sound": "stone"
+  },
+  "spore_blossom_generator": {
+    "sound": "stone"
+  },
+  "big_dripleaf_generator": {
+    "sound": "stone"
+  },
+  "flowering_azalea_generator": {
+    "sound": "stone"
+  },
+  "resin_generator": {
+    "sound": "stone"
   }
 }

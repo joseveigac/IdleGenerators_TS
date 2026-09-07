@@ -502,6 +502,87 @@ export const GENERATORS: GeneratorTypesMap = {
     item: "minecraft:pink_dye",
     glyph: "\uE235",
   },
+  // \u2500\u2500 Nature (v1.4.0) \u2500\u2500
+  amethyst: {
+    id: "ghozix_idlegen:amethyst_generator",
+    entityId: "ghozix_idlegen:amethyst_generator_entity",
+    name: "Amethyst Generator",
+    category: "nature",
+    interval: 20,
+    cap: 512,
+    item: "minecraft:amethyst_shard",
+    glyph: "\uE236",
+  },
+  honeycomb: {
+    id: "ghozix_idlegen:honeycomb_generator",
+    entityId: "ghozix_idlegen:honeycomb_generator_entity",
+    name: "Honeycomb Generator",
+    category: "nature",
+    interval: 15,
+    cap: 512,
+    item: "minecraft:honeycomb",
+    glyph: "\uE237",
+  },
+  glow_lichen: {
+    id: "ghozix_idlegen:glow_lichen_generator",
+    entityId: "ghozix_idlegen:glow_lichen_generator_entity",
+    name: "Glow Lichen Generator",
+    category: "nature",
+    interval: 5,
+    cap: 512,
+    item: "minecraft:glow_lichen",
+    glyph: "\uE238",
+  },
+  moss: {
+    id: "ghozix_idlegen:moss_generator",
+    entityId: "ghozix_idlegen:moss_generator_entity",
+    name: "Moss Generator",
+    category: "nature",
+    interval: 5,
+    cap: 512,
+    item: "minecraft:moss_block",
+    glyph: "\uE239",
+  },
+  spore_blossom: {
+    id: "ghozix_idlegen:spore_blossom_generator",
+    entityId: "ghozix_idlegen:spore_blossom_generator_entity",
+    name: "Spore Blossom Generator",
+    category: "nature",
+    interval: 30,
+    cap: 256,
+    item: "minecraft:spore_blossom",
+    glyph: "\uE23A",
+  },
+  big_dripleaf: {
+    id: "ghozix_idlegen:big_dripleaf_generator",
+    entityId: "ghozix_idlegen:big_dripleaf_generator_entity",
+    name: "Big Dripleaf Generator",
+    category: "nature",
+    interval: 10,
+    cap: 256,
+    item: "minecraft:big_dripleaf",
+    glyph: "\uE23B",
+  },
+  flowering_azalea: {
+    id: "ghozix_idlegen:flowering_azalea_generator",
+    entityId: "ghozix_idlegen:flowering_azalea_generator_entity",
+    name: "Flowering Azalea Generator",
+    category: "nature",
+    interval: 10,
+    cap: 256,
+    item: "minecraft:flowering_azalea",
+    glyph: "\uE23C",
+  },
+  resin: {
+    id: "ghozix_idlegen:resin_generator",
+    entityId: "ghozix_idlegen:resin_generator_entity",
+    name: "Resin Generator",
+    category: "nature",
+    interval: 20,
+    cap: 512,
+    item: "minecraft:resin_clump",
+    glyph: "\uE23D",
+  },
 } as const;
 
 // ============================================================================
@@ -525,10 +606,10 @@ export function getGeneratorTypeFromBlockId(blockId: string): string | null {
 // GENERATOR DEFINITIONS
 // ============================================================================
 /** Pack al que pertenece un generador. Solo agrupa: cada generador se activa por separado. */
-export type GeneratorCategory = "ores" | "woods" | "stones" | "colors";
+export type GeneratorCategory = "ores" | "woods" | "stones" | "colors" | "nature";
 
 /** Orden de los packs en la configuración. */
-export const GENERATOR_SETS: GeneratorCategory[] = ["ores", "woods", "stones", "colors"];
+export const GENERATOR_SETS: GeneratorCategory[] = ["ores", "woods", "stones", "colors", "nature"];
 
 /** Claves de los generadores de un pack, en el orden del catálogo. */
 export function generatorKeysOf(set: GeneratorCategory): string[] {
