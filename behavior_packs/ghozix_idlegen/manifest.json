@@ -57,6 +57,12 @@
       "name": "ghozix_idlegen:nature",
       "text": "idlegen.packsettings.nature",
       "default": true
+    },
+    {
+      "type": "toggle",
+      "name": "ghozix_idlegen:nether",
+      "text": "idlegen.packsettings.nether",
+      "default": true
     }
   ],
   "dependencies": [

@@ -301,6 +301,7 @@ idlegen.config.set.woods=Woods
 idlegen.config.set.stones=Stones
 idlegen.config.set.colors=Colors
 idlegen.config.set.nature=Nature
+idlegen.config.set.nether=Nether
 idlegen.config.hint=A generator that is off stops producing and accumulating, but keeps what it already produced.
 idlegen.config.bulk=Quick action
 idlegen.config.bulk.keep=Use the switches below

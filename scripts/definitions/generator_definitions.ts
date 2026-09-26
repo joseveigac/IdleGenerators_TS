@@ -110,6 +110,36 @@ export const GENERATORS: GeneratorTypesMap = {
     item: "minecraft:pale_oak_log",
     glyph: "\uE219",
   },
+  poplar_log: {
+    id: "ghozix_idlegen:poplar_log_generator",
+    entityId: "ghozix_idlegen:poplar_log_generator_entity",
+    name: "Poplar Log Generator",
+    category: "woods",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:poplar_log",
+    glyph: "\uE23E",
+  },
+  crimson_stem: {
+    id: "ghozix_idlegen:crimson_stem_generator",
+    entityId: "ghozix_idlegen:crimson_stem_generator_entity",
+    name: "Crimson Stem Generator",
+    category: "woods",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:crimson_stem",
+    glyph: "\uE23F",
+  },
+  warped_stem: {
+    id: "ghozix_idlegen:warped_stem_generator",
+    entityId: "ghozix_idlegen:warped_stem_generator_entity",
+    name: "Warped Stem Generator",
+    category: "woods",
+    interval: 5,
+    cap: 64,
+    item: "minecraft:warped_stem",
+    glyph: "\uE240",
+  },
   cobblestone: {
     id: "ghozix_idlegen:cobblestone_generator",
     entityId: "ghozix_idlegen:cobblestone_generator_entity",
@@ -583,6 +613,107 @@ export const GENERATORS: GeneratorTypesMap = {
     item: "minecraft:resin_clump",
     glyph: "\uE23D",
   },
+  // \u2500\u2500 Nether (v1.5.0) \u2500\u2500
+  netherrack: {
+    id: "ghozix_idlegen:netherrack_generator",
+    entityId: "ghozix_idlegen:netherrack_generator_entity",
+    name: "Netherrack Generator",
+    category: "nether",
+    interval: 5,
+    cap: 512,
+    item: "minecraft:netherrack",
+    glyph: "\uE241",
+  },
+  blackstone: {
+    id: "ghozix_idlegen:blackstone_generator",
+    entityId: "ghozix_idlegen:blackstone_generator_entity",
+    name: "Blackstone Generator",
+    category: "nether",
+    interval: 5,
+    cap: 512,
+    item: "minecraft:blackstone",
+    glyph: "\uE242",
+  },
+  basalt: {
+    id: "ghozix_idlegen:basalt_generator",
+    entityId: "ghozix_idlegen:basalt_generator_entity",
+    name: "Basalt Generator",
+    category: "nether",
+    interval: 5,
+    cap: 512,
+    item: "minecraft:basalt",
+    glyph: "\uE243",
+  },
+  soul_sand: {
+    id: "ghozix_idlegen:soul_sand_generator",
+    entityId: "ghozix_idlegen:soul_sand_generator_entity",
+    name: "Soul Sand Generator",
+    category: "nether",
+    interval: 5,
+    cap: 512,
+    item: "minecraft:soul_sand",
+    glyph: "\uE244",
+  },
+  soul_soil: {
+    id: "ghozix_idlegen:soul_soil_generator",
+    entityId: "ghozix_idlegen:soul_soil_generator_entity",
+    name: "Soul Soil Generator",
+    category: "nether",
+    interval: 5,
+    cap: 512,
+    item: "minecraft:soul_soil",
+    glyph: "\uE245",
+  },
+  magma: {
+    id: "ghozix_idlegen:magma_generator",
+    entityId: "ghozix_idlegen:magma_generator_entity",
+    name: "Magma Generator",
+    category: "nether",
+    interval: 10,
+    cap: 512,
+    item: "minecraft:magma",
+    glyph: "\uE246",
+  },
+  nether_wart: {
+    id: "ghozix_idlegen:nether_wart_generator",
+    entityId: "ghozix_idlegen:nether_wart_generator_entity",
+    name: "Nether Wart Generator",
+    category: "nether",
+    interval: 10,
+    cap: 512,
+    item: "minecraft:nether_wart",
+    glyph: "\uE247",
+  },
+  glowstone: {
+    id: "ghozix_idlegen:glowstone_generator",
+    entityId: "ghozix_idlegen:glowstone_generator_entity",
+    name: "Glowstone Generator",
+    category: "nether",
+    interval: 15,
+    cap: 1024,
+    item: "minecraft:glowstone_dust",
+    glyph: "\uE248",
+  },
+  wither_rose: {
+    id: "ghozix_idlegen:wither_rose_generator",
+    entityId: "ghozix_idlegen:wither_rose_generator_entity",
+    name: "Wither Rose Generator",
+    category: "nether",
+    interval: 60,
+    cap: 256,
+    item: "minecraft:wither_rose",
+    glyph: "\uE249",
+  },
+  nether_star: {
+    id: "ghozix_idlegen:nether_star_generator",
+    entityId: "ghozix_idlegen:nether_star_generator_entity",
+    name: "Nether Star Generator",
+    category: "nether",
+    interval: 3600,
+    cap: 8,
+    item: "minecraft:nether_star",
+    glyph: "\uE24A",
+  },
 } as const;
 
 // ============================================================================
@@ -606,10 +737,10 @@ export function getGeneratorTypeFromBlockId(blockId: string): string | null {
 // GENERATOR DEFINITIONS
 // ============================================================================
 /** Pack al que pertenece un generador. Solo agrupa: cada generador se activa por separado. */
-export type GeneratorCategory = "ores" | "woods" | "stones" | "colors" | "nature";
+export type GeneratorCategory = "ores" | "woods" | "stones" | "colors" | "nature" | "nether";
 
 /** Orden de los packs en la configuración. */
-export const GENERATOR_SETS: GeneratorCategory[] = ["ores", "woods", "stones", "colors", "nature"];
+export const GENERATOR_SETS: GeneratorCategory[] = ["ores", "woods", "stones", "colors", "nature", "nether"];
 
 /** Claves de los generadores de un pack, en el orden del catálogo. */
 export function generatorKeysOf(set: GeneratorCategory): string[] {

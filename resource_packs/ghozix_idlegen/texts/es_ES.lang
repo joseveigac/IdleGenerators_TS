@@ -307,6 +307,7 @@ idlegen.config.set.woods=Maderas
 idlegen.config.set.stones=Piedras
 idlegen.config.set.colors=Colores
 idlegen.config.set.nature=Naturaleza
+idlegen.config.set.nether=Nether
 idlegen.config.hint=Un generador apagado no produce ni acumula, pero conserva lo ya producido.
 idlegen.config.bulk=Acción rápida
 idlegen.config.bulk.keep=Usar los interruptores de abajo
