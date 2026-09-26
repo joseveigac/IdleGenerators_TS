@@ -9,8 +9,8 @@ const root = process.cwd();
 const src = join(root, "behavior_packs", "ghozix_idlegen", "recipes", "crafting");
 const out = join(root, "dist", "recipe-template", "idlegen_recipe_overrides");
 rmSync(join(root, "dist", "recipe-template"), { recursive: true, force: true });
-mkdirSync(join(out, "recipes"), { recursive: true });
-cpSync(src, join(out, "recipes"), { recursive: true });
+mkdirSync(join(out, "recipes", "crafting"), { recursive: true });
+cpSync(src, join(out, "recipes", "crafting"), { recursive: true });
 copyFileSync(join(root, "templates", "recipe-overrides", "README.md"), join(out, "README.md"));
 copyFileSync(join(root, "behavior_packs", "ghozix_idlegen", "pack_icon.png"), join(out, "pack_icon.png"));
 const manifest = {
@@ -31,4 +31,4 @@ const pack = join(root, "dist", "packages", "idlegen_recipe_overrides.mcpack");
 rmSync(pack, { force: true });
 execFileSync("powershell", ["-NoProfile", "-Command",
   `Compress-Archive -Path '${out}\\*' -DestinationPath '${pack}.zip' -Force; Move-Item -Force '${pack}.zip' '${pack}'`]);
-console.log(`template: ${readdirSync(join(out, "recipes")).length} recipes -> ${pack}`);
+console.log(`template: ${readdirSync(join(out, "recipes", "crafting")).length} recipes -> ${pack}`);

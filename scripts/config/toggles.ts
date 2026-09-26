@@ -30,6 +30,7 @@ import { GENERATORS, GENERATOR_SETS, allSetsOn, generatorKeysOf } from "../defin
 import { updateAllPlaced } from "../instances/placed";
 import { settle } from "../instances/production";
 import { log } from "../utils/logger";
+import { adoptNewKeys, knownOrLegacy } from "./catalog_growth";
 
 import type { SetStates } from "../definitions/generator_definitions";
 import type { GeneratorData } from "../components/generator";
@@ -48,6 +49,8 @@ export interface ToggleConfig {
   sets: SetStates;
   /** Claves que apagó el interruptor del pack y siguen siendo suyas. */
   packOff: string[];
+  /** Claves del catálogo que este mundo ya conoce; las nuevas se adoptan en syncPackSettings. */
+  known: string[];
 }
 
 let cache: ToggleConfig | null = null;
@@ -72,7 +75,14 @@ function load(): ToggleConfig {
 
   // Primera vez, o config de un formato anterior: se empieza limpio.
   if (!stored || stored.v !== CONFIG_VERSION || !Array.isArray(stored.off)) {
-    return { v: CONFIG_VERSION, off: [], frozenSince: {}, sets: allSetsOn(), packOff: [] };
+    return {
+      v: CONFIG_VERSION,
+      off: [],
+      frozenSince: {},
+      sets: allSetsOn(),
+      packOff: [],
+      known: Object.keys(GENERATORS),
+    };
   }
 
   return {
@@ -81,6 +91,7 @@ function load(): ToggleConfig {
     frozenSince: stored.frozenSince ?? {},
     sets: normalizeSets(stored.sets),
     packOff: stored.packOff ?? [],
+    known: knownOrLegacy(stored.known, Object.keys(GENERATORS)),
   };
 }
 
@@ -145,10 +156,13 @@ export function syncPackSettings(states: SetStates): void {
   const current = getToggles();
   const changed = GENERATOR_SETS.filter((set) => current.sets[set] !== states[set]);
 
-  if (changed.length === 0) return;
-
   const off = new Set(current.off);
   const packOff = new Set(current.packOff);
+
+  // Generadores que trae una actualización: siguen el último estado guardado de su pack.
+  const fresh = adoptNewKeys(GENERATORS, current.known, current.sets, off, packOff);
+
+  if (changed.length === 0 && fresh.length === 0) return;
 
   for (const set of changed) {
     for (const key of generatorKeysOf(set)) {
@@ -164,10 +178,18 @@ export function syncPackSettings(states: SetStates): void {
   }
 
   commit(
-    { ...current, off: [...off], packOff: [...packOff], frozenSince: { ...current.frozenSince }, sets: { ...states } },
+    {
+      ...current,
+      off: [...off],
+      packOff: [...packOff],
+      frozenSince: { ...current.frozenSince },
+      sets: { ...states },
+      known: Object.keys(GENERATORS),
+    },
     current
   );
 
+  if (changed.length === 0) return;
   log(`[IdleGen] Pack settings: ${changed.map((set) => `${set}=${states[set] ? "on" : "off"}`).join(", ")}.`);
 }
 
