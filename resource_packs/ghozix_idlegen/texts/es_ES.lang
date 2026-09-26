@@ -299,6 +299,71 @@ tile.ghozix_idlegen:resin_generator.name=Generador de Resina
 entity.ghozix_idlegen:resin_generator_entity.name=Entidad Generador de Resina
 ## Entidad para el Generador de Resina
 
+tile.ghozix_idlegen:poplar_log_generator.name=Generador de Troncos de Álamo
+## Bloque generador que produce troncos de álamo
+entity.ghozix_idlegen:poplar_log_generator_entity.name=Entidad Generador de Troncos de Álamo
+## Entidad para el Generador de Troncos de Álamo
+
+tile.ghozix_idlegen:crimson_stem_generator.name=Generador de Tallos Carmesí
+## Bloque generador que produce tallos carmesí
+entity.ghozix_idlegen:crimson_stem_generator_entity.name=Entidad Generador de Tallos Carmesí
+## Entidad para el Generador de Tallos Carmesí
+
+tile.ghozix_idlegen:warped_stem_generator.name=Generador de Tallos Deformados
+## Bloque generador que produce tallos deformados
+entity.ghozix_idlegen:warped_stem_generator_entity.name=Entidad Generador de Tallos Deformados
+## Entidad para el Generador de Tallos Deformados
+
+tile.ghozix_idlegen:netherrack_generator.name=Generador de Infiedra
+## Bloque generador que produce infiedra
+entity.ghozix_idlegen:netherrack_generator_entity.name=Entidad Generador de Infiedra
+## Entidad para el Generador de Infiedra
+
+tile.ghozix_idlegen:blackstone_generator.name=Generador de Rocanegra
+## Bloque generador que produce rocanegra
+entity.ghozix_idlegen:blackstone_generator_entity.name=Entidad Generador de Rocanegra
+## Entidad para el Generador de Rocanegra
+
+tile.ghozix_idlegen:basalt_generator.name=Generador de Basalto
+## Bloque generador que produce basalto
+entity.ghozix_idlegen:basalt_generator_entity.name=Entidad Generador de Basalto
+## Entidad para el Generador de Basalto
+
+tile.ghozix_idlegen:soul_sand_generator.name=Generador de Arena de Almas
+## Bloque generador que produce arena de almas
+entity.ghozix_idlegen:soul_sand_generator_entity.name=Entidad Generador de Arena de Almas
+## Entidad para el Generador de Arena de Almas
+
+tile.ghozix_idlegen:soul_soil_generator.name=Generador de Tierra de Alma
+## Bloque generador que produce tierra de alma
+entity.ghozix_idlegen:soul_soil_generator_entity.name=Entidad Generador de Tierra de Alma
+## Entidad para el Generador de Tierra de Alma
+
+tile.ghozix_idlegen:magma_generator.name=Generador de Bloques de Magma
+## Bloque generador que produce bloques de magma
+entity.ghozix_idlegen:magma_generator_entity.name=Entidad Generador de Bloques de Magma
+## Entidad para el Generador de Bloques de Magma
+
+tile.ghozix_idlegen:nether_wart_generator.name=Generador de Verrugas de Inframundo
+## Bloque generador que produce verrugas de inframundo
+entity.ghozix_idlegen:nether_wart_generator_entity.name=Entidad Generador de Verrugas de Inframundo
+## Entidad para el Generador de Verrugas de Inframundo
+
+tile.ghozix_idlegen:glowstone_generator.name=Generador de Polvo de Piedra Brillante
+## Bloque generador que produce polvo de piedra brillante
+entity.ghozix_idlegen:glowstone_generator_entity.name=Entidad Generador de Polvo de Piedra Brillante
+## Entidad para el Generador de Polvo de Piedra Brillante
+
+tile.ghozix_idlegen:wither_rose_generator.name=Generador de Rosas del Wither
+## Bloque generador que produce rosas del Wither
+entity.ghozix_idlegen:wither_rose_generator_entity.name=Entidad Generador de Rosas del Wither
+## Entidad para el Generador de Rosas del Wither
+
+tile.ghozix_idlegen:nether_star_generator.name=Generador de Estrellas de Inframundo
+## Bloque generador que produce estrellas de inframundo
+entity.ghozix_idlegen:nether_star_generator_entity.name=Entidad Generador de Estrellas de Inframundo
+## Entidad para el Generador de Estrellas de Inframundo
+
 ###region UI ------------------------------------------------------------------------
 idlegen.config.title=§lIdle Generators§r — Ajustes
 idlegen.config.pick_set=Elige un pack de generadores:
@@ -307,7 +372,7 @@ idlegen.config.set.woods=Maderas
 idlegen.config.set.stones=Piedras
 idlegen.config.set.colors=Colores
 idlegen.config.set.nature=Naturaleza
-idlegen.config.set.nether=Nether
+idlegen.config.set.nether=Inframundo
 idlegen.config.hint=Un generador apagado no produce ni acumula, pero conserva lo ya producido.
 idlegen.config.bulk=Acción rápida
 idlegen.config.bulk.keep=Usar los interruptores de abajo

@@ -170,5 +170,44 @@
   },
   "resin_generator": {
     "sound": "stone"
+  },
+  "poplar_log_generator": {
+    "sound": "stone"
+  },
+  "crimson_stem_generator": {
+    "sound": "stone"
+  },
+  "warped_stem_generator": {
+    "sound": "stone"
+  },
+  "netherrack_generator": {
+    "sound": "stone"
+  },
+  "blackstone_generator": {
+    "sound": "stone"
+  },
+  "basalt_generator": {
+    "sound": "stone"
+  },
+  "soul_sand_generator": {
+    "sound": "stone"
+  },
+  "soul_soil_generator": {
+    "sound": "stone"
+  },
+  "magma_generator": {
+    "sound": "stone"
+  },
+  "nether_wart_generator": {
+    "sound": "stone"
+  },
+  "glowstone_generator": {
+    "sound": "stone"
+  },
+  "wither_rose_generator": {
+    "sound": "stone"
+  },
+  "nether_star_generator": {
+    "sound": "stone"
   }
 }

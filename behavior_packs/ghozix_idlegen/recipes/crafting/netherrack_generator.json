@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:netherrack_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:flint_and_steel" },
+      "B": { "item": "minecraft:obsidian" },
+      "D": { "item": "minecraft:netherrack" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:netherrack"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:netherrack_generator",
+      "count": 1
+    }
+  }
+}

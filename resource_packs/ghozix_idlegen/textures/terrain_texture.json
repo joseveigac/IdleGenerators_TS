@@ -174,6 +174,45 @@
     },
     "resin_generator": {
       "textures": "textures/blocks/resin_generator"
+    },
+    "poplar_log_generator": {
+      "textures": "textures/blocks/poplar_log_generator"
+    },
+    "crimson_stem_generator": {
+      "textures": "textures/blocks/crimson_stem_generator"
+    },
+    "warped_stem_generator": {
+      "textures": "textures/blocks/warped_stem_generator"
+    },
+    "netherrack_generator": {
+      "textures": "textures/blocks/netherrack_generator"
+    },
+    "blackstone_generator": {
+      "textures": "textures/blocks/blackstone_generator"
+    },
+    "basalt_generator": {
+      "textures": "textures/blocks/basalt_generator"
+    },
+    "soul_sand_generator": {
+      "textures": "textures/blocks/soul_sand_generator"
+    },
+    "soul_soil_generator": {
+      "textures": "textures/blocks/soul_soil_generator"
+    },
+    "magma_generator": {
+      "textures": "textures/blocks/magma_generator"
+    },
+    "nether_wart_generator": {
+      "textures": "textures/blocks/nether_wart_generator"
+    },
+    "glowstone_generator": {
+      "textures": "textures/blocks/glowstone_generator"
+    },
+    "wither_rose_generator": {
+      "textures": "textures/blocks/wither_rose_generator"
+    },
+    "nether_star_generator": {
+      "textures": "textures/blocks/nether_star_generator"
     }
   }
 }

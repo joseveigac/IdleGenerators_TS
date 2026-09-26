@@ -293,6 +293,71 @@ tile.ghozix_idlegen:resin_generator.name=Resin Generator
 entity.ghozix_idlegen:resin_generator_entity.name=Resin Generator Entity
 ## Entity for Resin Generator
 
+tile.ghozix_idlegen:poplar_log_generator.name=Poplar Log Generator
+## Generator Block that produces Poplar logs
+entity.ghozix_idlegen:poplar_log_generator_entity.name=Poplar Log Generator Entity
+## Entity for Poplar Log Generator
+
+tile.ghozix_idlegen:crimson_stem_generator.name=Crimson Stem Generator
+## Generator Block that produces Crimson stems
+entity.ghozix_idlegen:crimson_stem_generator_entity.name=Crimson Stem Generator Entity
+## Entity for Crimson Stem Generator
+
+tile.ghozix_idlegen:warped_stem_generator.name=Warped Stem Generator
+## Generator Block that produces Warped stems
+entity.ghozix_idlegen:warped_stem_generator_entity.name=Warped Stem Generator Entity
+## Entity for Warped Stem Generator
+
+tile.ghozix_idlegen:netherrack_generator.name=Netherrack Generator
+## Generator Block that produces Netherrack
+entity.ghozix_idlegen:netherrack_generator_entity.name=Netherrack Generator Entity
+## Entity for Netherrack Generator
+
+tile.ghozix_idlegen:blackstone_generator.name=Blackstone Generator
+## Generator Block that produces Blackstone
+entity.ghozix_idlegen:blackstone_generator_entity.name=Blackstone Generator Entity
+## Entity for Blackstone Generator
+
+tile.ghozix_idlegen:basalt_generator.name=Basalt Generator
+## Generator Block that produces Basalt
+entity.ghozix_idlegen:basalt_generator_entity.name=Basalt Generator Entity
+## Entity for Basalt Generator
+
+tile.ghozix_idlegen:soul_sand_generator.name=Soul Sand Generator
+## Generator Block that produces Soul sand
+entity.ghozix_idlegen:soul_sand_generator_entity.name=Soul Sand Generator Entity
+## Entity for Soul Sand Generator
+
+tile.ghozix_idlegen:soul_soil_generator.name=Soul Soil Generator
+## Generator Block that produces Soul soil
+entity.ghozix_idlegen:soul_soil_generator_entity.name=Soul Soil Generator Entity
+## Entity for Soul Soil Generator
+
+tile.ghozix_idlegen:magma_generator.name=Magma Generator
+## Generator Block that produces Magma blocks
+entity.ghozix_idlegen:magma_generator_entity.name=Magma Generator Entity
+## Entity for Magma Generator
+
+tile.ghozix_idlegen:nether_wart_generator.name=Nether Wart Generator
+## Generator Block that produces Nether wart
+entity.ghozix_idlegen:nether_wart_generator_entity.name=Nether Wart Generator Entity
+## Entity for Nether Wart Generator
+
+tile.ghozix_idlegen:glowstone_generator.name=Glowstone Generator
+## Generator Block that produces Glowstone dust
+entity.ghozix_idlegen:glowstone_generator_entity.name=Glowstone Generator Entity
+## Entity for Glowstone Generator
+
+tile.ghozix_idlegen:wither_rose_generator.name=Wither Rose Generator
+## Generator Block that produces Wither roses
+entity.ghozix_idlegen:wither_rose_generator_entity.name=Wither Rose Generator Entity
+## Entity for Wither Rose Generator
+
+tile.ghozix_idlegen:nether_star_generator.name=Nether Star Generator
+## Generator Block that produces Nether stars
+entity.ghozix_idlegen:nether_star_generator_entity.name=Nether Star Generator Entity
+## Entity for Nether Star Generator
+
 ###region UI ------------------------------------------------------------------------
 idlegen.config.title=§lIdle Generators§r — Settings
 idlegen.config.pick_set=Choose a generator pack:

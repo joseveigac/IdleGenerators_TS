@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:basalt_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:blue_ice" },
+      "B": { "item": "minecraft:obsidian" },
+      "D": { "item": "minecraft:basalt" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:basalt"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:basalt_generator",
+      "count": 1
+    }
+  }
+}

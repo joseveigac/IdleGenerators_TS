@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:crimson_stem_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GBG", "SLS", "GSG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "B": { "item": "minecraft:bone_meal" },
+      "S": { "item": "minecraft:crimson_fungus" },
+      "L": { "item": "minecraft:crimson_stem" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:crimson_stem"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:crimson_stem_generator",
+      "count": 1
+    }
+  }
+}
