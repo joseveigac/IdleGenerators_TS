@@ -26,7 +26,7 @@
         }
       },
       "minecraft:item_visual": {
-        "geometry": { "identifier": "geometry.generator_item" },
+        "geometry": { "identifier": "geometry.generator_item_nether_wart" },
         "material_instances": {
           "*": { "texture": "nether_wart_generator", "render_method": "alpha_test" }
         }

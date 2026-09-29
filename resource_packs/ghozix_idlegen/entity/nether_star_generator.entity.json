@@ -11,7 +11,7 @@
         "default": "textures/entity/nether_star_generator_entity"
       },
       "geometry": {
-        "default": "geometry.generator_entity"
+        "default": "geometry.generator_entity_nether_star"
       },
 
       "animations": {

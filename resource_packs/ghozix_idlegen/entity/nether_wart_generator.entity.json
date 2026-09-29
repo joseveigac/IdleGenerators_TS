@@ -11,7 +11,7 @@
         "default": "textures/entity/nether_wart_generator_entity"
       },
       "geometry": {
-        "default": "geometry.generator_entity"
+        "default": "geometry.generator_entity_nether_wart"
       },
 
       "animations": {
