@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:soul_sand_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:nether_wart" },
+      "B": { "item": "minecraft:obsidian" },
+      "D": { "item": "minecraft:soul_sand" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:soul_sand"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:soul_sand_generator",
+      "count": 1
+    }
+  }
+}

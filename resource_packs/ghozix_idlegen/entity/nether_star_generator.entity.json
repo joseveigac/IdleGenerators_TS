@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "ghozix_idlegen:nether_star_generator_entity",
+
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/nether_star_generator_entity"
+      },
+      "geometry": {
+        "default": "geometry.generator_entity_nether_star"
+      },
+
+      "animations": {
+        "rotate": "animation.generator_entity.rotate"
+      },
+      "scripts": {
+        "animate": ["rotate"]
+      },
+
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

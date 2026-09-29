@@ -1,25 +1,25 @@
 {
   "format_version": 3,
   "header": {
-    "name": "Idle Generators 1.4.0",
+    "name": "Idle Generators 1.5.0",
     "description": "An idle generator addon for Minecraft Bedrock — passively generates resources on real-world time, even offline.",
     "uuid": "ed97778b-789f-405d-bb74-5c42e2e1398d",
-    "version": "1.4.0",
-    "min_engine_version": "1.26.30"
+    "version": "1.5.0",
+    "min_engine_version": "1.26.50"
   },
   "modules": [
     {
       "description": "Behavior",
       "type": "data",
       "uuid": "5b445716-4551-42c1-8147-00333b87f233",
-      "version": "1.4.0"
+      "version": "1.5.0"
     },
     {
       "description": "Script resources",
       "language": "javascript",
       "type": "script",
       "uuid": "2c9cb3de-cbcd-4ef0-b29d-7e758a948bc8",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "entry": "scripts/main.js"
     }
   ],
@@ -57,12 +57,18 @@
       "name": "ghozix_idlegen:nature",
       "text": "idlegen.packsettings.nature",
       "default": true
+    },
+    {
+      "type": "toggle",
+      "name": "ghozix_idlegen:nether",
+      "text": "idlegen.packsettings.nether",
+      "default": true
     }
   ],
   "dependencies": [
     {
       "module_name": "@minecraft/server",
-      "version": "2.8.0"
+      "version": "2.10.0"
     },
     {
       "module_name": "@minecraft/server-ui",
@@ -70,7 +76,7 @@
     },
     {
       "uuid": "abad2758-5b6c-44cd-bfa5-4a39c7e60071",
-      "version": "1.4.0"
+      "version": "1.5.0"
     }
   ],
   "metadata": {

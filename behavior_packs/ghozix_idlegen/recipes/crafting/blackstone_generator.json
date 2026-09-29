@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:blackstone_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:gold_ingot" },
+      "B": { "item": "minecraft:obsidian" },
+      "D": { "item": "minecraft:blackstone" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:blackstone"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:blackstone_generator",
+      "count": 1
+    }
+  }
+}

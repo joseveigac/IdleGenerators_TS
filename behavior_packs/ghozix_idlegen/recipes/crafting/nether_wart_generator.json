@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:nether_wart_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:soul_sand" },
+      "B": { "item": "minecraft:obsidian" },
+      "D": { "item": "minecraft:nether_wart" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:nether_wart"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:nether_wart_generator",
+      "count": 1
+    }
+  }
+}

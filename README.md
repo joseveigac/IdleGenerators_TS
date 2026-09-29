@@ -2,13 +2,13 @@
 
 **Place a generator and let it work — even while the world is closed.**
 
-Idle Generators is a Minecraft Bedrock add-on (Behavior Pack + Resource Pack) that adds 56 craftable block-generators producing resources passively over real time. Close the world, go offline, come back later — each generator tracks how much real time has passed and fills its internal buffer, and an action-bar HUD shows the buffer whenever you look at one.
+Idle Generators is a Minecraft Bedrock add-on (Behavior Pack + Resource Pack) that adds 69 craftable block-generators producing resources passively over real time. Close the world, go offline, come back later — each generator tracks how much real time has passed and fills its internal buffer, and an action-bar HUD shows the buffer whenever you look at one.
 
 **[Download on CurseForge](https://www.curseforge.com/minecraft-bedrock/addons/idle-ore-generators)**
 
 ## Features
 
-- **56 generators**: 11 mineral types, 9 wood types, 12 stone & construction types, 16 dye colors and 8 nature resources.
+- **69 generators**: 11 mineral types, 12 wood types, 12 stone & construction types, 16 dye colors, 8 nature resources and 10 Nether resources.
 - **Offline production** — real-world timestamps; items accumulate while the game is closed.
 - **Action-bar HUD** — per-generator icon, buffer readout (stored / cap) and cycle progress while looking at a generator.
 - **Simple withdrawal** — left-click a generator to withdraw one item, sneak + left-click for a full stack; break the block to move it.
@@ -33,7 +33,7 @@ Idle Generators is a Minecraft Bedrock add-on (Behavior Pack + Resource Pack) th
 | Emerald | 60 s | 512 |
 | Diamond | 80 s | 256 |
 | Netherite | 100 s | 64 |
-| Oak / Spruce / Birch / Jungle / Acacia / Dark Oak / Mangrove / Cherry / Pale Oak Log | 5 s | 64 |
+| Oak / Spruce / Birch / Jungle / Acacia / Dark Oak / Mangrove / Cherry / Pale Oak / Poplar Log, Crimson / Warped Stem | 5 s | 64 |
 | Stone / Granite / Diorite / Andesite / Tuff / Gravel / Sand / Red Sand | 5 s | 512 |
 | Deepslate / Calcite | 10 s | 512 |
 | Dripstone (pointed dripstone) | 10 s | 512 |
@@ -44,10 +44,15 @@ Idle Generators is a Minecraft Bedrock add-on (Behavior Pack + Resource Pack) th
 | Honeycomb | 15 s | 512 |
 | Amethyst (shards) / Resin (clumps) | 20 s | 512 |
 | Spore Blossom | 30 s | 256 |
+| Netherrack / Blackstone / Basalt / Soul Sand / Soul Soil | 5 s | 512 |
+| Magma Block / Nether Wart | 10 s | 512 |
+| Glowstone (dust) | 15 s | 1024 |
+| Wither Rose | 60 s | 256 |
+| Nether Star | 3600 s (1 per hour) | 8 |
 
 ## Requirements
 
-- Minecraft Bedrock Edition **1.26.30+** (v1.2.1 stays available for 1.21.130+)
+- Minecraft Bedrock Edition **1.26.50+** (v1.4.0 stays available for 1.26.30+, v1.2.1 for 1.21.130+)
 - Both packs enabled on the world (Behavior + Resource) — importing the `.mcaddon` sets them up together.
 
 ## Development

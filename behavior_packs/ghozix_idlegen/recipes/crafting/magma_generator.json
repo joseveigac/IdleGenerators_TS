@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "ghozix_idlegen:magma_generator_recipe"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["GTG", "BDB", "GTG"],
+    "key": {
+      "G": { "item": "minecraft:glass" },
+      "T": { "item": "minecraft:magma_cream" },
+      "B": { "item": "minecraft:obsidian" },
+      "D": { "item": "minecraft:magma" }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:magma"
+      }
+    ],
+    "result": {
+      "item": "ghozix_idlegen:magma_generator",
+      "count": 1
+    }
+  }
+}

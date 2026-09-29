@@ -1,18 +1,18 @@
 {
   "format_version": 3,
   "header": {
-    "name": "Idle Generators 1.4.0",
+    "name": "Idle Generators 1.5.0",
     "description": "An idle generator addon for Minecraft Bedrock — passively generates resources on real-world time, even offline.",
     "uuid": "abad2758-5b6c-44cd-bfa5-4a39c7e60071",
-    "version": "1.4.0",
-    "min_engine_version": "1.26.30"
+    "version": "1.5.0",
+    "min_engine_version": "1.26.50"
   },
   "modules": [
     {
       "description": "Idle Generators Resource Pack",
       "type": "resources",
       "uuid": "d034e8c0-69b2-45a0-96c3-3e989ff36a70",
-      "version": "1.4.0"
+      "version": "1.5.0"
     }
   ],
   "capabilities": ["pbr"],
